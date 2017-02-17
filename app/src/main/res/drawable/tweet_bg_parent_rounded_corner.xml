@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:shape="rectangle">
+    
+    <!-- view background -->
+    <solid android:color="@color/tweet_item_bg"/>
+    
+    <!-- view border color and width -->
+	<stroke 
+	    android:width="@dimen/tweet_item_border_width"
+	    android:color="@color/tweet_item_border"/>
+	
+	<!-- Here is the corner radius -->
+	<corners android:radius="@dimen/tweet_item_corner_radius"/>
+</shape>
