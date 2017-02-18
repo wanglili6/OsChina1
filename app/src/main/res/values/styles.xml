@@ -10,10 +10,15 @@
             res/values-vXX/styles.xml, while customizations related to
             backward-compatibility can go here.
         -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:colorPrimaryDark">@color/actionbar_background</item>
+
     </style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
     
@@ -34,7 +39,8 @@
     <style name="OverflowButton" parent="@style/Widget.AppCompat.ActionButton.Overflow">
         <item name="android:src">@drawable/actionbar_more_icon_normal</item>
     </style>
-    
+
+
 
     <style name="ActionBarBaseStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
         <!--控制ActionBar的背景颜色-->
@@ -341,4 +347,7 @@
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/tab_title_slide_selector</item>
     </style>
+
+
+
 </resources>

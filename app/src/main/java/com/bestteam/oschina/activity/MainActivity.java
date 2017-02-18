@@ -5,10 +5,10 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -24,6 +24,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 
 public class MainActivity extends FragmentActivity implements RadioGroup.OnCheckedChangeListener {
@@ -45,8 +46,15 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
     RadioButton rbMe;
     @BindView(R.id.radiogroup)
     RadioGroup radiogroup;
-    @BindView(R.id.drawerlayout)
-    DrawerLayout drawerlayout;
+    @BindView(R.id.main_search)
+    ImageButton mainSearch;
+    @BindView(R.id.main_setting)
+    ImageButton mainSetting;
+    @BindView(R.id.tv_title)
+    TextView tvTitle;
+    @BindView(R.id.main_code)
+    ImageButton mainCode;
+
     private List<Fragment> fragments;
 
     @Override
@@ -55,18 +63,26 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initFragments();
+        //设置监听事件
+        initEvent();
+        //设置默认的显示
+        tvTitle.setText("综合");
+        switchFragments(0);
         radiogroup.check(R.id.rb_new);
+    }
+
+    private void initEvent() {
+
+        //给radiogroup设置选择监听
         radiogroup.setOnCheckedChangeListener(this);
 
+        //中间加号的点击事件
         tvPostTweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
         });
-        switchFragments(0);
-
-
     }
 
     /**
@@ -102,25 +118,64 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         fragments.add(new ExploreFragment());
         fragments.add(new MeFragment());
     }
-
+    /**
+     * 选中监听
+     *
+     * @param group
+     * @param checkedId
+     */
 
     @Override
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
             case R.id.rb_new:
                 switchFragments(0);
+                tvTitle.setText("综合");
+                mainSetting.setVisibility(View.GONE);
+                mainSearch.setVisibility(View.VISIBLE);
+                mainCode.setVisibility(View.GONE);
+
                 break;
             case R.id.rb_tweet:
 
                 switchFragments(1);
+                tvTitle.setText("动弹");
+                mainSetting.setVisibility(View.GONE);
+                mainSearch.setVisibility(View.VISIBLE);
+                mainCode.setVisibility(View.GONE);
                 break;
             case R.id.rb_explore:
 
                 switchFragments(2);
+                tvTitle.setText("发现");
+                mainSetting.setVisibility(View.GONE);
+                mainSearch.setVisibility(View.VISIBLE);
+                mainCode.setVisibility(View.GONE);
+
                 break;
             case R.id.rb_me:
 
                 switchFragments(3);
+                mainSearch.setVisibility(View.GONE);
+                mainSetting.setVisibility(View.VISIBLE);
+                mainCode.setVisibility(View.VISIBLE);
+                tvTitle.setText("");
+                break;
+        }
+    }
+
+    /**
+     * 点击事件
+     * @param view
+     */
+    @OnClick({R.id.main_setting, R.id.main_search, R.id.main_code})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.main_setting:
+                break;
+            case R.id.main_search:
+                break;
+            case R.id.main_code:
                 break;
         }
     }
