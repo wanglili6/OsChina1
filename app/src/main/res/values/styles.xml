@@ -4,7 +4,7 @@
         Base application theme, dependent on API level. This theme is replaced
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
-    <style name="AppBaseTheme" parent="android:Theme.Light">
+    <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -37,9 +37,13 @@
     
 
     <style name="ActionBarBaseStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
-        <item name="background">@color/actionbar_background</item>
+        <!--控制ActionBar的背景颜色-->
+        <item name="background">@color/main_green</item>
+        <!--控制ActionBar标题的文字样式-->
         <item name="titleTextStyle">@style/TitleStyle</item>
+        <!--控制ActionBar的图标的图片,设置为透明就是去掉图标-->
         <item name="android:icon">@android:color/transparent</item>
+        <!--控制ActionBar子标题的样式-->
         <item name="subtitleTextStyle">@style/SubTitle</item>
     </style>
 
@@ -48,11 +52,16 @@
         <item name="background">@color/transparent</item>
     </style>
     
-    <style name="ActionBarBaseTheme" parent="@style/Theme.AppCompat.Light">
+    <style name="ActionBarBaseTheme" parent="@style/Theme.AppCompat.NoActionBar">
+        <!--当前app的所有Activity窗体的默认背景颜色-->
         <item name="android:windowBackground">@color/window_background</item>
+        <!--修改ActionBar相关的样式-->
         <item name="actionBarStyle">@style/ActionBarBaseStyle</item>
+        <!--控制ActionBar溢出按钮的样式-->
         <item name="actionOverflowButtonStyle">@style/OverflowButton</item>
+        <!--ActionBar的条目被点击的状态选择器-->
         <item name="actionBarItemBackground">@drawable/socialize_titlebar_item_background_selector</item>
+        <!--修改ActionBar的Menu的文字的颜色的-->
         <item name="android:actionMenuTextColor">@color/white</item>
     </style>
 
@@ -181,25 +190,42 @@
     </style>
 
     <!-- 操作项样式end -->
-    <style name="dialog_animation" parent="android:Animation">
+    <style name="dialog_animation" parent="android:Animation.Dialog">
         <item name="@android:windowEnterAnimation">@anim/dialog_enter</item>
         <item name="@android:windowExitAnimation">@anim/dialog_exit</item>
     </style>
-    <style name="dialog_common" parent="@style/Theme.AppCompat.Light.Dialog">
-        <item name="android:windowBackground">@drawable/dialog_background</item>
-    </style>
 
-    <style name="dialog_bottom" parent="@style/dialog_common">
-        <item name="android:windowBackground">@drawable/dialog_bottom_background</item>
+    <style name="quick_option_dialog" parent="@style/Theme.AppCompat.Light.Dialog">
+        <item name="android:windowBackground">@color/white</item>
         <item name="android:windowAnimationStyle">@style/dialog_animation</item>
     </style>
-    
+
+    <!-- quick option style start -->
+    <style name="quick_option_item">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/space_16</item>
+        <item name="android:background">@drawable/list_item_background</item>
+    </style>
+
+    <style name="quick_option_item_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/space_12</item>
+        <item name="android:textColor">@color/drawer_menu_text</item>
+        <item name="android:textSize">@dimen/text_size_12</item>
+    </style>
+
+
     <!-- viewpage文本  滑动标签标题 -->
     <style name="viewpage_slidingTabTitle">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:gravity">center</item>
-        <item name="android:textColor">@color/viewpage_selector_slide_title</item>
+        <item name="android:textColor">@color/tab_title_slide_selector</item>
         <item name="android:textSize">17sp</item>
     </style>
     
@@ -294,5 +320,25 @@
         <item name="android:layout_width">fill_parent</item>
         <item name="android:layout_height">1.0px</item>
         <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+
+    <style name="tab_style">
+        <item name="android:textColor">@color/tab_title_slide_selector</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="main_radiobtn_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:button">@null</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/tab_title_slide_selector</item>
     </style>
 </resources>

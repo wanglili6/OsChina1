@@ -1,10 +1,21 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    <!--showAsAction属性值介绍:-->
+    <!--　　1、always：这个值会使菜单项一直显示在Action Bar上。-->
+    <!--　　2、ifRoom：如果有足够的空间，这个值会使菜单项显示在Action Bar上。-->
+    <!--　　3、never：这个值使菜单项永远都不出现在Action Bar上。-->
+    <!--　　4、withText：这个值使菜单项和它的图标，菜单文本一起显示。-->
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
+        app:showAsAction="always|withText"
+        android:icon="@drawable/actionbar_icon_add"
+        android:title="hehe"/>
+    <item
+        android:id="@+id/action_settings1"
+        android:orderInCategory="100"
         app:showAsAction="never"
+        android:icon="@drawable/angel"
         android:title="@string/action_settings"/>
 
 </menu>

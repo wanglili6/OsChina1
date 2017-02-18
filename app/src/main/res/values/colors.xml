@@ -41,8 +41,9 @@
     <color name="drawer_menu_item_background_pressed">#ebeceb</color>
     
     <color name="actionbar_item_background_normal">@color/transparent</color>
-    <color name="actionbar_item_background_pressed">#0b751e</color>
-    
+    <color name="actionbar_item_background_pressed">@color/blue</color>
+    <!--<color name="actionbar_item_background_pressed">#0b751e</color>-->
+
     <color name="ui_dialog_divider">@color/list_divider_color</color>
     <color name="ui_dialog_list_text">#5E5E5E</color>
     <color name="text_dark">#af000000</color>
@@ -97,4 +98,17 @@
     
     <color name="spinner_background">#464646</color>
     <color name="spinner_background_press">#6baf77</color>
+
+
+
+    <!-- 新版登录模块-->
+    <color name="login_line_color">#dededf</color>
+    <color name="login_input_active">#31b968</color>
+    <color name="login_other_color">#cacaca</color>
+    <color name="account_input_bg_color">#33ffffff</color>
+    <color name="account_lock_bg">#ff43815c</color>
+    <color name="account_lock_font_color">#FF68997C</color>
+    <color name="account_input_color">#c9c9c9</color>
+    <color name="account_pressed_true">#14b94d</color>
+
 </resources>

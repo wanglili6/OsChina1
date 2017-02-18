@@ -4,8 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.itheima.oschina.util.StringUtils;
 
+import com.bestteam.oschina.util.StringUtils;
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 /**
