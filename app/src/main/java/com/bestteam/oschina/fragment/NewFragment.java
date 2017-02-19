@@ -23,6 +23,7 @@ import java.util.List;
  * Created by 王丽丽 on 2017/2/18.
  */
 public class NewFragment extends android.support.v4.app.Fragment {
+<<<<<<< HEAD
 
     private TabLayout tabLayout;
     private ViewPager vp;
@@ -68,4 +69,7 @@ public class NewFragment extends android.support.v4.app.Fragment {
 //        return fragment;
 //    }
 
+=======
+    
+>>>>>>> 135dbcbb335321872710275631ce20d62c0cba3e
 }
