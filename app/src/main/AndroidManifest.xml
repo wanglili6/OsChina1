@@ -8,8 +8,9 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
         android:supportsRtl="true">
+        <activity android:name=".activity.MainActivity"/>
+        <activity android:name=".activity.SplashActivity">
 
-        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -17,10 +18,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.LoginActivity"/>
+<<<<<<< HEAD
+
+=======
         <activity android:name=".activity.UpdataActivity"/>
         <activity android:name=".activity.FriendActivity"/>
         <activity android:name=".activity.SoftwareActivity"/>
         <activity android:name=".activity.PlayActivity"/>
+>>>>>>> 9483a96040a96b6214f99782d91ab2d59c49a785
     </application>
 
 </manifest>

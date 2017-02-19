@@ -6,7 +6,7 @@ android {
     defaultConfig {
         applicationId "com.bestteam.oschina"
         minSdkVersion 23
-        targetSdkVersion 24
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
