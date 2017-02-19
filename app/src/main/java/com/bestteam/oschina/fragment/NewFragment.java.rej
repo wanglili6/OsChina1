@@ -1,0 +1,7 @@
+diff a/app/src/main/java/com/bestteam/oschina/fragment/NewFragment.java b/app/src/main/java/com/bestteam/oschina/fragment/NewFragment.java	(rejected hunks)
+@@ -71,4 +71,5 @@
+ 
+ =======
+     
++>>>>>>> 135dbcbb335321872710275631ce20d62c0cba3e
+ }
