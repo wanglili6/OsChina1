@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bestteam.oschina">
-
+<uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +18,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.LoginActivity"/>
+<<<<<<< HEAD
 
+=======
+        <activity android:name=".activity.UpdataActivity"/>
+        <activity android:name=".activity.FriendActivity"/>
+        <activity android:name=".activity.SoftwareActivity"/>
+        <activity android:name=".activity.PlayActivity"/>
+>>>>>>> 9483a96040a96b6214f99782d91ab2d59c49a785
     </application>
 
 </manifest>
