@@ -82,7 +82,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
             @Override
             public void onClick(View v) {
 
-                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                startActivity(new Intent(MainActivity.this, LoginActivity.class));
 
             }
         });
@@ -121,6 +121,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         fragments.add(new ExploreFragment());
         fragments.add(new MeFragment());
     }
+
     /**
      * 选中监听
      *
@@ -169,12 +170,15 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
 
     /**
      * 点击事件
+     *
      * @param view
      */
     @OnClick({R.id.main_setting, R.id.main_search, R.id.main_code})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.main_setting:
+                Intent intent = new Intent(this,SettingActivity.class);
+                startActivity(intent);
                 break;
             case R.id.main_search:
                 break;
