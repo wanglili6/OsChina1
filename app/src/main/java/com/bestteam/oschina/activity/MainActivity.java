@@ -14,6 +14,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.bean.User;
 import com.bestteam.oschina.fragment.ExploreFragment;
 import com.bestteam.oschina.fragment.MeFragment;
 import com.bestteam.oschina.fragment.NewFragment;
@@ -80,7 +81,9 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         tvPostTweet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+
             }
         });
     }
