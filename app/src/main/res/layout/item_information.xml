@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp">
+
+        <ImageView
+            android:id="@+id/iv_icon_item_information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="3dp"
+            android:src="@drawable/widget_today_icon" />
+
+        <TextView
+            android:id="@+id/tv_title_item_information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/iv_icon_item_information"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="新闻标题"
+            android:textColor="#f8000000"
+            android:textSize="16dp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_content_item_information"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="内容"
+        android:textColor="#c8383737"
+        android:textSize="12dp"
+        android:layout_marginBottom="3dp"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_name_item_information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="名字"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/tv_time_item_information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/tv_name_item_information"
+            android:text="时间"
+            android:textSize="10dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_comment_item_information"
+                android:layout_width="15dp"
+                android:layout_height="10dp"
+                android:background="@drawable/ic_comment"
+                android:layout_gravity="center"
+                android:layout_marginRight="5dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10dp"
+                android:text="1"
+                android:layout_gravity="center"
+                android:layout_marginRight="3dp"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>

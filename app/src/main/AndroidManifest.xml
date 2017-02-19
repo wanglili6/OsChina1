@@ -18,6 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.UpdataActivity" />
         <activity android:name=".activity.FriendActivity" />
@@ -25,6 +26,15 @@
         <activity android:name=".activity.PlayActivity" />
         <activity android:name=".activity.MessageActivity" />
         <activity android:name=".activity.SettingActivity" />
+=======
+        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.UpdataActivity"/>
+        <activity android:name=".activity.FriendActivity"/>
+        <activity android:name=".activity.SoftwareActivity"/>
+        <activity android:name=".activity.PlayActivity"/>
+        <activity android:name=".activity.AttentionActivity"/>
+        <activity android:name=".activity.FansActivity"/>
+>>>>>>> 5389b05add52c6533d0639ba1debd1ee15a1f101
 
     </application>
 
