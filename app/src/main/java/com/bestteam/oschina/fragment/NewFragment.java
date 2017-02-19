@@ -19,6 +19,8 @@ import com.bestteam.oschina.fragment.newsfragment.InformationFragment;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by 王丽丽 on 2017/2/18.
  */
@@ -32,7 +34,12 @@ public class NewFragment extends android.support.v4.app.Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+<<<<<<< HEAD
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.newfragmengt, container,false);
+
+=======
         View view = LayoutInflater.from(getContext()).inflate(R.layout.newfragmengt, (ViewGroup) getView(), false);
+>>>>>>> 07dffe953a9977529379f6012af5b2244881249b
 
         tabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
         vp = (ViewPager) view.findViewById(R.id.vp);
@@ -47,7 +54,11 @@ public class NewFragment extends android.support.v4.app.Fragment {
 
     private void initViewParge() {
 
+<<<<<<< HEAD
+        NewsFragmentVPAdapter adapter = new NewsFragmentVPAdapter(getChildFragmentManager(),fragments,title);
+=======
         NewsFragmentVPAdapter adapter = new NewsFragmentVPAdapter(getFragmentManager(), fragments, title);
+>>>>>>> 07dffe953a9977529379f6012af5b2244881249b
         vp.setAdapter(adapter);
 
         tabLayout.setupWithViewPager(vp);
