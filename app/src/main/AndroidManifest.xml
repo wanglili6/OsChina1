@@ -18,17 +18,26 @@
             </intent-filter>
         </activity>
 
+
+
+
         <activity android:name=".activity.MessageActivity" />
         <activity android:name=".activity.SettingActivity" />
-
         <activity android:name=".activity.LoginActivity"/>
         <activity android:name=".activity.UpdataActivity"/>
         <activity android:name=".activity.FriendActivity"/>
         <activity android:name=".activity.SoftwareActivity"/>
         <activity android:name=".activity.PlayActivity"/>
-        <activity android:name=".activity.ClassifyItemActivity"/>
+        <activity android:name=".activity.retrieveActivity"/>
+        <activity android:name=".activity.ResetActivity"/>
+        <activity android:name=".activity.RegisterActivity"/>
+        <activity android:name=".activity.RegisterUserActivity"/>
+        <activity android:name=".activity.FlipActivity"/>
         <activity android:name=".activity.AttentionActivity"/>
         <activity android:name=".activity.FansActivity"/>
+        <activity android:name=".activity.MyBlogActivity"/>
+        <activity android:name=".activity.MessageCenterActivity"/>
+
 
 
     </application>

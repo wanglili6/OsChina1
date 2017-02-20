@@ -15,4 +15,5 @@ public interface Cantents {
     public String HOT_TWEET_URL = "uid=-1&pageIndex=0&pageSize=20";
 
 
+    public String CLISSIFTY_Item2_URl = "https://www.oschina.net/action/api/softwaretag_list?searchTag=";
 }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:background="@color/actionbar_background"
+        android:fitsSystemWindows="true">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/ib_myblog"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:background="@drawable/btn_back_selector"
+                android:layout_alignParentTop="true"
+
+                />
+            <TextView
+                android:layout_toRightOf="@id/ib_myblog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                android:textSize="12sp"
+                android:text="我的"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:layout_centerInParent="true"
+                android:textSize="20sp"
+                android:text="我的博客"/>
+        </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+
+</LinearLayout>

@@ -1,10 +1,10 @@
 package com.bestteam.oschina.activity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.widget.ImageButton;
@@ -12,11 +12,11 @@ import android.widget.TextView;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.SoftwareAdapter;
-import com.bestteam.oschina.fragment.ClassifyFragment;
+import com.bestteam.oschina.fragment.findfragment.ClassifyFragment;
 import com.bestteam.oschina.fragment.DomesticFragment;
-import com.bestteam.oschina.fragment.HotFragment;
-import com.bestteam.oschina.fragment.NewestFragment;
-import com.bestteam.oschina.fragment.RecommendFragment;
+import com.bestteam.oschina.fragment.findfragment.HotFragment;
+import com.bestteam.oschina.fragment.findfragment.NewestFragment;
+import com.bestteam.oschina.fragment.findfragment.RecommendFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,7 +36,7 @@ public class SoftwareActivity extends FragmentActivity {
     @BindView(R.id.software_tab)
     TabLayout softwareTab;
     @BindView(R.id.software_vp)
-    ViewPager softwareVp;
+    public ViewPager softwareVp;
     private String[] titles;
 
     private List<Fragment> fragments;
@@ -80,6 +80,19 @@ public class SoftwareActivity extends FragmentActivity {
 
     @OnClick(R.id.ib_back)
     public void onClick() {
-        finish();
+        // 获取当前回退栈中的Fragment个数
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        int backStackEntryCount = fragmentManager.getBackStackEntryCount();
+        Log.i("wlll", "onClick: "+backStackEntryCount);
+            // 判断当前回退栈中的fragment个数,
+            if (backStackEntryCount > 0) {
+                // 立即回退一步
+                fragmentManager.popBackStackImmediate();
+
+            }else {
+                finish();
+            }
+
+
     }
 }

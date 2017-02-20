@@ -4,15 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:orientation="vertical">
+    >
 
-    <FrameLayout
-        android:id="@+id/cassify_categor_contanier"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<android.support.v7.widget.RecyclerView
+    android:id="@+id/fragment_rv"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    </FrameLayout>
-
+</android.support.v7.widget.RecyclerView>
 
 
 </LinearLayout>
