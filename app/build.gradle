@@ -33,20 +33,16 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.1'
     testCompile 'junit:junit:4.12'
     compile files('libs/xstream-1.4.7.jar')
-
     compile 'com.android.support:design:25.0.1'
     //    /*添加注解工具的依赖*/
     compile 'com.jakewharton:butterknife:8.4.0'
     apt 'com.jakewharton:butterknife-compiler:8.4.0'
-//    //添加图片加载库
+    //    //添加图片加载库
     compile 'com.squareup.picasso:picasso:2.5.2'
-
-//   // 添加网络请求框架
+    //   // 添加网络请求框架
     compile 'com.zhy:okhttputils:2.6.2'
-
-//recyclerview
+    //recyclerview
     compile 'com.android.support:recyclerview-v7:25.0.1'
-
     compile 'com.google.code.gson:gson:2.2.4'
-
+    compile 'com.android.support:design:25.1.1'
 }

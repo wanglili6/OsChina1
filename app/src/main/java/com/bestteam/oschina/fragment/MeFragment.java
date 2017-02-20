@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.activity.AttentionActivity;
+import com.bestteam.oschina.activity.FansActivity;
 import com.bestteam.oschina.activity.MessageActivity;
 
 import butterknife.BindView;
@@ -57,6 +60,7 @@ public class MeFragment extends Fragment {
     @BindView(R.id.rl_me_team)
     RelativeLayout rlMeTeam;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -79,13 +83,17 @@ public class MeFragment extends Fragment {
             case R.id.ll_me_shoucang:
                 break;
             case R.id.ll_me_guanzhu:
+                Intent intent3 = new Intent(getActivity(), AttentionActivity.class);
+                startActivity(intent3);
                 break;
             case R.id.ll_me_fenshi:
+                Intent intent4 = new Intent(getActivity(), FansActivity.class);
+                startActivity(intent4);
                 break;
             case R.id.me_ib_message:
                 break;
             case R.id.rl_me_message:
-                Intent intent = new Intent(getContext(), MessageActivity.class);
+                Intent intent = new Intent(getActivity(), MessageActivity.class);
                 startActivity(intent);
                 break;
             case R.id.me_ib_moke:

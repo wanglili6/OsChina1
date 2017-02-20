@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
@@ -25,11 +26,23 @@
             android:text="消息中心" />
     </LinearLayout>
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar"
+    <!--标签页控件-->
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        app:tabBackground="@color/account_lock_bg"
+        app:tabSelectedTextColor="#000"
+        app:tabTextColor="#fff"
+        app:tabIndicatorHeight="1dp"
+        app:tabIndicatorColor="#a9c17a"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#e9e3e3">
-    </android.support.v7.widget.Toolbar>
+        android:layout_height="wrap_content">
+    </android.support.design.widget.TabLayout>
+
+    <!--页面控件-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v4.view.ViewPager>
 
 </LinearLayout>
