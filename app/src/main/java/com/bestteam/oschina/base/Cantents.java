@@ -7,4 +7,12 @@ package com.bestteam.oschina.base;
 
 public interface Cantents {
     public String CLISSIFTY_URl = "https://www.oschina.net/action/api/softwarecatalog_list?tag=";
+
+    //动弹用
+    public String BASE_URL_TWEET = "http://www.oschina.net/action/api/tweet_list?";
+
+    public String NEW_TWEET_URL = "uid=0&pageIndex=0&pageSize=20";
+    public String HOT_TWEET_URL = "uid=-1&pageIndex=0&pageSize=20";
+
+
 }

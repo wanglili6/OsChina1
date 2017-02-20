@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bestteam.oschina.R;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 /**
  * Created by 45011 on 2017/2/19.
@@ -18,16 +19,16 @@ import com.bestteam.oschina.R;
 
 public abstract class BaseTweetFragment extends Fragment {
 
-    protected SwipeRefreshLayout mSwipe;
-    protected RecyclerView mRv;
+    //protected SwipeRefreshLayout mSwipe;
+    protected XRecyclerView mRv;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.tab_dongtan,container,false);
 
-        mSwipe = (SwipeRefreshLayout) view.findViewById(R.id.swipe_dongtan);
-        mRv = (RecyclerView) view.findViewById(R.id.rv_dongtan);
+        //mSwipe = (SwipeRefreshLayout) view.findViewById(R.id.swipe_dongtan);
+        mRv = (XRecyclerView) view.findViewById(R.id.rv_dongtan);
 
         return view;
     }

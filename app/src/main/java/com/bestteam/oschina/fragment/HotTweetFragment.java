@@ -21,16 +21,6 @@ private Handler handler = new Handler();
 
     @Override
     public void initRefresh() {
-        mSwipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mSwipe.setRefreshing(false);
-                    }
-                }, 2000);
-            }
-        });
+
     }
 }
