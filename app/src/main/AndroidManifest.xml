@@ -21,6 +21,7 @@
 
 
 
+
         <activity android:name=".activity.MessageActivity" />
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.LoginActivity"/>
@@ -28,7 +29,6 @@
         <activity android:name=".activity.FriendActivity"/>
         <activity android:name=".activity.SoftwareActivity"/>
         <activity android:name=".activity.PlayActivity"/>
-        <activity android:name=".activity.ClassifyItemActivity"/>
         <activity android:name=".activity.AttentionActivity"/>
         <activity android:name=".activity.FansActivity"/>
         <activity android:name=".activity.MyBlogActivity"/>
