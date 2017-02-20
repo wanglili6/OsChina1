@@ -12,6 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.activity.AttentionActivity;
+import com.bestteam.oschina.activity.FansActivity;
 import com.bestteam.oschina.activity.MessageCenterActivity;
 import com.bestteam.oschina.activity.MyBlogActivity;
 
@@ -80,8 +82,12 @@ public class MeFragment extends Fragment {
             case R.id.ll_me_shoucang:
                 break;
             case R.id.ll_me_guanzhu:
+                Intent intent3 = new Intent(getContext(), AttentionActivity.class);
+                startActivity(intent3);
                 break;
             case R.id.ll_me_fenshi:
+                Intent intent4 = new Intent(getContext(), FansActivity.class);
+                startActivity(intent4);
                 break;
             case R.id.me_ib_message:
                 break;
