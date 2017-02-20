@@ -55,7 +55,7 @@ public class SplashActivity extends Activity implements Animation.AnimationListe
 
         //渐变
         AlphaAnimation alpha = new AlphaAnimation(0, 1);
-        alpha.setDuration(5000);
+        alpha.setDuration(1000);
 
         set.addAnimation(alpha);
 
@@ -70,7 +70,7 @@ public class SplashActivity extends Activity implements Animation.AnimationListe
     @Override
     public void onAnimationEnd(Animation animation) {
 
-        mHandler.postDelayed(new MyTask(),2000);
+        mHandler.postDelayed(new MyTask(),1000);
     }
 
     @Override

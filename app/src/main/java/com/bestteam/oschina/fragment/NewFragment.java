@@ -32,7 +32,7 @@ public class NewFragment extends android.support.v4.app.Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.newfragmengt, container,false);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.newfragmengt, (ViewGroup) getView(),false);
 
         tabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
         vp = (ViewPager) view.findViewById(R.id.vp);
