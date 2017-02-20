@@ -8,14 +8,13 @@
         android:orientation="horizontal"
         android:background="@color/actionbar_background"
         android:layout_width="match_parent"
-        android:layout_height="?android:attr/actionBarSize">
+        android:layout_height="36dp">
         <ImageButton
             android:id="@+id/ib_back"
             android:layout_marginLeft="5dp"
             android:background="@drawable/btn_back_selector"
-            android:layout_width="25dp"
-
-            android:layout_height="25dp" />
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
         <TextView
             android:id="@+id/tv_friend"
             android:layout_marginLeft="5dp"

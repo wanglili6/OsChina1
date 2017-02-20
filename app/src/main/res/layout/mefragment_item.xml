@@ -18,6 +18,7 @@
             android:src="@drawable/ic_share" />
 
         <TextView
+            android:id="@+id/me_tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -37,6 +38,7 @@
                 android:textColor="#fff" />
 
             <TextView
+                android:id="@+id/me_ll_sorces"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
@@ -67,6 +69,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/ll_me_dongtan"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
@@ -88,6 +91,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/ll_me_shoucang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
@@ -109,6 +113,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/ll_me_guanzhu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
@@ -130,6 +135,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/ll_me_fenshi"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
@@ -146,9 +152,10 @@
     </LinearLayout>
 
     <RelativeLayout
-        android:layout_marginTop="10dp"
+        android:id="@+id/rl_me_message"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:id="@+id/me_ib_message"
@@ -174,16 +181,17 @@
     </RelativeLayout>
 
     <View
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
+        android:layout_marginTop="10dp"
         android:background="#aaae88"
         android:paddingTop="10dp" />
 
     <RelativeLayout
-        android:layout_marginTop="10dp"
+        android:id="@+id/rl_me_boke"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:id="@+id/me_ib_moke"
@@ -209,16 +217,17 @@
     </RelativeLayout>
 
     <View
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
+        android:layout_marginTop="10dp"
         android:background="#aaae88"
         android:paddingTop="10dp" />
 
     <RelativeLayout
-        android:layout_marginTop="10dp"
+        android:id="@+id/rl_me_question"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:id="@+id/me_ib_question"
@@ -244,16 +253,17 @@
     </RelativeLayout>
 
     <View
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
+        android:layout_marginTop="10dp"
         android:background="#aaae88"
         android:paddingTop="10dp" />
 
     <RelativeLayout
-        android:layout_marginTop="10dp"
+        android:id="@+id/rl_me_sports"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:id="@+id/me_ib_sport"
@@ -279,16 +289,17 @@
     </RelativeLayout>
 
     <View
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
+        android:layout_marginTop="10dp"
         android:background="#aaae88"
         android:paddingTop="10dp" />
 
     <RelativeLayout
-        android:layout_marginTop="10dp"
+        android:id="@+id/rl_me_team"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
 
         <ImageView
             android:id="@+id/me_ib_team"
@@ -314,9 +325,9 @@
     </RelativeLayout>
 
     <View
-        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
+        android:layout_marginTop="10dp"
         android:background="#aaae88"
         android:paddingTop="10dp" />
 

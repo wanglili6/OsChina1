@@ -1,4 +1,4 @@
-package com.bestteam.oschina.fragment;
+package com.bestteam.oschina.fragment.findfragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,12 +10,12 @@ import android.widget.TextView;
 /**
  * Created by 王丽丽 on 2017/2/18.
  */
-public class HotFragment extends android.support.v4.app.Fragment {
+public class RecommendFragment extends android.support.v4.app.Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         TextView textView = new TextView(getContext());
-        textView.setText("4444444");
+        textView.setText("2222222");
         return textView;
     }
 }

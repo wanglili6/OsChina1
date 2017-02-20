@@ -6,6 +6,7 @@
     android:orientation="vertical">
 
     <TextView
+        android:elevation="2dp"
         android:id="@+id/btn_friend"
         style="@style/explore_btn_style"
         android:layout_marginTop="25dp"
@@ -14,14 +15,17 @@
         android:text="好友圈" />
 
     <TextView
+        android:elevation="2dp"
         android:id="@+id/btn_software"
         style="@style/explore_btn_style"
         android:layout_marginTop="25dp"
         android:clickable="true"
+
         android:drawableLeft="@drawable/drawer_menu_icon_rss_over"
         android:text="开源软件" />
 
     <LinearLayout
+        android:elevation="2dp"
         android:layout_marginTop="25dp"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -29,6 +33,7 @@
         android:background="#fff">
 
         <TextView
+
             android:id="@+id/btn_sweep"
             style="@style/explore_btn_style"
             android:clickable="true"
@@ -36,12 +41,14 @@
             android:text="扫一扫" />
 
         <View
+
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginLeft="50dp"
             android:background="#EFEBEF" />
 
         <TextView
+
             android:id="@+id/btn_shake"
             style="@style/explore_btn_style"
             android:clickable="true"
@@ -51,6 +58,7 @@
 
 
     <TextView
+        android:elevation="2dp"
         android:id="@+id/btn_coder"
         style="@style/explore_btn_style"
         android:layout_marginTop="25dp"
@@ -59,6 +67,7 @@
         android:text="附近的程序员" />
 
     <TextView
+        android:elevation="2dp"
         android:id="@+id/btn_activity"
         style="@style/explore_btn_style"
         android:layout_marginTop="25dp"
