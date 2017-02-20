@@ -12,7 +12,8 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.activity.MessageActivity;
+import com.bestteam.oschina.activity.MessageCenterActivity;
+import com.bestteam.oschina.activity.MyBlogActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -85,12 +86,14 @@ public class MeFragment extends Fragment {
             case R.id.me_ib_message:
                 break;
             case R.id.rl_me_message:
-                Intent intent = new Intent(getContext(), MessageActivity.class);
+                Intent intent = new Intent(getContext(), MessageCenterActivity.class);
                 startActivity(intent);
                 break;
             case R.id.me_ib_moke:
                 break;
             case R.id.rl_me_boke:
+                Intent intent1 = new Intent(getContext(), MyBlogActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.me_ib_question:
                 break;
