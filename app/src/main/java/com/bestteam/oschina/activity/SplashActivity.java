@@ -48,6 +48,7 @@ public class SplashActivity extends Activity implements Animation.AnimationListe
         AlphaAnimation alpha = new AlphaAnimation(0, 1);
         alpha.setDuration(2000);
 
+
         set.addAnimation(alpha);
 
         return set;
