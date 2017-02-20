@@ -1,6 +1,7 @@
 package com.bestteam.oschina.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +11,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.activity.ClassifyItemActivity;
+import com.bestteam.oschina.base.Cantents;
+import com.bestteam.oschina.bean.Software;
 import com.bestteam.oschina.bean.SoftwareCatalogList;
 
 import java.util.List;
@@ -24,7 +28,8 @@ public class ClassifyRvAdapter extends RecyclerView.Adapter {
     private Context context;
     private List<SoftwareCatalogList.SoftwareType> softwareTypeList;
 
-    public ClassifyRvAdapter(Context context,  List<SoftwareCatalogList.SoftwareType> softwareTypeList) {
+
+    public ClassifyRvAdapter(Context context, List<SoftwareCatalogList.SoftwareType> softwareTypeList) {
         this.context = context;
         this.softwareTypeList = softwareTypeList;
     }
@@ -37,10 +42,19 @@ public class ClassifyRvAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         ViewHolder viewHolder = (ViewHolder) holder;
-        SoftwareCatalogList.SoftwareType SoftwareType = softwareTypeList.get(position);
-        viewHolder.tvName.setText(SoftwareType.getName());
+        final SoftwareCatalogList.SoftwareType softwareType = softwareTypeList.get(position);
+        viewHolder.tvName.setText(softwareType.getName());
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.putExtra("url", Cantents.CLISSIFTY_URl+softwareType.getTag());
+                intent.setClass(context,ClassifyItemActivity.class);
+                context.startActivity(intent);
+            }
+        });
 
     }
 
@@ -49,7 +63,7 @@ public class ClassifyRvAdapter extends RecyclerView.Adapter {
         return softwareTypeList.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    static class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.tv_name)
         TextView tvName;
         @BindView(R.id.ib_next)
