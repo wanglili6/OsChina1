@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.ClassifyRvAdapter;
+import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.SoftwareCatalogList;
 import com.bestteam.oschina.util.MyToast;
 import com.bestteam.oschina.util.XmlUtils;
@@ -73,10 +74,9 @@ public class ClassifyFragment extends Fragment {
     private void loadNetData() {
         OkHttpUtils
                 .get()
-                .url("https://www.oschina.net/action/api/softwarecatalog_list?tag=0")
+                .url(Cantents.CLISSIFTY_URl+"0")
                 .build()
                 .execute(new StringCallback() {
-
                     @Override
                     public void onError(Call call, Exception e, int id) {
                         MyToast.show(getContext(), "数据加载失败");
@@ -84,13 +84,12 @@ public class ClassifyFragment extends Fragment {
 
                     @Override
                     public void onResponse(String response, int id) {
-                        MyToast.show(getContext(), "数据加载成功");
                         SoftwareCatalogList softwareCatalogList =
                                 XmlUtils.toBean(SoftwareCatalogList.class, response.getBytes());
                         classifyRvAdapter = new ClassifyRvAdapter(getContext(),
                                 softwareCatalogList.getSoftwarecataloglist());
                         fragmentRv.setAdapter(classifyRvAdapter);
-                        classifyRvAdapter.notifyDataSetChanged();
+
 
 
                     }

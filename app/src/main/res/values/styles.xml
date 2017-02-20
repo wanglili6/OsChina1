@@ -351,12 +351,12 @@
 
     <style name="explore_btn_style">
 
-        <item name="android:padding">15dp</item>
+        <item name="android:padding">12dp</item>
         <item name="android:drawablePadding">5dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:background">#fff</item>
-        <item name="android:textSize">20sp</item>
-        <item name="android:textColor">#000</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">#868686</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
