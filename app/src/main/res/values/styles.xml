@@ -349,9 +349,17 @@
         <item name="android:textColor">@color/tab_title_slide_selector</item>
     </style>
 
-    <style name="explore_btn_style">
+    <!--性别选择器-->
+    <style name="register_radiobtn_style">
+        <item name="android:layout_width">wrap_content</item>
+        <!--<item name="android:padding">2dp</item>-->
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:button">@null</item>
+        <item name="android:textColor">@color/tab_title_slide_selector</item>
+    </style>
 
-        <item name="android:padding">15dp</item>
+    <style name="explore_btn_style">
+        <item name="android:padding">25dp</item>
         <item name="android:drawablePadding">5dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:background">#fff</item>

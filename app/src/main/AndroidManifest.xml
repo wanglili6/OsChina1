@@ -22,7 +22,11 @@
         <activity android:name=".activity.FriendActivity"/>
         <activity android:name=".activity.SoftwareActivity"/>
         <activity android:name=".activity.PlayActivity"/>
-
+        <activity android:name=".activity.retrieveActivity"/>
+        <activity android:name=".activity.ResetActivity"/>
+        <activity android:name=".activity.RegisterActivity"/>
+        <activity android:name=".activity.RegisterUserActivity"/>
+        <activity android:name=".activity.FlipActivity"/>
     </application>
 
 </manifest>
