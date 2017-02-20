@@ -31,7 +31,7 @@ public class ClassifyItem1 extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.item_recyview,container,false);
+        View view = inflater.inflate(R.layout.layout_sub_classify_fragment,container,false);
         fragmentRv = (RecyclerView) view.findViewById(R.id.fragment_rv);
         fragmentRv.setLayoutManager(new LinearLayoutManager(getContext()));
         loadData();
