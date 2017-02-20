@@ -31,15 +31,6 @@ public class SplashActivity extends Activity implements Animation.AnimationListe
         setContentView(R.layout.activity_splash);
         ButterKnife.bind(this);
 
-//        Handler handler = new Handler();
-//        handler.postDelayed(new Runnable() {
-//            @Override
-//            public void run() {
-//                Intent intent = new Intent(SplashActivity.this,MainActivity.class);
-//                startActivity(intent);
-//                SplashActivity.this.finish();
-//            }
-//        },500);
 
         Animation animation = createAnimation();
 
@@ -55,7 +46,8 @@ public class SplashActivity extends Activity implements Animation.AnimationListe
 
         //渐变
         AlphaAnimation alpha = new AlphaAnimation(0, 1);
-        alpha.setDuration(1000);
+        alpha.setDuration(2000);
+
 
         set.addAnimation(alpha);
 
@@ -70,7 +62,7 @@ public class SplashActivity extends Activity implements Animation.AnimationListe
     @Override
     public void onAnimationEnd(Animation animation) {
 
-        mHandler.postDelayed(new MyTask(),1000);
+        mHandler.postDelayed(new MyTask(),500);
     }
 
     @Override
