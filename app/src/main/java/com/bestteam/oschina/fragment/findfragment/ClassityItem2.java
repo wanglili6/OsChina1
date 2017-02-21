@@ -5,14 +5,18 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.ClassifyRvAdapter;
+import com.bestteam.oschina.adapter.ClassifyRvAdapter2;
+import com.bestteam.oschina.adapter.ClassifyRvAdapter3;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.SoftwareCatalogList;
+import com.bestteam.oschina.bean.SoftwareList;
 import com.bestteam.oschina.util.MyToast;
 import com.bestteam.oschina.util.XmlUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
@@ -42,14 +46,14 @@ public class ClassityItem2 extends Fragment{
         this.tag=tag;
 
     }
+
     private void loadData() {
         OkHttpUtils
                 .get()
-                .url(Cantents.CLISSIFTY_Item2_URl+tag+"")
+                .url(Cantents.CLISSIFTY_URl+tag)
                 .build()
                 .execute(new StringCallback() {
 
-                    private SoftwareCatalogList softwareCatalogList;
 
                     @Override
                     public void onError(Call call, Exception e, int id) {
@@ -57,10 +61,12 @@ public class ClassityItem2 extends Fragment{
                     }
                     @Override
                     public void onResponse(String response, int id) {
-                        softwareCatalogList = XmlUtils.toBean(SoftwareCatalogList.class, response.getBytes());
-                        ClassifyRvAdapter adapter = new ClassifyRvAdapter(getFragmentManager(), getContext(), softwareCatalogList.getSoftwarecataloglist());
+                        Log.i("wll", "onResponse: "+response);
+                        SoftwareCatalogList softwareCatalogList = XmlUtils.toBean(SoftwareCatalogList.class, response.getBytes());
+                        ClassifyRvAdapter2 adapter = new ClassifyRvAdapter2(getFragmentManager(),getContext(), softwareCatalogList.getSoftwarecataloglist());
                         recyclerView.setAdapter(adapter);
-                        adapter.notifyDataSetChanged();
+
+
                     }
                 });
     }

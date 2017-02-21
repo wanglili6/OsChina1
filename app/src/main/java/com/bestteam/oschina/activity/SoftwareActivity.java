@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.SoftwareAdapter;
 import com.bestteam.oschina.fragment.findfragment.ClassifyFragment;
-import com.bestteam.oschina.fragment.DomesticFragment;
+import com.bestteam.oschina.fragment.findfragment.DomesticFragment;
 import com.bestteam.oschina.fragment.findfragment.HotFragment;
 import com.bestteam.oschina.fragment.findfragment.NewestFragment;
 import com.bestteam.oschina.fragment.findfragment.RecommendFragment;
