@@ -1,17 +1,13 @@
 package com.bestteam.oschina.activity;
 
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+y;
 import android.view.View;
 import android.widget.ImageButton;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.adapter.InformationFragmentRVAdapter;
+
+import com.bestteam.oschina.adapter.newsfragmentadapter.InformationFragmentRVAdapter;
 import com.bestteam.oschina.fragment.MessageCenterFragment.AtMeFragment;
 import com.bestteam.oschina.fragment.MessageCenterFragment.CommentFragment;
 import com.bestteam.oschina.fragment.MessageCenterFragment.PrivateMessageFragment;
