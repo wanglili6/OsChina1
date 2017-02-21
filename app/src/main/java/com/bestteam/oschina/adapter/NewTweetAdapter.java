@@ -96,6 +96,7 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
         @BindView(R.id.iv_content)
         ImageView ivContent;
         private Date pub;
+        private Tweet tweet;
 
         MyViewHolder(View view) {
             super(view);
@@ -103,7 +104,7 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
         }
 
         public void setData(int position) {
-            Tweet tweet = list.get(position);
+            tweet = list.get(position);
             String portrait = tweet.getPortrait();
             String imgSmall = tweet.getImgSmall();
             String imgBig = tweet.getImgBig();
@@ -205,6 +206,14 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
                 case R.id.iv_content:
                     break;
                 case R.id.iv_zan:
+                    int isLike = tweet.getIsLike();
+                    if(isLike == 0){
+                        isLike = 1;
+                        ivZan.setBackgroundResource(R.drawable.ic_likeed);
+                    }else if (isLike == 1){
+                        isLike = 0;
+                        ivZan.setBackgroundResource(R.drawable.ic_unlike);
+                    }
                     break;
             }
         }

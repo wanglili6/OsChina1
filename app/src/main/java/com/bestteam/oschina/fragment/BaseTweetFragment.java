@@ -29,7 +29,7 @@ public abstract class BaseTweetFragment extends Fragment {
 
         //mSwipe = (SwipeRefreshLayout) view.findViewById(R.id.swipe_dongtan);
         mRv = (XRecyclerView) view.findViewById(R.id.rv_dongtan);
-
+        setFlag();
         return view;
     }
 
@@ -43,4 +43,6 @@ public abstract class BaseTweetFragment extends Fragment {
     public abstract void initRecyclerView();
 
     public abstract void initRefresh();
+
+    public abstract void setFlag();
 }
