@@ -12,11 +12,15 @@
         -->
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:colorPrimaryDark">@color/actionbar_background</item>
+        <!--&lt;!&ndash; 设置activity切换动画 &ndash;&gt;-->
+        <!--<item name="android:windowAnimationStyle">@style/activityAnimation</item>-->
+
 
     </style>
 
     <!-- Application theme. -->
     <style name="AppTheme" parent="AppBaseTheme">
+        <!--设置沉浸式状态栏-->
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
 
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
@@ -339,7 +343,7 @@
         <item name="android:layout_weight">1</item>
         <item name="android:layout_height">match_parent</item>
     </style>
-
+    <!--mainactivity的radiobtn的样式-->
     <style name="main_radiobtn_style">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
@@ -348,6 +352,7 @@
         <item name="android:gravity">center</item>
         <item name="android:textColor">@color/tab_title_slide_selector</item>
     </style>
+<!--发现文字样式-->
 
     <!--性别选择器-->
     <style name="register_radiobtn_style">
@@ -359,15 +364,22 @@
     </style>
 
     <style name="explore_btn_style">
+
         <item name="android:padding">12dp</item>
         <item name="android:drawablePadding">5dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:background">#fff</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">17sp</item>
         <item name="android:textColor">#868686</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
     </style>
-
+    <!--activity的动画切换-->
+    <style name="activityAnimation" parent="@android:style/Animation">
+        <item name="android:activityOpenEnterAnimation">@anim/in_right</item>
+        <item name="android:activityOpenExitAnimation">@anim/out_left</item>
+        <item name="android:activityCloseEnterAnimation">@anim/in_left</item>
+        <item name="android:activityCloseExitAnimation">@anim/out_right</item>
+    </style>
 
 </resources>

@@ -11,9 +11,12 @@ public interface Cantents {
     //动弹用
     public String BASE_URL_TWEET = "http://www.oschina.net/action/api/tweet_list?";
 
-    public String NEW_TWEET_URL = "uid=0&pageIndex=0&pageSize=20";
-    public String HOT_TWEET_URL = "uid=-1&pageIndex=0&pageSize=20";
+    public String NEW_TWEET_URL = "uid=0&pageSize=20&pageIndex=0";
+    public String HOT_TWEET_URL = "uid=-1&pageSize=20&pageIndex=0";
 
 
-    public String CLISSIFTY_Item2_URl = "https://www.oschina.net/action/api/softwaretag_list?searchTag=";
+    public String CLISSIFTY_Item2_URl = "https://www.oschina.net/action/api/software_list?searchTag=";
+    public String CLISSIFTY_CLASSIFY_URl = "https://www.oschina.net/action/api/softwaretag_list?searchTag=";
+    public String NEWS = "http://www.oschina.net/action/api/news_list?pageIndex=0&catalog=1&pageSize=20";
+
 }

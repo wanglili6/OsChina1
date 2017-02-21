@@ -11,7 +11,7 @@
         style="@style/explore_btn_style"
         android:layout_marginTop="25dp"
         android:clickable="true"
-        android:drawableLeft="@drawable/icon_explore_friends"
+        android:drawableLeft="@drawable/ic_my_team"
         android:text="好友圈" />
 
     <TextView
@@ -20,8 +20,7 @@
         style="@style/explore_btn_style"
         android:layout_marginTop="25dp"
         android:clickable="true"
-
-        android:drawableLeft="@drawable/drawer_menu_icon_rss_over"
+        android:drawableLeft="@drawable/ic_discover_softwares"
         android:text="开源软件" />
 
     <LinearLayout
@@ -33,26 +32,23 @@
         android:background="#fff">
 
         <TextView
-
             android:id="@+id/btn_sweep"
             style="@style/explore_btn_style"
             android:clickable="true"
-            android:drawableLeft="@drawable/icon_explore_scan"
+            android:drawableLeft="@drawable/ic_discover_scan"
             android:text="扫一扫" />
 
         <View
-
             android:layout_width="match_parent"
             android:layout_height="2dp"
             android:layout_marginLeft="50dp"
             android:background="#EFEBEF" />
 
         <TextView
-
             android:id="@+id/btn_shake"
             style="@style/explore_btn_style"
             android:clickable="true"
-            android:drawableLeft="@drawable/icon_explore_shake"
+            android:drawableLeft="@drawable/ic_discover_shake"
             android:text="摇一摇" />
     </LinearLayout>
 
@@ -63,7 +59,7 @@
         style="@style/explore_btn_style"
         android:layout_marginTop="25dp"
         android:clickable="true"
-        android:drawableLeft="@drawable/icon_explore_finduser"
+        android:drawableLeft="@drawable/ic_discover_nearby"
         android:text="附近的程序员" />
 
     <TextView
@@ -72,6 +68,6 @@
         style="@style/explore_btn_style"
         android:layout_marginTop="25dp"
         android:clickable="true"
-        android:drawableLeft="@drawable/icon_explore_event"
+        android:drawableLeft="@drawable/ic_my_event"
         android:text="线下活动" />
 </LinearLayout>

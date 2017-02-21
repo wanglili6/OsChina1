@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="10dp"
+    android:background="?android:attr/selectableItemBackground"
     android:orientation="vertical">
+
+
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:layout_marginBottom="3dp">
 
         <ImageView
@@ -15,7 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginRight="3dp"
+            android:layout_marginRight="5dp"
             android:src="@drawable/widget_today_icon" />
 
         <TextView
@@ -34,12 +39,12 @@
         android:id="@+id/tv_content_item_information"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="3dp"
         android:ellipsize="end"
         android:maxLines="2"
         android:text="内容"
         android:textColor="#c8383737"
-        android:textSize="12dp"
-        android:layout_marginBottom="3dp"/>
+        android:textSize="12dp" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -71,17 +76,18 @@
                 android:id="@+id/iv_comment_item_information"
                 android:layout_width="15dp"
                 android:layout_height="10dp"
-                android:background="@drawable/ic_comment"
                 android:layout_gravity="center"
                 android:layout_marginRight="5dp"
-                />
+                android:background="@drawable/ic_comment" />
+
             <TextView
+                android:id="@+id/tv_num_item_information"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="10dp"
-                android:text="1"
                 android:layout_gravity="center"
-                android:layout_marginRight="3dp"/>
+                android:layout_marginRight="3dp"
+                android:text="1"
+                android:textSize="10dp" />
         </LinearLayout>
 
 
