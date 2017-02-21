@@ -23,13 +23,13 @@ import butterknife.ButterKnife;
 /**
  * Created by 王丽丽 on 2017/2/19.
  */
-public class ClassifyRvAdapter extends RecyclerView.Adapter {
+public class ClassifyRvAdapter3 extends RecyclerView.Adapter {
     private Context context;
     private List<SoftwareCatalogList.SoftwareType> softwareTypeList;
     private FragmentManager fragmentManager;
 
 
-    public ClassifyRvAdapter( FragmentManager fragmentManager,Context context, List<SoftwareCatalogList.SoftwareType> softwareTypeList) {
+    public ClassifyRvAdapter3(FragmentManager fragmentManager, Context context, List<SoftwareCatalogList.SoftwareType> softwareTypeList) {
         this.context = context;
         this.fragmentManager = fragmentManager;
         this.softwareTypeList = softwareTypeList;
