@@ -1,4 +1,4 @@
-package com.bestteam.oschina.adapter;
+package com.bestteam.oschina.adapter.newsfragmentadapter;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

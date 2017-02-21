@@ -29,7 +29,7 @@
         <activity android:name=".activity.ClassifyItemActivity"/>
         <activity android:name=".activity.AttentionActivity"/>
         <activity android:name=".activity.FansActivity"/>
-
+        <activity android:name=".activity.newsfragmentActivity.NewsDetailActivity"/>
 
     </application>
 
