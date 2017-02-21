@@ -35,14 +35,11 @@
         <activity android:name=".activity.FlipActivity"/>
         <activity android:name=".activity.AttentionActivity"/>
         <activity android:name=".activity.FansActivity"/>
-<<<<<<< HEAD
+
         <activity android:name=".activity.newsfragmentActivity.NewsDetailActivity"/>
-=======
         <activity android:name=".activity.MyBlogActivity"/>
         <activity android:name=".activity.MessageCenterActivity"/>
 
-
->>>>>>> 0266387d22d3ba81e2ec034e5df16ec3c8e30ce5
 
     </application>
 
