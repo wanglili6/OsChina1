@@ -43,7 +43,7 @@ public class OKHttp3Helper {
                 .writeTimeout(10, TimeUnit.SECONDS)//
                 .retryOnConnectionFailure(true)//重试的操作
                 //数据缓存的相关设置
-                .cache(new Cache(MyApplication.getContext().getCacheDir(),10 * 1024 * 1024))//设置数据缓存的
+//                .cache(new Cache(MyApplication.getContext().getCacheDir(),10 * 1024 * 1024))//设置数据缓存的
                 //公共的Cookie的设置
 //                .cookieJar(new PersistentCookieJar(new SetCookieCache(), new SharedPrefsCookiePersistor(MyApplication.context)))
                 .addInterceptor(new CacheIntercept())

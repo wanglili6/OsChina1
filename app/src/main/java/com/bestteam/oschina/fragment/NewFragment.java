@@ -63,10 +63,4 @@ public class NewFragment extends android.support.v4.app.Fragment {
         fragments.add(new CommendFragment());
 
     }
-//    private Fragment setTitle(Fragment fragment,String title) {
-//        Bundle bundle = new Bundle();
-//        bundle.putString("title",title);
-//        fragment.setArguments(bundle);
-//        return fragment;
-//    }
 }
