@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.bean.SoftwareCatalogList;
 import com.bestteam.oschina.fragment.findfragment.ClassityItem2;
-import com.bestteam.oschina.util.MyToast;
 
 import java.util.List;
 
@@ -51,12 +50,11 @@ public class ClassifyRvAdapter extends RecyclerView.Adapter {
             @Override
             public void onClick(View view) {
                 int tag = softwareType.getTag();
-                MyToast.show(context,"点击"+position);
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
                 ClassityItem2 classityItem2 = new ClassityItem2();
                 classityItem2.setItemTag(tag);
                 transaction.add(R.id.cassify_categor_contanier, classityItem2,"item2");
-                transaction.addToBackStack("item1");
+                transaction.addToBackStack("item2");
                 transaction.commit();
 
             }
