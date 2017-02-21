@@ -6,9 +6,10 @@
              android:layout_height="match_parent"
              android:fitsSystemWindows="true">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+    <!--<ScrollView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
 
 
     <LinearLayout
@@ -19,7 +20,14 @@
         android:orientation="vertical"
         android:paddingBottom="16dp">
 
-
+        <ImageView
+            android:id="@+id/tv_brows_back"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:clickable="true"
+            android:background="@drawable/btn_back_selector"/>
         <ImageView
             android:id="@+id/iv_login_logo"
             android:layout_width="wrap_content"
@@ -27,8 +35,8 @@
             android:layout_gravity="center_horizontal"
             android:contentDescription="@null"
             android:paddingTop="48dp"
-            android:scaleType="centerInside"
-            app:srcCompat="@drawable/logo_osc" />
+            android:scaleType="fitXY"
+            app:srcCompat="@mipmap/logo_osc" />
 
         <LinearLayout
             android:id="@+id/ll_login_username"
@@ -42,6 +50,7 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:clickable="true"
                 android:id="@+id/iv_login_username_icon"
                 android:layout_width="24dp"
                 android:layout_height="24dp"
@@ -85,9 +94,11 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:contentDescription="@null"
-                android:scaleType="fitCenter"
+                android:scaleType="fitXY"
+                android:clickable="true"
+                app:srcCompat="@drawable/btn_clear_input_selector"
                 android:visibility="gone"
-                app:srcCompat="@drawable/ic_clear" />
+                 />
         </LinearLayout>
 
         <LinearLayout
@@ -141,9 +152,10 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginRight="16dp"
                 android:contentDescription="@null"
-                android:scaleType="fitCenter"
+                android:scaleType="fitXY"
                 android:visibility="gone"
-                app:srcCompat="@drawable/ic_clear" />
+                android:clickable="true"
+                app:srcCompat="@drawable/btn_back_selector" />
 
         </LinearLayout>
 
@@ -174,7 +186,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/login_hold_hint"
-                android:textColor="@color/white"
+                android:background="@drawable/bg_login_input_ok"
                 android:textSize="16sp"
                 android:visibility="invisible" />
 
@@ -236,6 +248,6 @@
     </LinearLayout>
 
 
-    </ScrollView>
+
 
 </FrameLayout>
