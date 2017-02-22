@@ -10,27 +10,11 @@ import com.bestteam.oschina.adapter.NewTweetAdapter;
  * Created by 45011 on 2017/2/19.
  */
 
-public class HotTweetFragment extends BaseTweetFragment {
-private Handler handler = new Handler();
-    @Override
-    public void initRecyclerView() {
-        mRv.setLayoutManager(new LinearLayoutManager(getContext()));
-        NewTweetAdapter adapter = new NewTweetAdapter(getContext());
-        mRv.setAdapter(adapter);
-}
+public class HotTweetFragment extends DadTweetFragment {
 
     @Override
-    public void initRefresh() {
-        mSwipe.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        mSwipe.setRefreshing(false);
-                    }
-                }, 2000);
-            }
-        });
+    public void setFlag() {
+        refresh = PULL_REFRESH_HOT;
+        loadmore = LOAD_MORE_HOT;
     }
 }

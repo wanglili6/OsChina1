@@ -18,6 +18,7 @@ import com.bestteam.oschina.bean.User;
 import com.bestteam.oschina.fragment.ExploreFragment;
 import com.bestteam.oschina.fragment.MeFragment;
 import com.bestteam.oschina.fragment.NewFragment;
+import com.bestteam.oschina.fragment.NewTweetFragment;
 import com.bestteam.oschina.fragment.TweetFragment;
 
 import java.util.ArrayList;
@@ -57,6 +58,8 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
     ImageButton mainCode;
 
     private List<Fragment> fragments;
+    private boolean tweetHasLoad;
+    private TweetFragment tweet;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -117,9 +120,10 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
      * 初始化四个fragment
      */
     private void initFragments() {
+        tweet = new TweetFragment();
         fragments = new ArrayList<>();
         fragments.add(new NewFragment());
-        fragments.add(new TweetFragment());
+        fragments.add(tweet);
         fragments.add(new ExploreFragment());
         fragments.add(new MeFragment());
     }
@@ -149,6 +153,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
                 mainSetting.setVisibility(View.GONE);
                 mainSearch.setVisibility(View.VISIBLE);
                 mainCode.setVisibility(View.GONE);
+                //((NewTweetFragment)((TweetFragment)fragments.get(1)).fragments.get(0)).loadNetData();
                 break;
             case R.id.rb_explore:
 
