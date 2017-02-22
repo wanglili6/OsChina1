@@ -95,8 +95,9 @@
         <TextView
             android:id="@+id/tv_post_tweet"
             style="@style/main_radiobtn_style"
-            android:drawableTop="@drawable/selector_bton_tweet"
-            android:paddingTop="10dp" />
+            android:layout_gravity="center"
+            android:padding="5dp"
+            android:drawableTop="@drawable/selector_bton_tweet" />
 
 
         <RadioButton
