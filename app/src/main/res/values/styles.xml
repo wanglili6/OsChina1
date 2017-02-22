@@ -13,7 +13,7 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:colorPrimaryDark">@color/actionbar_background</item>
         <!--&lt;!&ndash; 设置activity切换动画 &ndash;&gt;-->
-        <!--<item name="android:windowAnimationStyle">@style/activityAnimation</item>-->
+        <item name="android:windowAnimationStyle">@style/activityAnimation</item>
 
 
     </style>

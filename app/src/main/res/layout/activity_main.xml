@@ -53,7 +53,7 @@
                 android:layout_centerVertical="true"
                 android:layout_margin="5dp"
                 android:visibility="gone"
-                android:background="@drawable/btn_qrcode"
+                android:background="@drawable/btn_quickoption_pressed"
                  />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
@@ -95,7 +95,7 @@
         <TextView
             android:id="@+id/tv_post_tweet"
             style="@style/main_radiobtn_style"
-            android:drawableTop="@drawable/my_add"
+            android:drawableTop="@drawable/selector_bton_tweet"
             android:paddingTop="10dp" />
 
 
@@ -115,9 +115,4 @@
     </RadioGroup>
 
 
-    <!--<LinearLayout-->
-    <!--android:layout_width="240dp"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:layout_gravity="left"-->
-    <!--android:background="@color/main_background"></LinearLayout>-->
 </LinearLayout>

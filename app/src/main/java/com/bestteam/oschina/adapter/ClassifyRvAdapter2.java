@@ -52,6 +52,7 @@ public class ClassifyRvAdapter2 extends RecyclerView.Adapter {
             public void onClick(View view) {
                 int tag = softwareType.getTag();
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
+
                 ClassityItem3 classityItem3 = new ClassityItem3();
                 classityItem3.setItemTag(tag);
                 transaction.add(R.id.cassify_categor_contanier, classityItem3,"item3");

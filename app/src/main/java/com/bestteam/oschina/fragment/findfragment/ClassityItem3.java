@@ -1,8 +1,9 @@
 package com.bestteam.oschina.fragment.findfragment;
 
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,19 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.adapter.ClassifyRvAdapter;
-import com.bestteam.oschina.adapter.ClassifyRvAdapter3;
 import com.bestteam.oschina.base.BaseFindLoadNetData;
 import com.bestteam.oschina.base.Cantents;
-import com.bestteam.oschina.bean.SoftwareCatalogList;
-import com.bestteam.oschina.bean.SoftwareDec;
-import com.bestteam.oschina.bean.SoftwareList;
-import com.bestteam.oschina.util.MyToast;
-import com.bestteam.oschina.util.XmlUtils;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.callback.StringCallback;
-
-import okhttp3.Call;
+import com.bestteam.oschina.view.RefreshRecyleView;
 
 /**
  * Created by 王丽丽 on 2017/2/20.
@@ -30,43 +21,57 @@ import okhttp3.Call;
 
 public class ClassityItem3 extends BaseFindLoadNetData{
 
-    private RecyclerView recyclerView;
+    private RefreshRecyleView recyclerView;
     private int tag;
     private String url;
+    private SwipeRefreshLayout swipeRefreshLayout;
+    private Handler mHandler = new Handler();
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        loadNetData(url,recyclerView);
+    }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-       View view = inflater.inflate(R.layout.layout_sub_classify_fragment,container,false);
-        recyclerView = (RecyclerView) view.findViewById(R.id.fragment_rv);
+        View view = inflater.inflate(R.layout.base_reclyview,container,false);
+
+        recyclerView = (RefreshRecyleView) view.findViewById(R.id.base_rv);
+        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.srefresh);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         url = Cantents.CLISSIFTY_CLASSIFY_URl + tag;
         loadNetData(url,recyclerView);
+        initSwipe();
         return view;
     }
+
+
     public void setItemTag(int tag){
         this.tag=tag;
 
     }
-    private void loadData() {
 
-        OkHttpUtils
-                .get()
-                .url(url)
-                .build()
-                .execute(new StringCallback() {
+    private void initSwipe() {
+        //设置下拉刷新的颜色
+        swipeRefreshLayout.setColorSchemeResources(android.R.color.holo_blue_bright,
+                android.R.color.holo_green_light,
+                android.R.color.holo_orange_light,
+                android.R.color.holo_red_light);
+        //设置下拉刷新回调
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mHandler.postDelayed(new Runnable() {
                     @Override
-                    public void onError(Call call, Exception e, int id) {
-                        MyToast.show(getContext(), "数据加载失败");
+                    public void run() {
+
+                        loadNetData(url, recyclerView);
                     }
-                    @Override
-                    public void onResponse(String response, int id) {
-                        MyToast.show(getContext(), "数据加载1111");
-                        SoftwareList softwareList = XmlUtils.toBean(SoftwareList.class, response.getBytes());
-                        ClassifyRvAdapter3 adapter = new ClassifyRvAdapter3(getFragmentManager(),getContext(),softwareList.getList());
-                        recyclerView.setAdapter(adapter);
-                        adapter.notifyDataSetChanged();
-                    }
-                });
+                },1000);
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
     }
 }

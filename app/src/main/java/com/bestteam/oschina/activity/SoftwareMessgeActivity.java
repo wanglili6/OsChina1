@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -38,10 +39,18 @@ public class SoftwareMessgeActivity extends Activity {
         setContentView(R.layout.activity_softwaremessge);
         ButterKnife.bind(this);
         url = getIntent().getStringExtra("url");
-
         Log.i("wll----url", "onCreate: "+url);
         //让webView支持js
         softwareMsgWebView.getSettings().setJavaScriptEnabled(true);
+
+        //设置图片点击事件
+        softwareMsgWebView.setWebViewClient(new WebViewClient(){
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                //给网页里面的img标签去添加点击事件
+                //addPictureClick();
+            }
+        });
         //加载网页
         softwareMsgWebView.loadUrl("https://www.oschina.net/p/spring");
 
