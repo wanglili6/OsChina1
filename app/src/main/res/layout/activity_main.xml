@@ -53,7 +53,7 @@
                 android:layout_centerVertical="true"
                 android:layout_margin="5dp"
                 android:visibility="gone"
-                android:background="@drawable/btn_quickoption_pressed"
+                android:background="@drawable/btn_qrcode"
                  />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
