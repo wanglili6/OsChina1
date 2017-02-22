@@ -17,6 +17,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 
 /**
+ *
+ * 注册
  * Created by lx on 2017/2/20.
  */
 

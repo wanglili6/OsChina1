@@ -1,19 +1,17 @@
 package com.bestteam.oschina.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.bean.SoftwareCatalogList;
-import com.bestteam.oschina.fragment.findfragment.ClassityItem2;
-import com.bestteam.oschina.util.MyToast;
+import com.bestteam.oschina.activity.SoftwareMessgeActivity;
+import com.bestteam.oschina.bean.SoftwareDec;
 
 import java.util.List;
 
@@ -25,19 +23,18 @@ import butterknife.ButterKnife;
  */
 public class ClassifyRvAdapter3 extends RecyclerView.Adapter {
     private Context context;
-    private List<SoftwareCatalogList.SoftwareType> softwareTypeList;
-    private FragmentManager fragmentManager;
+    private List<SoftwareDec> softwareDecList;
 
 
-    public ClassifyRvAdapter3(FragmentManager fragmentManager, Context context, List<SoftwareCatalogList.SoftwareType> softwareTypeList) {
+
+    public ClassifyRvAdapter3( Context context, List<SoftwareDec> softwareDecList) {
         this.context = context;
-        this.fragmentManager = fragmentManager;
-        this.softwareTypeList = softwareTypeList;
+        this.softwareDecList = softwareDecList;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_rv, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item3_rv, parent, false);
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
@@ -45,20 +42,17 @@ public class ClassifyRvAdapter3 extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         ViewHolder viewHolder = (ViewHolder) holder;
-        final SoftwareCatalogList.SoftwareType softwareType = softwareTypeList.get(position);
-        viewHolder.tvName.setText(softwareType.getName());
+        final SoftwareDec softwareDec = softwareDecList.get(position);
+        viewHolder.tvName.setText(softwareDec.getName());
+        viewHolder.tvBody.setText(softwareDec.getDescription());
+
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int tag = softwareType.getTag();
-                MyToast.show(context,"点击"+position);
-                FragmentTransaction transaction = fragmentManager.beginTransaction();
-                ClassityItem2 classityItem2 = new ClassityItem2();
-                classityItem2.setItemTag(tag);
-                transaction.add(R.id.cassify_categor_contanier, classityItem2,"item2");
-                transaction.addToBackStack("item1");
-                transaction.commit();
-
+                Intent initen = new Intent();
+                initen.setClass(context, SoftwareMessgeActivity.class);
+                initen.putExtra("url",softwareDec.getUrl());
+                context.startActivity(initen);
             }
         });
 
@@ -67,14 +61,15 @@ public class ClassifyRvAdapter3 extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return softwareTypeList.size();
+
+        return softwareDecList.size();
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.tv_name)
         TextView tvName;
-        @BindView(R.id.ib_next)
-        ImageButton ibNext;
+        @BindView(R.id.tv_body)
+        TextView tvBody;
 
         ViewHolder(View view) {
             super(view);
