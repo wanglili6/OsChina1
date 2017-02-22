@@ -174,7 +174,7 @@
             android:drawablePadding="10dp"
             style="@style/register_radiobtn_style"
             android:drawableLeft="@drawable/userinfo_icon_male"
-            android:text="女士"
+            android:text="男士"
              />
 
             <RadioButton

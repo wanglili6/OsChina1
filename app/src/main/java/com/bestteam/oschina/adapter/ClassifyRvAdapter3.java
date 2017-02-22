@@ -24,12 +24,11 @@ import butterknife.ButterKnife;
 public class ClassifyRvAdapter3 extends RecyclerView.Adapter {
     private Context context;
     private List<SoftwareDec> softwareDecList;
-    private FragmentManager fragmentManager;
 
 
-    public ClassifyRvAdapter3(FragmentManager fragmentManager, Context context, List<SoftwareDec> softwareDecList) {
+
+    public ClassifyRvAdapter3( Context context, List<SoftwareDec> softwareDecList) {
         this.context = context;
-        this.fragmentManager = fragmentManager;
         this.softwareDecList = softwareDecList;
     }
 
@@ -46,6 +45,7 @@ public class ClassifyRvAdapter3 extends RecyclerView.Adapter {
         final SoftwareDec softwareDec = softwareDecList.get(position);
         viewHolder.tvName.setText(softwareDec.getName());
         viewHolder.tvBody.setText(softwareDec.getDescription());
+
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

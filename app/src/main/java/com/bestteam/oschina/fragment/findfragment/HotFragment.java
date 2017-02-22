@@ -23,6 +23,7 @@ public class HotFragment extends BaseFindLoadNetData {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
        View  view = inflater.inflate(R.layout.layout_sub_classify_fragment,container,false);
         recyclerView = (RecyclerView) view.findViewById(R.id.fragment_rv);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));

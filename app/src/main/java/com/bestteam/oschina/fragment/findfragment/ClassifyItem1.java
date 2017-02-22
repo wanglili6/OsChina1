@@ -61,7 +61,6 @@ public class ClassifyItem1 extends Fragment {
                     }
                     @Override
                     public void onResponse(String response, int id) {
-                        MyToast.show(getContext(), "数据加载成功");
                         softwareCatalogList = XmlUtils.toBean(SoftwareCatalogList.class, response.getBytes());
                         ClassifyRvAdapter adapter = new ClassifyRvAdapter(getFragmentManager(),getContext(), softwareCatalogList.getSoftwarecataloglist());
                         fragmentRv.setAdapter(adapter);
