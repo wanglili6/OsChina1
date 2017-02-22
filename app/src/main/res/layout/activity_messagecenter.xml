@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/actionbar_background"
+        android:fitsSystemWindows="true">
+       <RelativeLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+           <ImageButton
+               android:id="@+id/iv_messagecenter"
+               android:layout_width="25dp"
+               android:layout_height="25dp"
+               android:layout_alignParentLeft="true"
+               android:background="@drawable/btn_back_selector"
+               android:layout_alignParentTop="true"
+               />
+           <TextView
+               android:layout_toRightOf="@id/iv_messagecenter"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textColor="#fff"
+               android:layout_centerInParent="true"
+               android:textSize="23sp"
+               android:text="我的"
+               />
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textColor="#fff"
+               android:layout_centerInParent="true"
+               android:textSize="25sp"
+               android:text="消息中心"/>
+       </RelativeLayout>
+
+    </android.support.v7.widget.Toolbar>
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_messagecenter"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="#bcb8b8"
+        app:tabTextColor="#fff"
+        app:tabSelectedTextColor="#40AA53"
+        >
+    </android.support.design.widget.TabLayout>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_messagecenter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBarDrawerToggle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,8 +13,10 @@ import android.widget.TextView;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.activity.AttentionActivity;
+import com.bestteam.oschina.activity.DongTanActivity;
 import com.bestteam.oschina.activity.FansActivity;
-import com.bestteam.oschina.activity.MessageActivity;
+import com.bestteam.oschina.activity.MessageCenterActivity;
+import com.bestteam.oschina.activity.ShouCangActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -79,8 +80,12 @@ public class MeFragment extends Fragment {
             case R.id.me_ll_sorces:
                 break;
             case R.id.ll_me_dongtan:
+                Intent intent1 = new Intent(getActivity(), DongTanActivity.class);
+                startActivity(intent1);
                 break;
             case R.id.ll_me_shoucang:
+        Intent intent2 = new Intent(getActivity(), ShouCangActivity.class);
+                startActivity(intent2);
                 break;
             case R.id.ll_me_guanzhu:
                 Intent intent3 = new Intent(getActivity(), AttentionActivity.class);
@@ -93,7 +98,7 @@ public class MeFragment extends Fragment {
             case R.id.me_ib_message:
                 break;
             case R.id.rl_me_message:
-                Intent intent = new Intent(getActivity(), MessageActivity.class);
+                Intent intent = new Intent(getActivity(), MessageCenterActivity.class);
                 startActivity(intent);
                 break;
             case R.id.me_ib_moke:

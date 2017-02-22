@@ -19,7 +19,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activity.MessageActivity" />
+
         <activity android:name=".activity.SettingActivity" />
 
         <activity android:name=".activity.LoginActivity" />
@@ -30,6 +30,10 @@
         <activity android:name=".activity.ClassifyItemActivity" />
         <activity android:name=".activity.AttentionActivity" />
         <activity android:name=".activity.FansActivity" />
+        <activity android:name=".activity.MyBlogActivity" />
+        <activity android:name=".activity.MessageCenterActivity" />
+        <activity android:name=".activity.DongTanActivity" />
+        <activity android:name=".activity.ShouCangActivity" />
 
 
     </application>
