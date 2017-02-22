@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -103,7 +104,8 @@ public int  getUid(){
                     @Override
                     public void onResponse(String response, int id) {
                         User user = XmlUtils.toBean(User.class, response.getBytes());
-                        uid=user.getId();
+                        Log.i("id", "onResponse: "+user.getId());
+//                        uid=user.getId();
                         MyToast.show(LoginActivity.this,"111");
                         startActivity(new Intent(LoginActivity.this,MainActivity.class));
                         finish();
