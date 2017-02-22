@@ -1,9 +1,9 @@
 package com.bestteam.oschina.adapter;
 
 import android.content.Context;
-import android.content.Intent;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +11,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.activity.ClassifyItemActivity;
-import com.bestteam.oschina.base.Cantents;
-import com.bestteam.oschina.bean.Software;
 import com.bestteam.oschina.bean.SoftwareCatalogList;
+import com.bestteam.oschina.fragment.findfragment.ClassityItem2;
 
 import java.util.List;
 
@@ -27,10 +25,12 @@ import butterknife.ButterKnife;
 public class ClassifyRvAdapter extends RecyclerView.Adapter {
     private Context context;
     private List<SoftwareCatalogList.SoftwareType> softwareTypeList;
+    private FragmentManager fragmentManager;
 
 
-    public ClassifyRvAdapter(Context context, List<SoftwareCatalogList.SoftwareType> softwareTypeList) {
+    public ClassifyRvAdapter( FragmentManager fragmentManager,Context context, List<SoftwareCatalogList.SoftwareType> softwareTypeList) {
         this.context = context;
+        this.fragmentManager = fragmentManager;
         this.softwareTypeList = softwareTypeList;
     }
 
@@ -49,14 +49,19 @@ public class ClassifyRvAdapter extends RecyclerView.Adapter {
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.putExtra("url", Cantents.CLISSIFTY_URl+softwareType.getTag());
-                intent.setClass(context,ClassifyItemActivity.class);
-                context.startActivity(intent);
+                int tag = softwareType.getTag();
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
+                ClassityItem2 classityItem2 = new ClassityItem2();
+                classityItem2.setItemTag(tag);
+                transaction.add(R.id.cassify_categor_contanier, classityItem2,"item2");
+                transaction.addToBackStack("item2");
+                transaction.commit();
+
             }
         });
 
     }
+
 
     @Override
     public int getItemCount() {

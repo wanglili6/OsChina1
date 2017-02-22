@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/iv_friend_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/bear"/>
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="titleName"
+        android:textSize="16sp"
+        android:textColor="#000"
+        android:layout_toRightOf="@+id/iv_friend_item"
+        />
+
+    <TextView
+        android:id="@+id/tv_null"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1111"
+        android:textSize="10sp"
+        android:textColor="#1a1919"
+        android:layout_toRightOf="@+id/iv_friend_item"
+        android:layout_marginTop="20dp"/>
+</RelativeLayout>

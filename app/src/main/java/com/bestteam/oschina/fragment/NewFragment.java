@@ -2,6 +2,8 @@ package com.bestteam.oschina.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+
+
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -10,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.adapter.NewsFragmentVPAdapter;
+import com.bestteam.oschina.adapter.newsfragmentadapter.NewsFragmentVPAdapter;
 import com.bestteam.oschina.fragment.newsfragment.BlogFragment;
 import com.bestteam.oschina.fragment.newsfragment.CommendFragment;
 import com.bestteam.oschina.fragment.newsfragment.HotSpotFragment;
@@ -32,7 +34,7 @@ public class NewFragment extends android.support.v4.app.Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.newfragmengt, (ViewGroup) getView(),false);
+        View view = inflater.inflate(R.layout.newfragmengt,container,false);
 
         tabLayout = (TabLayout) view.findViewById(R.id.tabLayout);
         vp = (ViewPager) view.findViewById(R.id.vp);
@@ -47,7 +49,7 @@ public class NewFragment extends android.support.v4.app.Fragment {
 
     private void initViewParge() {
 
-        NewsFragmentVPAdapter adapter = new NewsFragmentVPAdapter(getFragmentManager(),fragments,title);
+        NewsFragmentVPAdapter adapter = new NewsFragmentVPAdapter(getChildFragmentManager(),fragments,title);
         vp.setAdapter(adapter);
 
         tabLayout.setupWithViewPager(vp);
@@ -61,10 +63,4 @@ public class NewFragment extends android.support.v4.app.Fragment {
         fragments.add(new CommendFragment());
 
     }
-//    private Fragment setTitle(Fragment fragment,String title) {
-//        Bundle bundle = new Bundle();
-//        bundle.putString("title",title);
-//        fragment.setArguments(bundle);
-//        return fragment;
-//    }
 }

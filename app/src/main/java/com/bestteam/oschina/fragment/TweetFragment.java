@@ -22,7 +22,7 @@ public class TweetFragment extends android.support.v4.app.Fragment {
 
     private TabLayout tab_tweet;
     private ViewPager vp_tweet;
-    private List<Fragment> fragments;
+    public List<Fragment> fragments;
 
     @Nullable
     @Override
@@ -37,6 +37,7 @@ public class TweetFragment extends android.support.v4.app.Fragment {
     private void initView(View view) {
         tab_tweet = (TabLayout) view.findViewById(R.id.tab);
         vp_tweet = (ViewPager) view.findViewById(R.id.vp);
+
     }
 
     private void initViewPager(){
