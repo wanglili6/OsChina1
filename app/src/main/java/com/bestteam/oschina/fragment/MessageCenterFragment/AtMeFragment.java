@@ -11,13 +11,9 @@ import android.view.ViewGroup;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.AtMeFragmentRVAdapter;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import okhttp3.Call;
 
 /**
  * Created by zheng_000 on 2017/2/20.
@@ -37,17 +33,16 @@ public class AtMeFragment extends Fragment {
     }
     private void initData(){
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        String  url = "http://www.oschina.net/action/api/active_list?";
+       /* String  url = "http://www.oschina.net/action/api/active_list?";
         OkHttpUtils
                 .get()
                 .url(url)
                 .build()
                 .execute(new StringCallback() {
 
-
                     @Override
                     public void onError(Call call, Exception e, int id) {
-
+                        Toast.makeText(getContext(),"网络请求错误",Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
@@ -55,7 +50,7 @@ public class AtMeFragment extends Fragment {
 
                     }
 
-                });
+                });*/
 
 
 
