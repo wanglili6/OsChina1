@@ -17,10 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
-
         <activity android:name=".activity.MessageActivity" />
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.LoginActivity"/>
@@ -35,10 +31,10 @@
         <activity android:name=".activity.FlipActivity"/>
         <activity android:name=".activity.AttentionActivity"/>
         <activity android:name=".activity.FansActivity"/>
+        <activity android:name=".activity.newsfragmentActivity.NewsDetailActivity"/>
         <activity android:name=".activity.MyBlogActivity"/>
         <activity android:name=".activity.MessageCenterActivity"/>
-
-
+        <activity android:name=".activity.SoftwareMessgeActivity"/>
 
     </application>
 

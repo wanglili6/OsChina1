@@ -28,6 +28,7 @@ public class ClassifyItem1 extends Fragment {
 
     private RecyclerView fragmentRv;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -45,6 +46,7 @@ public class ClassifyItem1 extends Fragment {
 
     }
     private void loadData(){
+        
         OkHttpUtils
                 .get()
                 .url(Cantents.CLISSIFTY_URl+"0")
@@ -59,7 +61,6 @@ public class ClassifyItem1 extends Fragment {
                     }
                     @Override
                     public void onResponse(String response, int id) {
-                        MyToast.show(getContext(), "数据加载成功");
                         softwareCatalogList = XmlUtils.toBean(SoftwareCatalogList.class, response.getBytes());
                         ClassifyRvAdapter adapter = new ClassifyRvAdapter(getFragmentManager(),getContext(), softwareCatalogList.getSoftwarecataloglist());
                         fragmentRv.setAdapter(adapter);

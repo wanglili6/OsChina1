@@ -11,11 +11,13 @@ import android.view.ViewGroup;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.AtMeFragmentRVAdapter;
+import com.zhy.http.okhttp.OkHttpUtils;
+import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import okhttp3.OkHttpClient;
+import okhttp3.Call;
 
 /**
  * Created by zheng_000 on 2017/2/20.
@@ -35,8 +37,27 @@ public class AtMeFragment extends Fragment {
     }
     private void initData(){
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        OkHttpClient okHttpClient = new OkHttpClient();
-        String url = "http://www.oschina.net/action/api/active_list?uid=993896&pageIndex=0&catalog=3&pageSize=20";
+        String  url = "http://www.oschina.net/action/api/active_list?";
+        OkHttpUtils
+                .get()
+                .url(url)
+                .build()
+                .execute(new StringCallback() {
+
+
+                    @Override
+                    public void onError(Call call, Exception e, int id) {
+
+                    }
+
+                    @Override
+                    public void onResponse(String response, int id) {
+
+                    }
+
+                });
+
+
 
         mDatas = new ArrayList<>();
         for(int i = 0; i<50;i++){

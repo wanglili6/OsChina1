@@ -25,7 +25,7 @@
                 android:layout_centerVertical="true"
                 android:layout_margin="5dp"
                 android:visibility="gone"
-                android:background="@drawable/drawer_menu_icon_setting_write"
+                android:background="@drawable/btn_my_setting"
                  />
 
             <TextView
@@ -38,24 +38,22 @@
 
             <ImageButton
                 android:id="@+id/main_search"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_margin="5dp"
-
-
-                android:background="@drawable/quick_option_find_write" />
-
-            <ImageButton
-                android:id="@+id/main_code"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_margin="5dp"
+                android:background="@drawable/btn_search_normal" />
+
+            <ImageButton
+                android:id="@+id/main_code"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="5dp"
                 android:visibility="gone"
-                android:background="@drawable/icon_qr_code"
+                android:background="@drawable/btn_qrcode"
                  />
         </RelativeLayout>
     </android.support.v7.widget.Toolbar>
@@ -74,6 +72,7 @@
         android:id="@+id/radiogroup"
         android:layout_width="match_parent"
         android:layout_height="60dp"
+        android:layout_marginTop="5dp"
         android:background="@color/white"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -96,14 +95,13 @@
         <TextView
             android:id="@+id/tv_post_tweet"
             style="@style/main_radiobtn_style"
-            android:drawableTop="@drawable/tab_post_tweet"
+            android:drawableTop="@drawable/selector_bton_tweet"
             android:paddingTop="10dp" />
 
 
         <RadioButton
             android:id="@+id/rb_explore"
             style="@style/main_radiobtn_style"
-
             android:drawableTop="@drawable/tab_icon_explore"
             android:text="发现" />
 
@@ -117,9 +115,4 @@
     </RadioGroup>
 
 
-    <!--<LinearLayout-->
-    <!--android:layout_width="240dp"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:layout_gravity="left"-->
-    <!--android:background="@color/main_background"></LinearLayout>-->
 </LinearLayout>

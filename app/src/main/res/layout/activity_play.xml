@@ -7,7 +7,7 @@
         android:orientation="horizontal"
         android:background="@color/actionbar_background"
         android:layout_width="match_parent"
-        android:layout_height="36dp">
+        android:layout_height="?android:attr/actionBarSize">
         <ImageButton
             android:id="@+id/ib_back"
             android:layout_marginLeft="5dp"
@@ -23,4 +23,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/srefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <com.bestteam.oschina.view.RefreshRecyleView
+            android:id="@+id/base_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.bestteam.oschina.view.RefreshRecyleView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>
