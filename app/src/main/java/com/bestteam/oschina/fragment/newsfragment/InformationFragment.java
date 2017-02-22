@@ -1,7 +1,7 @@
 package com.bestteam.oschina.fragment.newsfragment;
 
 import com.bestteam.oschina.base.BaseRecyclerViewFragment;
-import com.bestteam.oschina.Persenter.NewsPresenter;
+import com.bestteam.oschina.persenter.NewsPresenter;
 
 /**
  * Created by Why on 2017/2/21.

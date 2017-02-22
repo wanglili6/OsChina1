@@ -1,18 +1,12 @@
-package com.bestteam.oschina.Persenter;
+package com.bestteam.oschina.persenter;
 
-import android.app.Activity;
 import android.content.Context;
-import android.support.v4.app.Fragment;
-import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
-import com.bestteam.oschina.activity.AttentionActivity;
 import com.bestteam.oschina.adapter.newsfragmentadapter.InformationFragmentRVAdapter;
 import com.bestteam.oschina.base.BaseRecyclerViewFragment;
 import com.bestteam.oschina.base.Cantents;
-import com.bestteam.oschina.bean.News;
 import com.bestteam.oschina.bean.NewsList;
-import com.bestteam.oschina.fragment.newsfragment.InformationFragment;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.XmlUtils;
 
