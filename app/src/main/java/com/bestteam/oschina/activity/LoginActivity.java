@@ -91,10 +91,12 @@ public int  getUid(){
                 .post()
                 .url(url)
                 .addParams("keep_login","1")
-                .addParams("username",etLoginUsername.getText()+"")
-                .addParams("pwd",etLoginPwd.getText()+"")
+                .addParams("username",etLoginUsername.getText()+"".trim())
+                .addParams("pwd",etLoginPwd.getText()+"".trim())
                 .build()
                 .execute(new StringCallback() {
+
+
                     @Override
                     public void onError(Call call, Exception e, int id) {
                         MyToast.show(LoginActivity.this,"失败");
@@ -103,13 +105,12 @@ public int  getUid(){
                     @Override
                     public void onResponse(String response, int id) {
                         User user = XmlUtils.toBean(User.class, response.getBytes());
-                        uid=user.getId();
+                            uid=user.getId();
                         MyToast.show(LoginActivity.this,"111");
                         startActivity(new Intent(LoginActivity.this,MainActivity.class));
                         finish();
                     }
                 });
-
 
     }
 
