@@ -35,6 +35,7 @@
         <activity android:name=".activity.MyBlogActivity"/>
         <activity android:name=".activity.MessageCenterActivity"/>
         <activity android:name=".activity.SoftwareMessgeActivity"/>
+        <activity android:name=".activity.ShowActivity"/>
 
     </application>
 

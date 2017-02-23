@@ -11,8 +11,10 @@ import android.widget.TextView;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.activity.SoftwareMessgeActivity;
+import com.bestteam.oschina.bean.Software;
 import com.bestteam.oschina.bean.SoftwareDec;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -23,14 +25,30 @@ import butterknife.ButterKnife;
  */
 public class ClassifyRvAdapter3 extends RecyclerView.Adapter {
     private Context context;
-    private List<SoftwareDec> softwareDecList;
+    private List<SoftwareDec> softwareDecList = new ArrayList<>();
 
 
+    public void clear(){
+        this.softwareDecList.clear();
+    }
+    public void addAll(List<SoftwareDec>  softwareDecs){
+
+
+        this.softwareDecList.addAll(softwareDecs);
+        notifyDataSetChanged();
+    }
 
     public ClassifyRvAdapter3( Context context, List<SoftwareDec> softwareDecList) {
         this.context = context;
         this.softwareDecList = softwareDecList;
+
     }
+
+    public ClassifyRvAdapter3( Context context) {
+        this.context = context;
+
+    }
+
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {

@@ -11,15 +11,12 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.adapter.ClassifyRvAdapter3;
 import com.bestteam.oschina.adapter.SoftwareAdapter;
-import com.bestteam.oschina.base.BaseLoadData;
 import com.bestteam.oschina.fragment.findfragment.ClassifyFragment;
 import com.bestteam.oschina.fragment.findfragment.DomesticFragment;
 import com.bestteam.oschina.fragment.findfragment.HotFragment;
 import com.bestteam.oschina.fragment.findfragment.NewestFragment;
 import com.bestteam.oschina.fragment.findfragment.RecommendFragment;
-import com.bestteam.oschina.view.RefreshListFragment;
 
 import java.util.ArrayList;
 import java.util.List;
