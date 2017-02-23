@@ -27,7 +27,7 @@ public class XmlUtils {
      * 将一个xml流转换为bean实体类
      * 
      * @param type
-     * @param instance
+     * @param
      * @return
      */
     @SuppressWarnings("unchecked")

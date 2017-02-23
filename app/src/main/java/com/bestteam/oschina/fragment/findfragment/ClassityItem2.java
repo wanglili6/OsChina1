@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.ClassifyRvAdapter;
@@ -32,12 +33,14 @@ public class ClassityItem2 extends Fragment{
 
     private RecyclerView recyclerView;
     private int tag;
+    private ProgressBar loadBar;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.layout_sub_classify_fragment,container,false);
         recyclerView = (RecyclerView) view.findViewById(R.id.fragment_rv);
+        loadBar = (ProgressBar) view.findViewById(R.id.load);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         loadData();
         return view;
@@ -48,6 +51,7 @@ public class ClassityItem2 extends Fragment{
     }
 
     private void loadData() {
+        loadBar.setVisibility(View.VISIBLE);
         OkHttpUtils
                 .get()
                 .url(Cantents.CLISSIFTY_URl+tag)
@@ -61,7 +65,7 @@ public class ClassityItem2 extends Fragment{
                     }
                     @Override
                     public void onResponse(String response, int id) {
-                        Log.i("wll", "onResponse: "+response);
+                        loadBar.setVisibility(View.GONE);
                         SoftwareCatalogList softwareCatalogList = XmlUtils.toBean(SoftwareCatalogList.class, response.getBytes());
                         ClassifyRvAdapter2 adapter = new ClassifyRvAdapter2(getFragmentManager(),getContext(), softwareCatalogList.getSoftwarecataloglist());
                         recyclerView.setAdapter(adapter);

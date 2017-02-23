@@ -51,26 +51,6 @@ public class ClassifyFragment extends Fragment {
 
         return view;
     }
-//
-//    @Override
-//    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-//        super.onViewCreated(view, savedInstanceState);
-//        switchSubFragment(0);
-//
-//    }
-//
-//
-//    public void switchSubFragment(int tag) {
-//        FragmentTransaction fragmentTransaction = getChildFragmentManager().beginTransaction();
-//        SubClassifyFragment subClassifyFragment = new SubClassifyFragment();
-//        Bundle bundle = new Bundle();
-//        bundle.putString("category", String.valueOf(tag));
-//        subClassifyFragment.setArguments(bundle);
-//        fragmentTransaction.replace(R.id.cassify_categor_contanier, subClassifyFragment);
-//        fragmentTransaction.addToBackStack(null);
-//        fragmentTransaction.commit();
-//    }
-//
 
 
 

@@ -50,7 +50,7 @@ public class ResetActivity extends AppCompatActivity {
         switch (view.getId()) {
             case R.id.iv_retrieve_back:
                //小箭头 返回找回密码界面
-                startActivity(new Intent(this,LoginActivity.class));
+                startActivity(new Intent(this,RegisterActivity.class));
                 finish();
                 break;
             case R.id.iv_login_pwd_icon:
