@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.bean.Messages;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -20,6 +21,7 @@ import java.util.List;
 public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
     private Context context;
     private List<Messages> messagesList;
+    private ViewHolder viewHolder;
 
     public AtMeFragmentRVAdapter(Context context, List<Messages> messagesList) {
         this.context = context;
@@ -29,7 +31,7 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_atme,parent,false);
-        ViewHolder viewHolder = new ViewHolder(view);
+        viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
@@ -62,6 +64,7 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
         }
         public void loadData(int position){
             Messages messages = messagesList.get(position);
+            Picasso.with(context).load(messages.getPortrait()).into(viewHolder.ivIcon);
            /* if()*/
         }
     }
