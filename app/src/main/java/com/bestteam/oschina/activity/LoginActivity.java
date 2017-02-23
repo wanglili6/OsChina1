@@ -1,6 +1,7 @@
 package com.bestteam.oschina.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -14,12 +15,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.bean.User;
+import com.bestteam.oschina.bean.LoginUserBean;
 import com.bestteam.oschina.util.MyToast;
+import com.bestteam.oschina.util.SPUtils;
 import com.bestteam.oschina.util.XmlUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
+import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -30,7 +33,7 @@ import okhttp3.Call;
  * Created by 王丽丽 on 2017/2/18.
  * 登录页面
  */
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     @BindView(R.id.tv_brows_back)
     ImageView tvBrowsBack;
@@ -39,7 +42,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.iv_login_username_icon)
     ImageView ivLoginUsernameIcon;
     @BindView(R.id.et_login_username)
-    EditText etLoginUsername;
+    EditText etLoginUsername;   //用户名
     @BindView(R.id.iv_login_username_del)
     ImageView ivLoginUsernameDel;
     @BindView(R.id.ll_login_username)
@@ -47,7 +50,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.iv_login_pwd_icon)
     ImageView ivLoginPwdIcon;
     @BindView(R.id.et_login_pwd)
-    EditText etLoginPwd;
+    EditText etLoginPwd;    //密码
     @BindView(R.id.iv_login_pwd_del)
     ImageView ivLoginPwdDel;
     @BindView(R.id.ll_login_pwd)
@@ -62,12 +65,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button btLoginRegister; //注册按键
     @BindView(R.id.lay_login_container)
     LinearLayout layLoginContainer;
-    private  int uid;
+    private int uid;
 
     // 请求 url 地址
     private String url = "http://www.oschina.net/action/api/login_validate";
+    private SharedPreferences preferences;
 
-
+    private String username;
+    private String pwd;
 
 
     @Override
@@ -82,37 +87,68 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         initListener();
     }
 
-public int  getUid(){
-   return uid;
 
-}
+    public int getUid() {
+
+        return uid;
+
+    }
+
 
     private void dataLogin() {
-        OkHttpUtils
-                .post()
-                .url(url)
-                .addParams("keep_login","1")
-                .addParams("username",etLoginUsername.getText()+"")
-                .addParams("pwd",etLoginPwd.getText()+"")
-                .build()
-                .execute(new StringCallback() {
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
-                        MyToast.show(LoginActivity.this,"失败");
-                    }
 
-                    @Override
-                    public void onResponse(String response, int id) {
-                        User user = XmlUtils.toBean(User.class, response.getBytes());
-                        Log.i("id", "onResponse: "+user.getId());
-//                        uid=user.getId();
-                        MyToast.show(LoginActivity.this,"111");
-                        startActivity(new Intent(LoginActivity.this,MainActivity.class));
-                        finish();
-                    }
-                });
+        username = etLoginUsername.getText().toString().trim();
+        pwd = etLoginPwd.getText().toString().trim();
 
 
+        SPUtils.saveString(this, "username", "pwd");
+        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(pwd)) {
+            MyToast.show(LoginActivity.this, "账号或密码不能为空");
+            return;
+        } else {
+
+//           SPUtils.getString(LoginActivity.this,"username",null);
+            OkHttpUtils
+                    .post()
+                    .url(url)
+                    .addParams("keep_login", "1")
+                    .addParams("username", username)
+                    .addParams("pwd", pwd)
+                    .build()
+                    .execute(new StringCallback() {
+
+
+                        @Override
+                        public String parseNetworkResponse(okhttp3.Response response, int id) throws IOException {
+                            String cookie = response.header("Set-Cookie", "");
+                            Log.d("KYZG", cookie);
+                            //cookie
+                            return response.body().string();
+
+                            //   SPUtils.saveString(this,);
+                        }
+
+
+                        @Override
+                        public void onError(Call call, Exception e, int id) {
+
+                            MyToast.show(LoginActivity.this, "用户名或者密码错误...");
+
+                            //进入注册界面
+                        }
+
+                        @Override
+                        public void onResponse(String response, int id) {
+
+                            LoginUserBean user = XmlUtils.toBean(LoginUserBean.class, response.getBytes());
+                            uid = user.getId();
+                            MyToast.show(LoginActivity.this, "登录成功");
+                            //startActivity(new Intent(LoginActivity.this,MainActivity.class));
+
+                            finish();
+                        }
+                    });
+        }
     }
 
     /**
@@ -125,7 +161,6 @@ public int  getUid(){
     }
 
     /**
-     *
      * 单击事件监听
      */
 
@@ -133,12 +168,12 @@ public int  getUid(){
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_brows_back:    // 返回主界面
-                startActivity(new Intent(this,MainActivity.class));
-               // finish();
+                startActivity(new Intent(this, MainActivity.class));
+                // finish();
                 break;
             case R.id.tv_login_forget_pwd:  //忘记密码
 
-                startActivity(new Intent(this,retrieveActivity.class));
+                startActivity(new Intent(this, retrieveActivity.class));
                 finish();
                 break;
             case R.id.bt_login_submit:  //登录界面  --->到弹一弹界面
@@ -148,16 +183,12 @@ public int  getUid(){
 
                 break;
             case R.id.bt_login_register:    //注册 --->到填写用户名和密码 选择性别
-                startActivity(new Intent(this,RegisterActivity.class));
+
+                startActivity(new Intent(this, RegisterActivity.class));
                 finish();
                 break;
         }
     }
 
-    private void login() {
 
-//        final String username = et_login_username.get
-//
-//        if (TextUtils.isEmpty(et_login_username))
-    }
 }

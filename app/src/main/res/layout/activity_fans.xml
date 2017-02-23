@@ -25,7 +25,7 @@
             android:layout_toRightOf="@+id/ib_back"
             android:layout_centerVertical="true"
             android:text="我的"
-            android:textColor="#fff"
+            android:textColor="@color/attention_text_selector"
             android:textSize="25sp" />
         <TextView
             android:id="@+id/tv_attention"
