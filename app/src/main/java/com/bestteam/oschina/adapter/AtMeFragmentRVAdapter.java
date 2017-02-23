@@ -23,6 +23,9 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
     private List<Messages> messagesList;
     private ViewHolder viewHolder;
 
+    public AtMeFragmentRVAdapter(Context context){
+        this.context = context;
+    }
     public AtMeFragmentRVAdapter(Context context, List<Messages> messagesList) {
         this.context = context;
         this.messagesList = messagesList;
@@ -64,6 +67,17 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
         }
         public void loadData(int position){
             Messages messages = messagesList.get(position);
+
+          /*  if(未登录){
+
+
+                跳转登陆
+
+            }else {
+
+            }
+            */
+
             Picasso.with(context).load(messages.getPortrait()).into(viewHolder.ivIcon);
             viewHolder.tvUsername.setText(messages.getFriendName());
             viewHolder.tvContent.setText(messages.getContent());

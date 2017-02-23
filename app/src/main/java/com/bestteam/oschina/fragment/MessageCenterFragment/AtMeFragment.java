@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,30 +13,63 @@ import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.AtMeFragmentRVAdapter;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.MessageList;
+import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.XmlUtils;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.callback.StringCallback;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
-import okhttp3.Call;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by zheng_000 on 2017/2/20.
  */
 
 public class AtMeFragment extends Fragment {
-    private RecyclerView rv;
+    /* pageIndex=0&catalog=3&pageSize=20*/
+    private XRecyclerView rv;
     private AtMeFragmentRVAdapter mAdapter;
+    private int pageIndex = 0;
+    private String cataLog = "3";
+    private String pageSize = "20";
+    private XRecyclerView xRecyclerView;
+    private boolean isRefresh = true;
+    private boolean isLoad = false;
+    private MessageList messageList;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_atme,container,false);
-        rv = (RecyclerView) view.findViewById(R.id.rv_atme);
-        initData();
+        rv = (XRecyclerView) view.findViewById(R.id.rv_atme);
+        rv.setLayoutManager(new LinearLayoutManager(getContext()));
         return view;
     }
-    private void initData(){
+
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        mAdapter = new AtMeFragmentRVAdapter(getContext(),messageList.getList());
+        xRecyclerView.setAdapter(mAdapter);
+        xRecyclerView.setPullRefreshEnabled(true);
+        xRecyclerView.setLoadingMoreEnabled(true);
+        xRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                isRefresh = true;
+                pageIndex = 0;
+                initData();
+            }
+
+            @Override
+            public void onLoadMore() {
+                isLoad = true;
+                pageIndex = pageIndex + 1;
+                initData();
+            }
+        });
+    }
+    /* private void initData(){
         String  url = Cantents.COMMENT_MESSAGE_CENTER;
-        OkHttpUtils
+        *//*OkHttpUtils
                 .get()
                 .url(url)
                 .build()
@@ -53,25 +85,73 @@ public class AtMeFragment extends Fragment {
                         processData(response);
                     }
 
-                });
+                });*//*
 
 
 
-       /* mDatas = new ArrayList<>();
+
+       *//* mDatas = new ArrayList<>();
         for(int i = 0; i<50;i++){
             mDatas.add("用户名"+i);
         }
         mAdapter = new AtMeFragmentRVAdapter(getContext(),mDatas);
         rv.setAdapter(mAdapter);
 
-        mAdapter.notifyDataSetChanged();*/
+        mAdapter.notifyDataSetChanged();*//*
+    }*/
+
+    private void initData(){
+        String url = Cantents.COMMENT_MESSAGE_CENTER;
+        Map<String, String> parmas = new HashMap<>();
+        parmas.put("pageIndex", String.valueOf(pageIndex));
+        parmas.put("pageSize", pageSize);
+        parmas.put("cataLog",cataLog);
+        OKHttp3Helper.create().get(url, null, parmas, new OKHttp3Helper.HttpCallback() {
+            @Override
+            public void onSuccess(String data) {
+
+                messageList = XmlUtils.toBean(MessageList.class,data.getBytes());
+                if(isRefresh){
+
+                    mAdapter = new AtMeFragmentRVAdapter(getContext(),messageList.getList());
+                    xRecyclerView.refreshComplete();
+                    isRefresh = false;
+                }
+                if(isLoad){
+                    mAdapter = new AtMeFragmentRVAdapter(getContext(),messageList.getList());
+                    xRecyclerView.loadMoreComplete();
+                    isLoad = false;
+                }
+
+
+
+                /*MessageList messageList = XmlUtils.toBean(MessageList.class, data.getBytes());
+                mAdapter = new AtMeFragmentRVAdapter(getContext(),messageList.getList());
+
+                rv.setAdapter(mAdapter);
+                mAdapter.notifyDataSetChanged();*/
+            }
+
+            @Override
+            public void onFail(Exception e) {
+                Toast.makeText(getContext(), "获取数据失败", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
+
+           /* @Override
+            public void onFail(Exception e) {
+                Toast.makeText(getContext(), "获取数据失败", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }*//*
     private void processData(String response){
         MessageList messageList = XmlUtils.toBean(MessageList.class, response.getBytes());
         mAdapter = new AtMeFragmentRVAdapter(getContext(),messageList.getList());
         rv.setLayoutManager(new LinearLayoutManager(getContext()));
         rv.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
-    }
+    }*/
 }
 
