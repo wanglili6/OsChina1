@@ -3,7 +3,9 @@ package com.bestteam.oschina.activity;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
+import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,22 +50,24 @@ public class ShouCangActivity extends Activity {
     // 网络请求
     private void initData(String url) {
         OkHttpUtils.get().url(url)
+                .addHeader("Cookie", "")
                 .build()
                 .execute(new StringCallback() {
                     @Override
                     public void onError(Call call, Exception e, int id) {
                         e.printStackTrace();
-                        runOnUiThread(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(ShouCangActivity.this, "网络加载失败", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                        runOnUiThread(
+                                new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        Toast.makeText(ShouCangActivity.this, "网络加载失败", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
                     }
 
                     @Override
                     public void onResponse(String response, int id) {
-                        System.out.println(response+"response");
+                        System.out.println(response + "response");
                         FavoriteList favorites = XmlUtils.toBean(FavoriteList.class, response.getBytes());
                         CollectAdapter collectAdapter = new CollectAdapter(ShouCangActivity.this);
                         List<Favorite> lists = favorites.getList();
@@ -75,6 +79,11 @@ public class ShouCangActivity extends Activity {
     }
 
     @OnClick(R.id.ib_back)
-    public void onClick() {
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.ib_back:
+                finish();
+                break;
+        }
     }
 }

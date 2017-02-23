@@ -1,9 +1,9 @@
-package com.bestteam.oschina.persenter;
+package com.bestteam.oschina.Persenter;
 
 import android.content.Context;
 import android.widget.Toast;
 
-import com.bestteam.oschina.adapter.newsfragmentadapter.InformationFragmentRVAdapter;
+import com.bestteam.oschina.adapter.NewsFragmentAdapter.InformationFragmentRVAdapter;
 import com.bestteam.oschina.base.BaseRecyclerViewFragment;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.NewsList;

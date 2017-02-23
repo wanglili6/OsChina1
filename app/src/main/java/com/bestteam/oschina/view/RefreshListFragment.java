@@ -38,6 +38,8 @@ public class RefreshListFragment extends Fragment implements SwipeRefreshLayout.
     private int status;
 
 
+    public RefreshListFragment(){};
+
     public RefreshListFragment(RecyclerView.Adapter adapter) {
         this.adapter = adapter;
         upToLoadAdapter = new UpToLoadAdapter(adapter);

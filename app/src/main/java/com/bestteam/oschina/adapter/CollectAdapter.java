@@ -2,6 +2,7 @@ package com.bestteam.oschina.adapter;
 
 import android.content.Context;
 
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,7 +44,7 @@ public class CollectAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     @Override
     public int getItemCount() {
-        return favoriteList.size() != 0 ? favoriteList.size() : 0;
+        return favoriteList != null && favoriteList.size() != 0 ? favoriteList.size() : 0;
     }
 
     //给adapter设置数据的方法,(写一个方法进行拿到传递过来的数据)
@@ -64,7 +65,7 @@ public class CollectAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
         //设置一个方法，进行数据的填充
         public void setData(Favorite favorites) {
-            collect_icon.setImageResource(R.drawable.actionbar_icon_switch_issue_state);
+            collect_icon.setImageResource(R.drawable.actionbar_back_icon_normal);
             collect_text.setText(favorites.getTitle());
         }
     }
