@@ -1,17 +1,13 @@
 package com.bestteam.oschina.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.provider.SyncStateContract;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.webkit.CookieSyncManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,23 +15,14 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.bean.Constants;
 import com.bestteam.oschina.bean.LoginUserBean;
-import com.bestteam.oschina.bean.User;
-import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.MyToast;
 import com.bestteam.oschina.util.SPUtils;
 import com.bestteam.oschina.util.XmlUtils;
-import com.squareup.okhttp.Response;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 
-
 import java.io.IOException;
-import java.net.CookieHandler;
-import java.net.CookieManager;
-import java.util.HashMap;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -46,7 +33,7 @@ import okhttp3.Call;
  * Created by 王丽丽 on 2017/2/18.
  * 登录页面
  */
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener{
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     @BindView(R.id.tv_brows_back)
     ImageView tvBrowsBack;
@@ -78,7 +65,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button btLoginRegister; //注册按键
     @BindView(R.id.lay_login_container)
     LinearLayout layLoginContainer;
-    private  int uid;
+    private int uid;
 
     // 请求 url 地址
     private String url = "http://www.oschina.net/action/api/login_validate";
@@ -101,15 +88,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
 
+    public int getUid() {
 
+        return uid;
 
-public int  getUid(){
-
-   return uid;
-
-}
-
-
+    }
 
 
     private void dataLogin() {
@@ -118,56 +101,54 @@ public int  getUid(){
         pwd = etLoginPwd.getText().toString().trim();
 
 
-
-        SPUtils.saveString(this,"username","pwd");
-       if (TextUtils.isEmpty(username)||TextUtils.isEmpty(pwd)){
-           MyToast.show(LoginActivity.this,"账号或密码不能为空");
-           return;
-       }else {
+        SPUtils.saveString(this, "username", "pwd");
+        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(pwd)) {
+            MyToast.show(LoginActivity.this, "账号或密码不能为空");
+            return;
+        } else {
 
 //           SPUtils.getString(LoginActivity.this,"username",null);
-        OkHttpUtils
-                .post()
-                .url(url)
-                .addParams("keep_login","1")
-                .addParams("username",username)
-                .addParams("pwd",pwd)
-                .build()
-                .execute(new StringCallback() {
+            OkHttpUtils
+                    .post()
+                    .url(url)
+                    .addParams("keep_login", "1")
+                    .addParams("username", username)
+                    .addParams("pwd", pwd)
+                    .build()
+                    .execute(new StringCallback() {
 
 
-                    @Override
-                    public String parseNetworkResponse(okhttp3.Response response, int id) throws IOException {
-                        String cookie = response.header("Set-Cookie","");
-                        Log.d("KYZG",cookie);
-                        //cookie
-                        return response.body().string();
+                        @Override
+                        public String parseNetworkResponse(okhttp3.Response response, int id) throws IOException {
+                            String cookie = response.header("Set-Cookie", "");
+                            Log.d("KYZG", cookie);
+                            //cookie
+                            return response.body().string();
 
-                     //   SPUtils.saveString(this,);
-                    }
+                            //   SPUtils.saveString(this,);
+                        }
 
 
+                        @Override
+                        public void onError(Call call, Exception e, int id) {
 
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
+                            MyToast.show(LoginActivity.this, "用户名或者密码错误...");
 
-                        MyToast.show(LoginActivity.this,"用户名或者密码错误...");
+                            //进入注册界面
+                        }
 
-                        //进入注册界面
-                    }
+                        @Override
+                        public void onResponse(String response, int id) {
 
-                    @Override
-                    public void onResponse(String response, int id) {
+                            LoginUserBean user = XmlUtils.toBean(LoginUserBean.class, response.getBytes());
+                            uid = user.getId();
+                            MyToast.show(LoginActivity.this, "登录成功");
+                            //startActivity(new Intent(LoginActivity.this,MainActivity.class));
 
-                        LoginUserBean user = XmlUtils.toBean(LoginUserBean.class, response.getBytes());
-                        uid=user.getId();
-                        MyToast.show(LoginActivity.this,"登录成功");
-                        //startActivity(new Intent(LoginActivity.this,MainActivity.class));
-
-                        finish();
-                    }
-                });
-       }
+                            finish();
+                        }
+                    });
+        }
     }
 
     /**
@@ -179,7 +160,6 @@ public int  getUid(){
     }
 
     /**
-     *
      * 单击事件监听
      */
 
@@ -187,12 +167,12 @@ public int  getUid(){
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_brows_back:    // 返回主界面
-                startActivity(new Intent(this,MainActivity.class));
-               // finish();
+                startActivity(new Intent(this, MainActivity.class));
+                // finish();
                 break;
             case R.id.tv_login_forget_pwd:  //忘记密码
 
-                startActivity(new Intent(this,retrieveActivity.class));
+                startActivity(new Intent(this, retrieveActivity.class));
                 finish();
                 break;
             case R.id.bt_login_submit:  //登录界面  --->到弹一弹界面
@@ -203,7 +183,7 @@ public int  getUid(){
                 break;
             case R.id.bt_login_register:    //注册 --->到填写用户名和密码 选择性别
 
-                startActivity(new Intent(this,RegisterActivity.class));
+                startActivity(new Intent(this, RegisterActivity.class));
                 finish();
                 break;
         }
