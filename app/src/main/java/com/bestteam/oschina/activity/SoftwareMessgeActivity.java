@@ -57,15 +57,15 @@ public class SoftwareMessgeActivity extends Activity {
         });
         //加载网页
         softwareMsgWebView.loadUrl(url);
-//        softwareMsgWebView.addJavascriptInterface(new JsCallJava() {
-//            @JavascriptInterface
-//            @Override
-//            public void openImage(String src) {
-//                Intent intent = new Intent(getApplicationContext(), ShowActivity.class);
-//                intent.putExtra("url", src);
-//                startActivity(intent);
-//            }
-//        }, "imagelistner");
+        softwareMsgWebView.addJavascriptInterface(new JsCallJava() {
+            @JavascriptInterface
+            @Override
+            public void openImage(String src) {
+                Intent intent = new Intent(getApplicationContext(), ShowActivity.class);
+                intent.putExtra("url", src);
+                startActivity(intent);
+            }
+        }, "imagelistner");
 
 
     }
