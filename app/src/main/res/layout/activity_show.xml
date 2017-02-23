@@ -2,12 +2,16 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
     android:orientation="vertical">
-    <com.bestteam.oschina.view.RefreshRecyleView
-        android:id="@+id/base_rv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
-    </com.bestteam.oschina.view.RefreshRecyleView>
+    <TextView
+        android:text="jlkjohui"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <uk.co.senab.photoview.PhotoView
+        android:id="@+id/photoView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
 </LinearLayout>
