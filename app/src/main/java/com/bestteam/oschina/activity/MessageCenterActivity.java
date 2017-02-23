@@ -11,7 +11,6 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.bestteam.oschina.R;
-
 import com.bestteam.oschina.adapter.newsfragmentadapter.InformationFragmentRVAdapter;
 import com.bestteam.oschina.fragment.MessageCenterFragment.AtMeFragment;
 import com.bestteam.oschina.fragment.MessageCenterFragment.CommentFragment;
