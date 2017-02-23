@@ -84,8 +84,6 @@ public class InformationFragment extends Fragment{
 
         OKHttp3Helper.create().get(url, null, parmas, new OKHttp3Helper.HttpCallback() {
 
-
-
             @Override
             public void onSuccess(String data) {
                 NewsList newsList = XmlUtils.toBean(NewsList.class, data.getBytes());

@@ -19,4 +19,7 @@ public interface Cantents {
     public String CLISSIFTY_CLASSIFY_URl = "https://www.oschina.net/action/api/softwaretag_list?searchTag=";
     public String NEWS_URL = "http://www.oschina.net/action/api/news_list?";
 
+
+    String NEWS_DETAIL_URL = "http://www.oschina.net/action/api/news_detail?id=";
+    String NEWS_HOT_URL = "http://www.oschina.net/action/api/news_list?";
 }
