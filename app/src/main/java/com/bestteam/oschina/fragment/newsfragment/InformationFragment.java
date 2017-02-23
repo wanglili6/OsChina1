@@ -1,7 +1,6 @@
 package com.bestteam.oschina.fragment.newsfragment;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -14,102 +13,101 @@ import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.newsfragmentadapter.InformationFragmentRVAdapter;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.NewsList;
+import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.XmlUtils;
-import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.callback.StringCallback;
 
-import okhttp3.Call;
-import okhttp3.OkHttpClient;
-import okhttp3.internal.http.OkHeaders;
+import java.util.HashMap;
+import java.util.Map;
+
 
 /**
- * Created by Why on 2017/2/19.
+ * Created by Why on 2017/2/21.
  */
 
-public class InformationFragment extends Fragment {
+public class InformationFragment extends Fragment{
 
-    private XRecyclerView rv;
+    private XRecyclerView xRecyclerView;
+
+    private String pageSize = "20";
+    private boolean isRefresh = true;
+    private boolean isLoaderMore = false;
+    private int pageIndex = 0;
     private InformationFragmentRVAdapter adapter;
-
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_information, container, false);
-        rv = (XRecyclerView) view.findViewById(R.id.rv);
-
-        initDatas();
+        View view = inflater.inflate(R.layout.fragment_information,container,false);
+        xRecyclerView = (XRecyclerView) view.findViewById(R.id.rv);
+        xRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         return view;
+
     }
 
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
 
-    private void initDatas() {
-        loadNetDatas();
+        adapter = new InformationFragmentRVAdapter(getContext());
+        xRecyclerView.setAdapter(adapter);
 
-        //设置xRecyclerView样式
-        rv.setRefreshProgressStyle(ProgressStyle.BallBeat);
-        rv.setLoadingMoreProgressStyle(ProgressStyle.BallPulse);
+        xRecyclerView.setPullRefreshEnabled(true);
+        xRecyclerView.setLoadingMoreEnabled(true);
 
-        rv.setLoadingListener(new XRecyclerView.LoadingListener() {
+        xRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
-                //下拉刷新
-                refreshData();
+                isRefresh = true;
+                pageIndex = 0;
+                requestData();
             }
 
             @Override
             public void onLoadMore() {
-                //上拉加载
-                loadMoreData();
+                isLoaderMore = true;
+                pageIndex = pageIndex + 1;
+                requestData();
             }
         });
+
+
+        requestData();
     }
 
-    //下拉刷新
-    private void refreshData() {
-        new Handler().postDelayed(new Runnable() {
+    private void requestData() {
+        String url = Cantents.NEWS_URL;
+        Map<String,String> parmas = new HashMap<>();
+        parmas.put("pageIndex", String.valueOf(pageIndex));
+        parmas.put("catalog","1");
+        parmas.put("pageSize", pageSize);
+
+        OKHttp3Helper.create().get(url, null, parmas, new OKHttp3Helper.HttpCallback() {
+
+
+
             @Override
-            public void run() {
-                loadNetDatas();
-                adapter.notifyDataSetChanged();
-                rv.refreshComplete();
+            public void onSuccess(String data) {
+                NewsList newsList = XmlUtils.toBean(NewsList.class, data.getBytes());
+
+                if (isRefresh) {
+                    adapter.clear();
+                    adapter.addAll(newsList.getList());
+                    xRecyclerView.refreshComplete();
+                    isRefresh = false;
+                }
+
+                if (isLoaderMore) {
+                    adapter.addAll(newsList.getList());
+                    xRecyclerView.loadMoreComplete();
+                    isLoaderMore = false;
+                }
             }
-        }, 1000);
-    }
 
-    //上拉加载
-    private void loadMoreData() {
-
-    }
-
-    //获取网络数据
-    private void loadNetDatas() {
-
-        String url = Cantents.NEWS;
-        OkHttpUtils.get()
-                .url(url)
-                .build()
-                .execute(new StringCallback() {
-                    @Override
-                    public void onError(Call call, Exception e, int id) {
-                        Toast.makeText(getContext(), "获取数据失败", Toast.LENGTH_SHORT).show();
-                    }
-                    @Override
-                    public void onResponse(String response, int id) {
-                        processDatas(response);
-                    }
-                });
-    }
-
-    //解析数据
-    private void processDatas(String response) {
-
-        NewsList newsList = XmlUtils.toBean(NewsList.class, response.getBytes());
-        //设置Adapter
-        adapter = new InformationFragmentRVAdapter(getContext(),newsList.getList());
-        rv.setLayoutManager(new LinearLayoutManager(getContext()));
-        rv.setAdapter(adapter);
+           @Override
+            public void onFail(Exception e) {
+                Toast.makeText(getContext(),"获取数据失败",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }
