@@ -5,6 +5,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="36dp"
         android:background="@color/actionbar_background">
@@ -20,14 +21,14 @@
             />
 
         <TextView
-            android:id="@+id/tv_title_newsdetail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_toRightOf="@id/iv_back_newsdetail"
             android:gravity="center_vertical"
-            android:text="标题"
+            android:text="资讯详情"
             android:textColor="#fff"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            />
 
         <ImageView
             android:layout_width="20dp"

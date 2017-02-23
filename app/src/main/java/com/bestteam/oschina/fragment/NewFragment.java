@@ -2,8 +2,6 @@ package com.bestteam.oschina.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-
-
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -12,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.adapter.newsfragmentadapter.NewsFragmentVPAdapter;
+import com.bestteam.oschina.adapter.NewsFragmentAdapter.NewsFragmentVPAdapter;
 import com.bestteam.oschina.fragment.newsfragment.BlogFragment;
 import com.bestteam.oschina.fragment.newsfragment.CommendFragment;
 import com.bestteam.oschina.fragment.newsfragment.HotSpotFragment;
