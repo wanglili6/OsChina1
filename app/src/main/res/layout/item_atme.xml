@@ -3,6 +3,7 @@
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <ImageView
+        android:id="@+id/icon_atme"
         android:layout_width="45dp"
         android:layout_height="45dp"
         android:src="@drawable/smiley_0"
@@ -25,6 +26,7 @@
                 android:textSize="12sp"
                 android:text="用户名"/>
             <TextView
+                android:id="@+id/time_atme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -42,6 +44,7 @@
             android:textColor="#939393"
             android:layout_marginTop="3dp"/>
         <TextView
+            android:id="@+id/content_atme"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="#000"
@@ -67,6 +70,7 @@
                 android:layout_marginTop="3dp"
                 android:src="@drawable/platform"/>
             <TextView
+                android:id="@+id/phone_atme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
