@@ -3,9 +3,12 @@ package com.bestteam.oschina.activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
@@ -20,7 +23,7 @@ import java.util.List;
  * Created by zhangyuanchao on 2017/2/19.
  */
 
-public class AttentionActivity extends Activity implements View.OnClickListener {
+public class AttentionActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageButton ibBack;
     private TextView tvMe;
@@ -54,6 +57,9 @@ public class AttentionActivity extends Activity implements View.OnClickListener 
     private void initEvent() {
         ibBack.setOnClickListener(this);
         tvMe.setOnClickListener(this);
+        LinearLayoutManager lm = new LinearLayoutManager(this);
+        lm.setOrientation(LinearLayoutManager.VERTICAL);
+        rvAttention.setLayoutManager(lm);
         rvAttention.setAdapter(new AttentionFriendAdapter(getApplicationContext(),friendDatas));
     }
 
