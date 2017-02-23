@@ -12,7 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.adapter.newsfragmentadapter.NewsFragmentVPAdapter;
+import com.bestteam.oschina.adapter.Newsfragmentadapter.NewsFragmentVPAdapter;
 import com.bestteam.oschina.fragment.newsfragment.BlogFragment;
 import com.bestteam.oschina.fragment.newsfragment.CommendFragment;
 import com.bestteam.oschina.fragment.newsfragment.HotSpotFragment;

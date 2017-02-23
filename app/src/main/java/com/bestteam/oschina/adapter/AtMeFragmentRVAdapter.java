@@ -5,9 +5,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.bean.Messages;
 
 import java.util.List;
 
@@ -17,11 +19,11 @@ import java.util.List;
 
 public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
     private Context context;
-    private List<String> mDatas;
+    private List<Messages> messagesList;
 
-    public AtMeFragmentRVAdapter(Context context,List<String> mDatas) {
+    public AtMeFragmentRVAdapter(Context context, List<Messages> messagesList) {
         this.context = context;
-        this.mDatas = mDatas;
+        this.messagesList = messagesList;
 
     }
     @Override
@@ -34,18 +36,34 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ViewHolder viewHolder = (ViewHolder) holder;
-        viewHolder.tv_username.setText(mDatas.get(position));
+       /* Messages messages = messagesList.get(position);
+        Picasso.with(context).load(messages.getPortrait()).into(viewHolder.ivIcon);*/
+        viewHolder.loadData(position);
+
     }
 
     @Override
     public int getItemCount() {
-        return mDatas != null ? mDatas.size() : 0;
+        return messagesList != null ? messagesList.size() : 0;
     }
     private class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView tv_username;
+        private TextView tvUsername;
+        private TextView tvTime;
+        private ImageView ivIcon;
+        private TextView tvContent;
+        private TextView tvPhone;
         public ViewHolder(View itemView) {
             super(itemView);
-            tv_username = (TextView) itemView.findViewById(R.id.username_atme);
+            tvUsername = (TextView) itemView.findViewById(R.id.username_atme);
+            tvContent = (TextView) itemView.findViewById(R.id.content_atme);
+            ivIcon = (ImageView) itemView.findViewById(R.id.icon_atme);
+            tvTime = (TextView) itemView.findViewById(R.id.time_atme);
+            tvPhone = (TextView) itemView.findViewById(R.id.phone_atme);
+        }
+        public void loadData(int position){
+            Messages messages = messagesList.get(position);
+           /* if()*/
         }
     }
+
 }
