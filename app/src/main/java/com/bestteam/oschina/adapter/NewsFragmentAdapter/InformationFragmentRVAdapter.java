@@ -2,6 +2,7 @@ package com.bestteam.oschina.adapter.newsfragmentadapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteStatement;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,19 +29,16 @@ import butterknife.ButterKnife;
 
 public class InformationFragmentRVAdapter extends RecyclerView.Adapter {
     private Context context;
-    private List<News> newsList;
+    private List<News> newsList = new ArrayList<>();
 
-
-    public InformationFragmentRVAdapter(Context context,List<News> newsList) {
+    public InformationFragmentRVAdapter(Context context) {
         this.context = context;
 
-        this.newsList = newsList;
     }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_information, parent, false);
-
         ViewHolder viewHolder = new ViewHolder(view);
         return viewHolder;
     }
@@ -60,8 +58,10 @@ public class InformationFragmentRVAdapter extends RecyclerView.Adapter {
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(context,NewsDetailActivity.class);
+                Intent intent = new Intent(context, NewsDetailActivity.class);
                 intent.putExtra("url", news.getUrl());
+                intent.putExtra("title",news.getTitle());
+                intent.putExtra("comment",news.getCommentCount());
                 context.startActivity(intent);
             }
         });
@@ -72,6 +72,21 @@ public class InformationFragmentRVAdapter extends RecyclerView.Adapter {
         return newsList != null ? newsList.size() : 0;
     }
 
+    /**
+     * 给adapter设置数据的方法
+     * @param newsList
+     */
+    public void addAll(List<News> newsList) {
+        this.newsList.addAll(newsList);
+        notifyDataSetChanged();
+    }
+
+    /**
+     * 清空已有的数据
+     */
+    public void clear() {
+        this.newsList.clear();
+    }
 
     static class ViewHolder extends RecyclerView.ViewHolder {
         @BindView(R.id.iv_icon_item_information)

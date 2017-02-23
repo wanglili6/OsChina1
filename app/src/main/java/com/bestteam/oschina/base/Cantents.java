@@ -17,7 +17,7 @@ public interface Cantents {
 
     public String CLISSIFTY_Item2_URl = "https://www.oschina.net/action/api/software_list?searchTag=";
     public String CLISSIFTY_CLASSIFY_URl = "https://www.oschina.net/action/api/softwaretag_list?searchTag=";
-    public String NEWS = "http://www.oschina.net/action/api/news_list?pageIndex=0&catalog=1&pageSize=20";
+    public String NEWS_URL = "http://www.oschina.net/action/api/news_list?";
 
     //消息中心
     public String COMMENT_MESSAGE_CENTER = "http://www.oschina.net/action/api/active_list?uid=993896&pageIndex=0&catalog=3&pageSize=20";

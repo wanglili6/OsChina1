@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.adapter.newsfragmentadapter.InformationFragmentRVAdapter;
 import com.bestteam.oschina.fragment.MessageCenterFragment.AtMeFragment;
 import com.bestteam.oschina.fragment.MessageCenterFragment.CommentFragment;
 import com.bestteam.oschina.fragment.MessageCenterFragment.PrivateMessageFragment;
@@ -27,6 +28,7 @@ public class MessageCenterActivity extends AppCompatActivity {
     private ViewPager viewPager;
     private ImageButton ib_back;
     private List<Fragment> fragments;
+    private InformationFragmentRVAdapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

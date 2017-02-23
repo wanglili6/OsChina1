@@ -37,7 +37,7 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        ViewHolder viewHolder = (ViewHolder) holder;
+        viewHolder = (ViewHolder) holder;
        /* Messages messages = messagesList.get(position);
         Picasso.with(context).load(messages.getPortrait()).into(viewHolder.ivIcon);*/
         viewHolder.loadData(position);
@@ -65,7 +65,24 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
         public void loadData(int position){
             Messages messages = messagesList.get(position);
             Picasso.with(context).load(messages.getPortrait()).into(viewHolder.ivIcon);
-           /* if()*/
+            viewHolder.tvUsername.setText(messages.getFriendName());
+            viewHolder.tvContent.setText(messages.getContent());
+
+           /* public final static int CLIENT_MOBILE = 2;
+            public final static int CLIENT_ANDROID = 3;
+            public final static int CLIENT_IPHONE = 4;
+            public final static int CLIENT_WINDOWS_PHONE = 5;*/
+
+            switch (messages.getAppClient()){
+                case 2:
+                    viewHolder.tvPhone.setText("moblile");
+                case 3:
+                    viewHolder.tvPhone.setText("andriod");
+                case 4:
+                    viewHolder.tvPhone.setText("iphone");
+                case 5:
+                    viewHolder.tvPhone.setText("windows_phone");
+            }
         }
     }
 
