@@ -40,8 +40,8 @@ public class AttentionActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void initData() {
+        //加载假数据
         friendDatas = new ArrayList<>();
-        //添加假数据
         for (int i= 0;i <= 20;i ++){
             Friend friend = new Friend();
             friend.setUserid(i);
