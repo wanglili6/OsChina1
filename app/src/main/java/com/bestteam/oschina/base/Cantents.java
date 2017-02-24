@@ -27,7 +27,6 @@ public interface Cantents {
     //消息中心
     public String COMMENT_MESSAGE_CENTER = "http://www.oschina.net/action/api/active_list?uid=993896&pageIndex=0&catalog=3&pageSize=20";
 
-
    String  KEY_HAS_READ = "new_id";
 
     String MY_COOKIE = "cookie";    //cookie值
