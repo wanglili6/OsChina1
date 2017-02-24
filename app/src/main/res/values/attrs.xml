@@ -10,5 +10,4 @@
         <attr name="allowWidthFull" format="boolean"/>
         <attr name="disableViewPager" format="boolean"/>
     </declare-styleable>
-    
 </resources>

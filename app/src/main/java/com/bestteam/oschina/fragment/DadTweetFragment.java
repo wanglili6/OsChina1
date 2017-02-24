@@ -8,8 +8,10 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.NewTweetAdapter;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.Tweet;
@@ -119,19 +121,19 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
             params.put("pageIndex", "0");
         } else if (flag == LOAD_MORE_NEW) {
             params.put("uid", "0");
-            params.put("pageIndex", String.valueOf(pageIndex));
+            params.put("pageIndex", String.valueOf(++pageIndex));
         } else if (flag == PULL_REFRESH_HOT) {
             params.put("uid", "-1");
             params.put("pageIndex", "0");
         } else if (flag == LOAD_MORE_HOT) {
             params.put("uid", "-1");
-            params.put("pageIndex", String.valueOf(pageIndex));
+            params.put("pageIndex", String.valueOf(++pageIndex));
         } else if (flag == PULL_REFRESH_ME) {
             params.put("uid", "3279999");
             params.put("pageIndex", "0");
         } else if (flag == LOAD_MORE_ME) {
             params.put("uid", "3279999");
-            params.put("pageIndex", String.valueOf(pageIndex));
+            params.put("pageIndex", String.valueOf(++pageIndex));
         }
         okHttp3Helper.get(Cantents.BASE_URL_TWEET, null, params, new OKHttp3Helper.HttpCallback() {
             @Override
@@ -143,7 +145,7 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
                     pageIndex = 0;
                     msg.what = 0;
                 } else if (flag == LOAD_MORE_NEW || flag == LOAD_MORE_HOT || flag == LOAD_MORE_ME) {
-                    pageIndex++;
+                    //pageIndex++;
                     msg.what = 1;
                 }
                 msg.obj = bean;
@@ -153,7 +155,9 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
 
             @Override
             public void onFail(Exception e) {
-
+                Toast.makeText(getActivity(),"获取网络失败",Toast.LENGTH_SHORT).show();
+                mRv.refreshComplete();
+                mRv.loadMoreComplete();
             }
         });
         /*OKHttp3Helper okHttp3Helper = OKHttp3Helper.create();

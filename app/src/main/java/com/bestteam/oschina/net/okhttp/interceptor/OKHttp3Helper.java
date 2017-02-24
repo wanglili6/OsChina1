@@ -13,6 +13,7 @@ import java.util.concurrent.TimeUnit;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;
+import okhttp3.Headers;
 import okhttp3.MultipartBody;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -182,6 +183,7 @@ public class OKHttp3Helper {
 //        Response response = call.execute();
         //执行异步请求的方式
         call.enqueue(new Callback() {
+
             @Override
             public void onFailure(Call call, final IOException e) {
                 e.printStackTrace();
@@ -200,6 +202,7 @@ public class OKHttp3Helper {
             public void onResponse(Call call, Response response) throws IOException {
                 //获取http相应体数据
                 ResponseBody body = response.body();
+
                 //将响应体的数据转为string
                 final String string = body.string();
                 handler.post(new Runnable() {
@@ -278,7 +281,9 @@ public class OKHttp3Helper {
             }
 
             @Override
-            public void onResponse(Call call, Response response) throws IOException {
+            public void onResponse(Call call, final Response response) throws IOException {
+                String cookie = response.header("Set-Cookie", "");
+
                 //获取http相应体数据
                 ResponseBody body = response.body();
                 //将响应体的数据转为string
@@ -297,10 +302,11 @@ public class OKHttp3Helper {
         });
     }
 
-    public interface HttpCallback {
-        void onSuccess(String data);
+    public  interface  HttpCallback {
 
+        void onSuccess(String  result);
         void onFail(Exception e);
     }
+
 
 }

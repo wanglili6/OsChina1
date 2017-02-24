@@ -4,15 +4,10 @@
     android:layout_height="match_parent"
     android:background="#fff"
     android:orientation="vertical">
-<android.support.v4.widget.SwipeRefreshLayout
-    android:id="@+id/srefresh"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
     <com.bestteam.oschina.view.RefreshRecyleView
         android:id="@+id/base_rv"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
     </com.bestteam.oschina.view.RefreshRecyleView>
-</android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>
