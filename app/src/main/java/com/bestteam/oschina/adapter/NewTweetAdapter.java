@@ -1,13 +1,17 @@
 package com.bestteam.oschina.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.text.Html;
 import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
+import android.text.method.LinkMovementMethod;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,9 +21,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.activity.ImgBigActivity;
+import com.bestteam.oschina.activity.TweetDetailActivity;
 import com.bestteam.oschina.bean.Tweet;
 import com.bestteam.oschina.bean.TweetsList;
 import com.bestteam.oschina.bean.User;
+import com.bestteam.oschina.util.HTMLUtil;
+import com.bestteam.oschina.util.SpannableUtil;
 import com.squareup.picasso.Picasso;
 
 import java.text.ParseException;
@@ -97,6 +105,9 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
         ImageView ivContent;
         private Date pub;
         private Tweet tweet;
+        private int isLike;
+        private String imgBig;
+
 
         MyViewHolder(View view) {
             super(view);
@@ -107,17 +118,28 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
             tweet = list.get(position);
             String portrait = tweet.getPortrait();
             String imgSmall = tweet.getImgSmall();
-            String imgBig = tweet.getImgBig();
+            imgBig = tweet.getImgBig();
             //加载头像
             if (!TextUtils.isEmpty(portrait)) {
                 Picasso.with(context).load(portrait).into(ivIcon);
             }
-            //加载用户名和发布文字内容
+            //加载用户名
             tvUsername.setText(tweet.getAuthor());
+
+            //加载文本内容
             tvContent.setText(tweet.getBody());
+            Spannable spannable = SpannableUtil.formatterHtmlTag(context, tvContent.getText());
+            spannable = SpannableUtil.formatterOnlyTag(context, spannable);
+            spannable = SpannableUtil.formatterOnlyLink(context, spannable);
+            //spannable = SpannableUtil.formatterEmoji(context.getResources(), spannable, 50);
+
+            //超链接行为
+            tvContent.setMovementMethod(LinkMovementMethod.getInstance());
+            tvContent.setText(spannable);
+
             //加载内容缩略图
             if (!TextUtils.isEmpty(imgSmall)) {
-                Picasso.with(context).load(portrait).into(ivIcon);
+                Picasso.with(context).load(imgSmall).into(ivContent);
                 ivContent.setVisibility(View.VISIBLE);
             } else {
                 ivContent.setVisibility(View.GONE);
@@ -154,59 +176,69 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
                 }
             }
             //是否点赞
-            int isLike = tweet.getIsLike();
+            isLike = tweet.getIsLike();
             if (isLike != 0) {
                 ivZan.setBackgroundResource(R.drawable.ic_likeed);
-            } else {
-                ivZan.setBackgroundResource(R.drawable.ic_unlike);
             }
 
             //加载点赞数据
             int likeCount = tweet.getLikeCount();
             List<User> likeUser = tweet.getLikeUser();
-            SpannableStringBuilder ssb = new SpannableStringBuilder();
-            ForegroundColorSpan blueSpan = new ForegroundColorSpan(Color.RED);
+            //SpannableStringBuilder ssb = new SpannableStringBuilder();
+            //ForegroundColorSpan blueSpan = new ForegroundColorSpan(Color.RED);
             if (likeCount > 0) {
                 StringBuffer sb = new StringBuffer();
 
-                if (likeUser.size() < 4) {
+                if (likeUser.size() < 10) {
                     int start = 0;
                     for (int i = 0; i < likeUser.size(); i++) {
                         String name = likeUser.get(i).getName();
-
-                        int end = start+name.length();
-                        ssb.append(likeUser.get(i).getName());
-                        ssb.setSpan(blueSpan,start,end,Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                        String s = Html.fromHtml("<B>" + name + "</b>").toString();
+                        sb.append(s);
                         if (i != likeUser.size() - 1) {
-                            ssb.append("、");
-                            start = end + 1;
+                            sb.append("、");
                         }
                     }
 
                 }else {
-                    for (int i = 0; i < 4; i++) {
-                        ssb.append(likeUser.get(i).getName(), blueSpan, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    for (int i = 0; i < 10; i++) {
+                        String name = likeUser.get(i).getName();
+                        String s = Html.fromHtml("<B>" + name + "</b>").toString();
+                        sb.append(s);
                         if (i != 3) {
-                            ssb.append("、");
+                            sb.append("、");
                         }
                     }
-                    ssb.append("等 ");
-                    ssb.append(likeCount+"人 ", blueSpan, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    sb.append("等 ");
+                    String ss = Html.fromHtml("<B>" + likeCount + "</b>").toString();
+                    sb.append(ss+"人 ");
                 }
-                ssb.append("赞了该动弹");
-                String textLike = ssb.toString();
+                sb.append("赞了该动弹");
+                String textLike = sb.toString();
                 tvZan.setText(textLike);
                 tvZan.setVisibility(View.VISIBLE);
             }
+
+            final int id = tweet.getId();
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context,TweetDetailActivity.class);
+                    intent.putExtra("id",id);
+                    context.startActivity(intent);
+                }
+            });
         }
 
-        @OnClick({R.id.iv_content, R.id.iv_zan})
+        @OnClick({R.id.iv_content, R.id.iv_zan,R.id.iv_icon})
         public void onClick(View view) {
             switch (view.getId()) {
                 case R.id.iv_content:
+                    Intent intent = new Intent(context,ImgBigActivity.class);
+                    intent.putExtra("imgBig",imgBig);
+                    context.startActivity(intent);
                     break;
                 case R.id.iv_zan:
-                    int isLike = tweet.getIsLike();
                     if(isLike == 0){
                         isLike = 1;
                         ivZan.setBackgroundResource(R.drawable.ic_likeed);
@@ -214,6 +246,9 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
                         isLike = 0;
                         ivZan.setBackgroundResource(R.drawable.ic_unlike);
                     }
+                    break;
+                case R.id.iv_icon:
+
                     break;
             }
         }
