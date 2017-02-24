@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.bestteam.oschina.R;
 
-import com.bestteam.oschina.adapter.NewsFragmentAdapter.InformationFragmentRVAdapter;
+import com.bestteam.oschina.adapter.InformationFragmentAdapter;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.NewsList;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
@@ -34,7 +34,7 @@ public class InformationFragment extends Fragment{
     private boolean isRefresh = true;
     private boolean isLoaderMore = false;
     private int pageIndex = 0;
-    private InformationFragmentRVAdapter adapter;
+    private InformationFragmentAdapter adapter;
 
     @Nullable
     @Override
@@ -54,7 +54,7 @@ public class InformationFragment extends Fragment{
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        adapter = new InformationFragmentRVAdapter(getContext());
+        adapter = new InformationFragmentAdapter(getContext());
         xRecyclerView.setAdapter(adapter);
 
         xRecyclerView.setPullRefreshEnabled(true);
