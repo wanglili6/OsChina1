@@ -10,16 +10,16 @@
 
         <ImageView
             android:id="@+id/iv_icon_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
             android:layout_margin="5dp"
-            android:background="@drawable/ic_launcher" />
+            android:background="@mipmap/ic_launcher" />
 
         <TextView
             android:id="@+id/tv_username_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="10dp"
             android:layout_toRightOf="@+id/iv_icon_detail"
             android:text="username"
             android:textColor="#17e4f2"
@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_username_detail"
             android:layout_toRightOf="@+id/iv_icon_detail"
+            android:layout_marginTop="15dp"
             android:text="时间"
             android:textColor="#b2b2ab" />
     </RelativeLayout>
@@ -89,5 +90,6 @@
         android:id="@+id/tv_zan_detail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/comment_reply_container_bg"
         android:layout_margin="10dp"/>
 </LinearLayout>

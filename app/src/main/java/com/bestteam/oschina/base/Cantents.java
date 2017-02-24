@@ -32,8 +32,8 @@ public interface Cantents {
 
     String KEY_HAS_READ = "new_id";
     String MY_COOKIE = "cookie";    //cookie值
-    String MY_UID = "uid";  //uid值
 
+    String MY_UID = "uid";  //uid值
 
 
 }
