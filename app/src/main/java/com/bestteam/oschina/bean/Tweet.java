@@ -261,7 +261,7 @@ public class Tweet extends Entity implements Parcelable {
     }
 
     /**
-     * @param str
+     * @param
      * @return
      */
     private SpannableStringBuilder addClickablePart(final Context context,
