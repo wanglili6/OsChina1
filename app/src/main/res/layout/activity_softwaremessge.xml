@@ -1,34 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/actionbar_background"
-        android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:background="@color/actionbar_background">
 
         <ImageButton
             android:id="@+id/ib_back"
             android:layout_width="20dp"
             android:layout_height="20dp"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:background="@drawable/btn_back_selector" />
 
         <TextView
             android:id="@+id/tv_softwore"
             android:layout_width="wrap_content"
+
             android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/ib_back"
             android:text="软件详情"
             android:textColor="#fff"
             android:textSize="20sp" />
-    </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/ic_menu_comment" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="14dp"
+            android:text="12"
+            android:textColor="#fff"
+            android:textSize="11sp" />
+    </RelativeLayout>
+
     <WebView
+
         android:id="@+id/software_msg_webView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_weight="1">
 
     </WebView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#bcbaba" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#fffefe"
+            android:elevation="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:translationZ="10dp">
+
+            <TextView
+                android:id="@+id/software_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:drawableLeft="@drawable/ic_comment_40"
+                android:drawablePadding="8dp"
+                android:paddingLeft="20dp"
+                android:text="评论(222)"
+                android:textColor="#545353" />
+
+            <TextView
+                android:id="@+id/software_fav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:drawableLeft="@drawable/ic_fav_normal"
+                android:drawablePadding="8dp"
+                android:paddingLeft="20dp"
+                android:text="收藏"
+                android:textColor="#545353" />
+
+
+            <TextView
+                android:id="@+id/software_share"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="true"
+                android:drawableLeft="@drawable/ic_share_black_normal"
+                android:drawablePadding="8dp"
+                android:paddingLeft="20dp"
+                android:text="评论(222)"
+                android:textColor="#545353" />
+        </LinearLayout>
+    </LinearLayout>
 </LinearLayout>

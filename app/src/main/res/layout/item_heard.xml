@@ -6,7 +6,7 @@
 <LinearLayout
     android:background="#89fc7c"
     android:orientation="vertical"
-    android:id="@+id/heart"
+    android:id="@+id/heard"
     android:layout_width="match_parent"
     android:layout_height="200dp">
 
