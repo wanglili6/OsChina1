@@ -1,4 +1,4 @@
-package com.bestteam.oschina.adapter.newsfragmentadapter;
+package com.bestteam.oschina.adapter.NewsFragmentAdapter;
 
 import android.content.Context;
 import android.content.Intent;

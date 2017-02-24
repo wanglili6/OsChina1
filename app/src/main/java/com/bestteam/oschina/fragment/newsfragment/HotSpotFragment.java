@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.adapter.newsfragmentadapter.HotSpotFragmentAdapter;
+import com.bestteam.oschina.adapter.NewsFragmentAdapter.HotSpotFragmentAdapter;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.NewsList;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
