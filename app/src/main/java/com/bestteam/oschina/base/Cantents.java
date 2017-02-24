@@ -26,4 +26,10 @@ public interface Cantents {
     String NEWS_HOT_URL = "http://www.oschina.net/action/api/news_list?";
 
    String  KEY_HAS_READ = "new_id";
+
+    String MY_COOKIE = "cookie";    //cookie值
+
+    String MY_UID = "uid";  //uid值
+
+
 }
