@@ -10,8 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.bestteam.oschina.R;
-
-import com.bestteam.oschina.adapter.NewsFragmentAdapter.InformationFragmentRVAdapter;
+import com.bestteam.oschina.adapter.InformationFragmentAdapter;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.NewsList;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
@@ -34,28 +33,31 @@ public class InformationFragment extends Fragment{
     private boolean isRefresh = true;
     private boolean isLoaderMore = false;
     private int pageIndex = 0;
-    private InformationFragmentRVAdapter adapter;
+    private InformationFragmentAdapter adapter;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_information,container,false);
-        xRecyclerView = (XRecyclerView) view.findViewById(R.id.rv);
+        xRecyclerView = (XRecyclerView) view.findViewById(R.id.information_rv);
         xRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
         return view;
 
     }
+
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        adapter = new InformationFragmentRVAdapter(getContext());
+        adapter = new InformationFragmentAdapter(getContext());
         xRecyclerView.setAdapter(adapter);
 
         xRecyclerView.setPullRefreshEnabled(true);
         xRecyclerView.setLoadingMoreEnabled(true);
-
         xRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
@@ -72,8 +74,8 @@ public class InformationFragment extends Fragment{
             }
         });
 
-
         requestData();
+
     }
 
     private void requestData() {

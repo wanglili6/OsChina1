@@ -11,7 +11,7 @@
         android:background="@color/actionbar_background">
 
         <ImageView
-            android:id="@+id/iv_back_newsdetail"
+            android:id="@+id/iv_back_blogdetail"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_centerVertical="true"
@@ -23,27 +23,28 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toRightOf="@id/iv_back_newsdetail"
+            android:layout_toRightOf="@id/iv_back_blogdetail"
             android:gravity="center_vertical"
-            android:text="资讯详情"
+            android:text="博客详情"
             android:textColor="#fff"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
+
         <TextView
-            android:id="@+id/tv_comment_newsdetail"
+            android:id="@+id/tv_comment_blogdetail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:textColor="#fff"
-            android:textSize="12sp"
+            android:background="@drawable/ic_menu_comment"
             android:gravity="center_horizontal"
             android:text="1"
-            android:background="@drawable/ic_menu_comment"/>
+            android:textColor="#fff"
+            android:textSize="12sp" />
     </RelativeLayout>
+
     <WebView
-        android:id="@+id/webView_newsdetail"
+        android:id="@+id/webView_blogdetail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></WebView>
 </LinearLayout>
