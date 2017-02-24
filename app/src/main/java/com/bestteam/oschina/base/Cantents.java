@@ -24,4 +24,6 @@ public interface Cantents {
 
     String NEWS_DETAIL_URL = "http://www.oschina.net/action/api/news_detail?id=";
     String NEWS_HOT_URL = "http://www.oschina.net/action/api/news_list?";
+
+   String  KEY_HAS_READ = "new_id";
 }

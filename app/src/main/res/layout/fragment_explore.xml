@@ -6,20 +6,15 @@
     android:orientation="vertical">
 
     <TextView
-        android:elevation="2dp"
+
         android:id="@+id/btn_friend"
         style="@style/explore_btn_style"
-        android:layout_marginTop="25dp"
-        android:clickable="true"
         android:drawableLeft="@drawable/ic_my_team"
         android:text="好友圈" />
 
     <TextView
-        android:elevation="2dp"
         android:id="@+id/btn_software"
         style="@style/explore_btn_style"
-        android:layout_marginTop="25dp"
-        android:clickable="true"
         android:drawableLeft="@drawable/ic_discover_softwares"
         android:text="开源软件" />
 
@@ -34,7 +29,6 @@
         <TextView
             android:id="@+id/btn_sweep"
             style="@style/explore_btn_style"
-            android:clickable="true"
             android:drawableLeft="@drawable/ic_discover_scan"
             android:text="扫一扫" />
 
@@ -47,27 +41,20 @@
         <TextView
             android:id="@+id/btn_shake"
             style="@style/explore_btn_style"
-            android:clickable="true"
             android:drawableLeft="@drawable/ic_discover_shake"
             android:text="摇一摇" />
     </LinearLayout>
 
 
     <TextView
-        android:elevation="2dp"
-        android:id="@+id/btn_coder"
         style="@style/explore_btn_style"
-        android:layout_marginTop="25dp"
-        android:clickable="true"
+        android:id="@+id/btn_coder"
         android:drawableLeft="@drawable/ic_discover_nearby"
         android:text="附近的程序员" />
 
     <TextView
-        android:elevation="2dp"
         android:id="@+id/btn_activity"
         style="@style/explore_btn_style"
-        android:layout_marginTop="25dp"
-        android:clickable="true"
         android:drawableLeft="@drawable/ic_my_event"
         android:text="线下活动" />
 </LinearLayout>

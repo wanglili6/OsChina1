@@ -2,7 +2,7 @@ package com.bestteam.oschina.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.os.PersistableBundle;
+import android.widget.ImageButton;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.util.MyToast;
@@ -10,6 +10,7 @@ import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import uk.co.senab.photoview.PhotoView;
 
 /**
@@ -18,6 +19,8 @@ import uk.co.senab.photoview.PhotoView;
 public class ShowActivity extends Activity {
     @BindView(R.id.photoView)
     PhotoView photoView;
+    @BindView(R.id.ib_back)
+    ImageButton ibBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,8 +29,12 @@ public class ShowActivity extends Activity {
         ButterKnife.bind(this);
 
         String url = getIntent().getStringExtra("url");
-        MyToast.show(this,url);
         //显示图片
         Picasso.with(this).load(url).into(photoView);
+    }
+
+    @OnClick(R.id.ib_back)
+    public void onClick() {
+        finish();
     }
 }
