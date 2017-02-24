@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.bean.Messages;
+import com.bestteam.oschina.bean.Comment;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -20,15 +20,15 @@ import java.util.List;
 
 public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
     private Context context;
-    private List<Messages> messagesList;
+    private List<Comment> commentList;
     private ViewHolder viewHolder;
 
     public AtMeFragmentRVAdapter(Context context){
         this.context = context;
     }
-    public AtMeFragmentRVAdapter(Context context, List<Messages> messagesList) {
+    public AtMeFragmentRVAdapter(Context context, List<Comment> commentList) {
         this.context = context;
-        this.messagesList = messagesList;
+        this.commentList = commentList;
 
     }
     @Override
@@ -49,8 +49,9 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return messagesList != null ? messagesList.size() : 0;
+        return commentList != null ? commentList.size() : 0;
     }
+
     private class ViewHolder extends RecyclerView.ViewHolder{
         private TextView tvUsername;
         private TextView tvTime;
@@ -66,7 +67,7 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
             tvPhone = (TextView) itemView.findViewById(R.id.phone_atme);
         }
         public void loadData(int position){
-            Messages messages = messagesList.get(position);
+            Comment comment = commentList.get(position);
 
           /*  if(未登录){
 
@@ -78,16 +79,16 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
             }
             */
 
-            Picasso.with(context).load(messages.getPortrait()).into(viewHolder.ivIcon);
-            viewHolder.tvUsername.setText(messages.getFriendName());
-            viewHolder.tvContent.setText(messages.getContent());
+            Picasso.with(context).load(comment.getPortrait()).into(viewHolder.ivIcon);
+            viewHolder.tvUsername.setText(comment.getAuthor());
+            viewHolder.tvContent.setText(comment.getContent());
 
            /* public final static int CLIENT_MOBILE = 2;
             public final static int CLIENT_ANDROID = 3;
             public final static int CLIENT_IPHONE = 4;
             public final static int CLIENT_WINDOWS_PHONE = 5;*/
 
-            switch (messages.getAppClient()){
+            switch (comment.getAppClient()){
                 case 2:
                     viewHolder.tvPhone.setText("moblile");
                 case 3:
