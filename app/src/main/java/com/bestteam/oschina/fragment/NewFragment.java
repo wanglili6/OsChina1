@@ -10,9 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bestteam.oschina.R;
-
-
-import com.bestteam.oschina.adapter.NewsFragmentAdapter.NewsFragmentVPAdapter;
+import com.bestteam.oschina.adapter.NewsFragmentVPAdapter;
 import com.bestteam.oschina.fragment.newsfragment.BlogFragment;
 import com.bestteam.oschina.fragment.newsfragment.CommendFragment;
 import com.bestteam.oschina.fragment.newsfragment.HotSpotFragment;
@@ -48,9 +46,8 @@ public class NewFragment extends android.support.v4.app.Fragment {
     }
 
     private void initViewParge() {
-
+        vp.setOffscreenPageLimit(5);
         NewsFragmentVPAdapter adapter = new NewsFragmentVPAdapter(getChildFragmentManager(),fragments,title);
-
         vp.setAdapter(adapter);
 
         tabLayout.setupWithViewPager(vp);

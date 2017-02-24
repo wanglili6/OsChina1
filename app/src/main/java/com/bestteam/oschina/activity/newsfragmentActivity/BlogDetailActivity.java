@@ -8,7 +8,7 @@ import android.widget.TextView;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.base.Cantents;
-import com.bestteam.oschina.bean.NewsDetail;
+import com.bestteam.oschina.bean.BlogDetail;
 import com.bestteam.oschina.util.XmlUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
@@ -19,22 +19,21 @@ import butterknife.OnClick;
 import okhttp3.Call;
 
 /**
- * Created by Why on 2017/2/20.
+ * Created by Why on 2017/2/24.
  */
 
-public class NewsDetailActivity extends Activity {
-    @BindView(R.id.iv_back_newsdetail)
+public class BlogDetailActivity extends Activity {
+    @BindView(R.id.iv_back_blogdetail)
     ImageView ivBack;
-    @BindView(R.id.tv_comment_newsdetail)
+    @BindView(R.id.tv_comment_blogdetail)
     TextView tvComment;
-    @BindView(R.id.webView_newsdetail)
+    @BindView(R.id.webView_blogdetail)
     WebView webView;
 
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news_detail);
+        setContentView(R.layout.activity_blog);
         ButterKnife.bind(this);
 
         initWebView();
@@ -45,12 +44,11 @@ public class NewsDetailActivity extends Activity {
 
         webView.getSettings().setJavaScriptEnabled(true);
 
-
     }
 
     private void requestData() {
         String id = getIntent().getStringExtra("id");
-        String url = Cantents.NEWS_DETAIL_URL + id;
+        String url = Cantents.BLOG_DETAIL_URL + id;
         OkHttpUtils.get().url(url).build().execute(new StringCallback() {
             @Override
             public void onError(Call call, Exception e, int id) {
@@ -59,16 +57,14 @@ public class NewsDetailActivity extends Activity {
 
             @Override
             public void onResponse(String response, int id) {
-                NewsDetail newsDetail = XmlUtils.toBean(NewsDetail.class, response.getBytes());
-                webView.loadUrl(newsDetail.getNews().getUrl());
-
+                BlogDetail blogDetail = XmlUtils.toBean(BlogDetail.class, response.getBytes());
+                webView.loadUrl(blogDetail.getBlog().getUrl());
             }
         });
-
     }
 
 
-    @OnClick(R.id.iv_back_newsdetail)
+    @OnClick(R.id.iv_back_blogdetail)
     public void onClick() {
         finish();
     }
