@@ -10,8 +10,8 @@ public interface Cantents {
 
     //动弹用
     public String BASE_URL_TWEET = "http://www.oschina.net/action/api/tweet_list?";
-
     public String BASE_TWEET_DETAIL = "http://www.oschina.net/action/api/tweet_detail?id=";
+    public String BASE_TWEET_COMMENT ="http://www.oschina.net/action/api/comment_list?";
 
 
     public String CLISSIFTY_Item2_URl = "https://www.oschina.net/action/api/software_list?searchTag=";
