@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.LoginUserBean;
 import com.bestteam.oschina.util.MyToast;
 import com.bestteam.oschina.util.SPUtils;
@@ -87,14 +88,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         initListener();
     }
 
-
-    public int getUid() {
-
-        return uid;
-
-    }
-
-
     private void dataLogin() {
 
         username = etLoginUsername.getText().toString().trim();
@@ -122,12 +115,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         public String parseNetworkResponse(okhttp3.Response response, int id) throws IOException {
                             String cookie = response.header("Set-Cookie", "");
                             Log.d("KYZG", cookie);
+                            //把cookie值存入sp中,用时get
+                            SPUtils.saveString(getApplicationContext(), Cantents.MY_COOKIE,cookie);
                             //cookie
                             return response.body().string();
 
-                            //   SPUtils.saveString(this,);
                         }
-
 
                         @Override
                         public void onError(Call call, Exception e, int id) {
@@ -139,9 +132,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                         @Override
                         public void onResponse(String response, int id) {
-
                             LoginUserBean user = XmlUtils.toBean(LoginUserBean.class, response.getBytes());
-                            uid = user.getId();
+                            SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getId()+"");
                             MyToast.show(LoginActivity.this, "登录成功");
                             //startActivity(new Intent(LoginActivity.this,MainActivity.class));
 
