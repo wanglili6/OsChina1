@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.bestteam.oschina">
-
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:allowBackup="true"
@@ -18,6 +17,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.MessageActivity" />
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.UpdataActivity" />
@@ -36,6 +36,7 @@
         <activity android:name=".activity.MessageCenterActivity" />
         <activity android:name=".activity.SoftwareMessgeActivity" />
         <activity android:name=".activity.TweetDetailActivity" />
+        <activity android:name=".activity.newsfragmentActivity.BlogDetailActivity"/>
         <activity
             android:name=".activity.ImgBigActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />

@@ -2,26 +2,16 @@ package com.bestteam.oschina.activity.newsfragmentActivity;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.design.widget.TabLayout;
-import android.util.Log;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.base.Cantents;
-import com.bestteam.oschina.bean.News;
 import com.bestteam.oschina.bean.NewsDetail;
-import com.bestteam.oschina.bean.Post;
-import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.XmlUtils;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;

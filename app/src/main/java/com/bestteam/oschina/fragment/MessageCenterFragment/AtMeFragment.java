@@ -15,6 +15,7 @@ import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.CommentList;
 import com.bestteam.oschina.bean.MessageList;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
+import com.bestteam.oschina.util.SPUtils;
 import com.bestteam.oschina.util.XmlUtils;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
@@ -28,7 +29,7 @@ import java.util.Map;
 public class AtMeFragment extends Fragment {
     private AtMeFragmentRVAdapter mAdapter;
     private int pageIndex = 0;
-    private String cataLog = "2";
+    private String cataLog = "3";
     private String pageSize = "20";
     private XRecyclerView xRecyclerView;
     private boolean isRefresh = true;
@@ -103,21 +104,22 @@ public class AtMeFragment extends Fragment {
 
     private void initData() {
         String url = Cantents.COMMENT_MESSAGE_CENTER;
+
+        String uid = SPUtils.getString(getContext(),Cantents.MY_UID,null);
+        String cookie = SPUtils.getString(getContext(),Cantents.MY_COOKIE,null);
+
+
+
+
         Map<String, String> parmas = new HashMap<>();
-
-        parmas.put("uid", "3280644");
-
+        parmas.put("uid", uid);
         parmas.put("pageIndex", String.valueOf(pageIndex));
         parmas.put("pageSize", pageSize);
         parmas.put("cataLog", cataLog);
 
         Map<String, String> headers = new HashMap<>();
-        String ysrCookie = "oscid=mgpStihVMPm1xnSONyn7kHbeMiZAkvS9fg" +
-                "%2F6UY0Z0fnwGExheP1XydgqsJvbmPb0JqFALMWqQDgiewdj13%2BMw3CnoH5wf4SR8vujD6FSX1uKhq" +
-                "%2Fxs9SVzq82JnSk6cwpvUMCM%2FfiQRScW4m%2B9R8WLw%3D%3D; Domain=.oschina.net; " +
-                "Expires=Fri, 23-Feb-2018 06:47:07 GMT; Path=/";
-        // String cookie = SPUtils.getString(context, MyConfig.TLF_COOLKIE, ysrCookie);
-        headers.put("ysrCookie", ysrCookie);
+
+        headers.put("cookie", cookie);
 
         OKHttp3Helper.create().get(url, headers, parmas, new OKHttp3Helper.HttpCallback() {
             @Override

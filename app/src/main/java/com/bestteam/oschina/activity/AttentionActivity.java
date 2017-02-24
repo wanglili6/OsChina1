@@ -15,6 +15,7 @@ import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.AttentionFriendAdapter;
 import com.bestteam.oschina.bean.Friend;
 import com.bestteam.oschina.fragment.MeFragment;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,7 +28,7 @@ public class AttentionActivity extends AppCompatActivity implements View.OnClick
 
     private ImageButton ibBack;
     private TextView tvMe;
-    private RecyclerView rvAttention;
+    private XRecyclerView rvAttention;
     private List<Friend> friendDatas;
 
     @Override
@@ -40,6 +41,7 @@ public class AttentionActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void initData() {
+        //加载假数据
         //加载假数据
         friendDatas = new ArrayList<>();
         for (int i= 0;i <= 20;i ++){
@@ -67,7 +69,7 @@ public class AttentionActivity extends AppCompatActivity implements View.OnClick
     private void initView() {
         ibBack = (ImageButton) findViewById(R.id.ib_back);
         tvMe = (TextView) findViewById(R.id.tv_me);
-        rvAttention = (RecyclerView) findViewById(R.id.rv_attention);
+        rvAttention = (XRecyclerView) findViewById(R.id.rv_attention);
     }
 
     @Override
