@@ -12,6 +12,7 @@ import com.bestteam.oschina.R;
 import com.bestteam.oschina.bean.Comment;
 import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,7 +21,7 @@ import java.util.List;
 
 public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
     private Context context;
-    private List<Comment> commentList;
+    private List<Comment> commentList = new ArrayList<>();
     private ViewHolder viewHolder;
 
     public AtMeFragmentRVAdapter(Context context){
@@ -41,8 +42,7 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         viewHolder = (ViewHolder) holder;
-       /* Messages messages = messagesList.get(position);
-        Picasso.with(context).load(messages.getPortrait()).into(viewHolder.ivIcon);*/
+
         viewHolder.loadData(position);
 
     }
@@ -50,6 +50,10 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
     @Override
     public int getItemCount() {
         return commentList != null ? commentList.size() : 0;
+    }
+    public void addAll(List<Comment> commentList) {
+        this.commentList.addAll(commentList);
+        notifyDataSetChanged();
     }
 
     private class ViewHolder extends RecyclerView.ViewHolder{
@@ -68,17 +72,6 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
         }
         public void loadData(int position){
             Comment comment = commentList.get(position);
-
-          /*  if(未登录){
-
-
-                跳转登陆
-
-            }else {
-
-            }
-            */
-
             Picasso.with(context).load(comment.getPortrait()).into(viewHolder.ivIcon);
             viewHolder.tvUsername.setText(comment.getAuthor());
             viewHolder.tvContent.setText(comment.getContent());
@@ -99,6 +92,9 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
                     viewHolder.tvPhone.setText("windows_phone");
             }
         }
+    }
+    public void clear() {
+        this.commentList.clear();
     }
 
 }

@@ -1,5 +1,6 @@
 package com.bestteam.oschina.fragment.MessageCenterFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,10 +11,10 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.activity.LoginActivity;
 import com.bestteam.oschina.adapter.AtMeFragmentRVAdapter;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.CommentList;
-import com.bestteam.oschina.bean.MessageList;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.SPUtils;
 import com.bestteam.oschina.util.XmlUtils;
@@ -29,12 +30,12 @@ import java.util.Map;
 public class AtMeFragment extends Fragment {
     private AtMeFragmentRVAdapter mAdapter;
     private int pageIndex = 0;
-    private String cataLog = "3";
+    private String cataLog = "2";
     private String pageSize = "20";
     private XRecyclerView xRecyclerView;
     private boolean isRefresh = true;
     private boolean isLoad = false;
-    private CommentList commentList;
+
 
     @Nullable
     @Override
@@ -69,91 +70,61 @@ public class AtMeFragment extends Fragment {
         });
         initData();
     }
-//     private void initData(){
-//        String  url = Cantents.COMMENT_MESSAGE_CENTER;
-//        OkHttpUtils
-//                .get()
-//                .url(url)
-//                .build()
-//                .execute(new StringCallback() {
-//
-//                    @Override
-//                    public void onError(Call call, Exception e, int id) {
-//                        Toast.makeText(getContext(),"网络请求错误",Toast.LENGTH_SHORT).show();
-//                    }
-//
-//                    @Override
-//                    public void onResponse(String response, int id) {
-//                        processData(response);
-//                    }
-//
-//                });
-//
-//
-//
-//
-//       /* mDatas = new ArrayList<>();
-//        for(int i = 0; i<50;i++){
-//            mDatas.add("用户名"+i);
-//        }
-//        mAdapter = new AtMeFragmentRVAdapter(getContext(),mDatas);
-//        rv.setAdapter(mAdapter);
-//
-//        mAdapter.notifyDataSetChanged();*/
-//    }
 
     private void initData() {
         String url = Cantents.COMMENT_MESSAGE_CENTER;
 
-        String uid = SPUtils.getString(getContext(),Cantents.MY_UID,null);
-        String cookie = SPUtils.getString(getContext(),Cantents.MY_COOKIE,null);
+        String uid = SPUtils.getString(getContext(),Cantents.MY_UID,"");
+        String cookie = SPUtils.getString(getContext(),Cantents.MY_COOKIE,"");
+        if(uid.isEmpty()){
+            Intent intent = new Intent(getActivity(), LoginActivity.class);
+            startActivity(intent);
+        }else{
+            Map<String, String> parmas = new HashMap<>();
+            parmas.put("uid", uid);
+            parmas.put("pageIndex", String.valueOf(pageIndex));
+            parmas.put("pageSize", pageSize);
+            parmas.put("cataLog", cataLog);
+
+            Map<String, String> headers = new HashMap<>();
+
+            headers.put("cookie", cookie);
+
+            OKHttp3Helper.create().get(url, headers, parmas, new OKHttp3Helper.HttpCallback() {
+                @Override
+                public void onSuccess(String data) {
+
+                    CommentList commentList = XmlUtils.toBean(CommentList.class, data.getBytes());
+                    if (isRefresh) {
+                        mAdapter.clear();
+                        mAdapter.addAll(commentList.getList());
+                        xRecyclerView.refreshComplete();
+                        isRefresh = false;
+                    }
+                    if (isLoad) {
+                        mAdapter.addAll(commentList.getList());
+                        xRecyclerView.loadMoreComplete();
+                        isLoad = false;
+                    }
 
 
-
-
-        Map<String, String> parmas = new HashMap<>();
-        parmas.put("uid", uid);
-        parmas.put("pageIndex", String.valueOf(pageIndex));
-        parmas.put("pageSize", pageSize);
-        parmas.put("cataLog", cataLog);
-
-        Map<String, String> headers = new HashMap<>();
-
-        headers.put("cookie", cookie);
-
-        OKHttp3Helper.create().get(url, headers, parmas, new OKHttp3Helper.HttpCallback() {
-            @Override
-            public void onSuccess(String data) {
-
-                commentList = XmlUtils.toBean(CommentList.class, data.getBytes());
-                if (isRefresh) {
-
-                    mAdapter = new AtMeFragmentRVAdapter(getContext(), commentList.getList());
-                    xRecyclerView.refreshComplete();
-                    isRefresh = false;
                 }
-                if (isLoad) {
-                    mAdapter = new AtMeFragmentRVAdapter(getContext(), commentList.getList());
-                    xRecyclerView.loadMoreComplete();
-                    isLoad = false;
+
+                @Override
+                public void onFail(Exception e) {
+                    Toast.makeText(getContext(), "获取数据失败", Toast.LENGTH_SHORT).show();
                 }
+            });
+        }
 
 
-                MessageList messageList = XmlUtils.toBean(MessageList.class, data.getBytes());
-                mAdapter = new AtMeFragmentRVAdapter(getContext(), commentList.getList());
 
-                xRecyclerView.setAdapter(mAdapter);
-                mAdapter.notifyDataSetChanged();
-            }
 
-            @Override
-            public void onFail(Exception e) {
-                Toast.makeText(getContext(), "获取数据失败", Toast.LENGTH_SHORT).show();
-            }
-        });
+
     }
 
 }
+
           /*  @Override
             public void onFail(Exception e) {
                 Toast.makeText(getContext(), "获取数据失败", Toast.LENGTH_SHORT).show();
