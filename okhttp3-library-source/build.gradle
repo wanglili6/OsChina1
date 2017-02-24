@@ -6,7 +6,6 @@ android {
 
     defaultConfig {
         minSdkVersion 15
-
         compileSdkVersion 25
         buildToolsVersion "25.0.2"
 

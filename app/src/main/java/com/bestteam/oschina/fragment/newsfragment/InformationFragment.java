@@ -38,12 +38,16 @@ public class InformationFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_information,container,false);
-        xRecyclerView = (XRecyclerView) view.findViewById(R.id.rv);
+        xRecyclerView = (XRecyclerView) view.findViewById(R.id.information_rv);
         xRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+
         return view;
 
     }
+
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -54,7 +58,6 @@ public class InformationFragment extends Fragment{
 
         xRecyclerView.setPullRefreshEnabled(true);
         xRecyclerView.setLoadingMoreEnabled(true);
-
         xRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
@@ -71,8 +74,8 @@ public class InformationFragment extends Fragment{
             }
         });
 
-
         requestData();
+
     }
 
     private void requestData() {

@@ -17,12 +17,17 @@ public interface Cantents {
 
     public String CLISSIFTY_Item2_URl = "https://www.oschina.net/action/api/software_list?searchTag=";
     public String CLISSIFTY_CLASSIFY_URl = "https://www.oschina.net/action/api/softwaretag_list?searchTag=";
-    public String NEWS_URL = "http://www.oschina.net/action/api/news_list?";
+
+    //综合
+    String NEWS_URL = "http://www.oschina.net/action/api/news_list?";
+    String NEWS_DETAIL_URL = "http://www.oschina.net/action/api/news_detail?id=";
+    String NEWS_HOT_URL = "http://www.oschina.net/action/api/news_list?";
+    String BOLG_URL = "http://www.oschina.net/action/api/blog_list?";
+    String BLOG_DETAIL_URL = "http://www.oschina.net/action/api/blog_detail?id=";
 
     //消息中心
     public String COMMENT_MESSAGE_CENTER = "http://www.oschina.net/action/api/active_list?uid=993896&pageIndex=0&catalog=3&pageSize=20";
 
 
-    String NEWS_DETAIL_URL = "http://www.oschina.net/action/api/news_detail?id=";
-    String NEWS_HOT_URL = "http://www.oschina.net/action/api/news_list?";
+
 }

@@ -5,9 +5,7 @@
     android:orientation="vertical">
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView
-        android:id="@+id/information_rv"
+        android:id="@+id/blog_rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-    </com.jcodecraeer.xrecyclerview.XRecyclerView>
+        android:layout_height="match_parent"></com.jcodecraeer.xrecyclerview.XRecyclerView>
 </LinearLayout>
