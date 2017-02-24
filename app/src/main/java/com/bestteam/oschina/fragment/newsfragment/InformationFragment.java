@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.bestteam.oschina.R;
-
 import com.bestteam.oschina.adapter.InformationFragmentAdapter;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.NewsList;

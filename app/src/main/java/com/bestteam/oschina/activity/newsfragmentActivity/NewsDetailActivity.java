@@ -25,17 +25,17 @@ import okhttp3.Call;
 public class NewsDetailActivity extends Activity {
     @BindView(R.id.iv_back_newsdetail)
     ImageView ivBack;
-    @BindView(R.id.tv_comment_newsdetail)
-    TextView tvComment;
     @BindView(R.id.webView_newsdetail)
     WebView webView;
-
+    @BindView(R.id.tv_comment_newsdetail)
+    TextView tvComment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_detail);
         ButterKnife.bind(this);
+
 
         initWebView();
         requestData();
@@ -61,6 +61,7 @@ public class NewsDetailActivity extends Activity {
             public void onResponse(String response, int id) {
                 NewsDetail newsDetail = XmlUtils.toBean(NewsDetail.class, response.getBytes());
                 webView.loadUrl(newsDetail.getNews().getUrl());
+                tvComment.setText(newsDetail.getNews().getCommentCount() + " ");
 
             }
         });

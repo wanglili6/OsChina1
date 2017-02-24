@@ -14,6 +14,7 @@ import com.bestteam.oschina.R;
 import com.bestteam.oschina.activity.newsfragmentActivity.NewsDetailActivity;
 import com.bestteam.oschina.bean.News;
 import com.bestteam.oschina.bean.NewsList;
+import com.bestteam.oschina.util.TimeZoneUtil;
 
 import java.io.LineNumberInputStream;
 import java.util.ArrayList;
