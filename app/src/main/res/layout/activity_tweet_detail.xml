@@ -3,11 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
-    <uk.co.senab.photoview.PhotoView
-        android:id="@+id/photoView"
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/xrv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-
+        android:layout_height="match_parent"></com.jcodecraeer.xrecyclerview.XRecyclerView>
 </LinearLayout>

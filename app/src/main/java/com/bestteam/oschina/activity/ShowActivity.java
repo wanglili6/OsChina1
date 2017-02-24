@@ -20,8 +20,8 @@ public class ShowActivity extends Activity {
     PhotoView photoView;
 
     @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show);
         ButterKnife.bind(this);
 
@@ -29,6 +29,5 @@ public class ShowActivity extends Activity {
         MyToast.show(this,url);
         //显示图片
         Picasso.with(this).load(url).into(photoView);
-
     }
 }

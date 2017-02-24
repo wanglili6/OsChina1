@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     @BindView(R.id.iv_login_pwd_icon)
     ImageView ivLoginPwdIcon;
     @BindView(R.id.et_login_pwd)
-    EditText etLoginPwd;    //密码
+    EditText etLoginPwd;
     @BindView(R.id.iv_login_pwd_del)
     ImageView ivLoginPwdDel;
     @BindView(R.id.ll_login_pwd)
