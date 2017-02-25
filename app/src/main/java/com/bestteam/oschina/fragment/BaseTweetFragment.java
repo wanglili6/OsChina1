@@ -9,6 +9,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.RelativeLayout;
 
 import com.bestteam.oschina.R;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -21,6 +23,8 @@ public abstract class BaseTweetFragment extends Fragment {
 
     //protected SwipeRefreshLayout mSwipe;
     protected XRecyclerView mRv;
+    protected RelativeLayout rlWait;
+    protected Button btLogin;
 
     @Nullable
     @Override
@@ -29,6 +33,8 @@ public abstract class BaseTweetFragment extends Fragment {
 
         //mSwipe = (SwipeRefreshLayout) view.findViewById(R.id.swipe_dongtan);
         mRv = (XRecyclerView) view.findViewById(R.id.rv_dongtan);
+        rlWait = (RelativeLayout) view.findViewById(R.id.rl_wait);
+        btLogin = (Button) view.findViewById(R.id.bt_login_tweet);
         setFlag();
         return view;
     }

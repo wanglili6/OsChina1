@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private String username;
     private String pwd;
-
+    private boolean loginFlag;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -102,7 +102,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             MyToast.show(LoginActivity.this, "账号或密码不能为空");
             return;
         } else {
-// else if (username.equals(my_name)&&pwd.equals(my_pwd)) {
 
 //           SPUtils.getString(LoginActivity.this,"username",null);
             OkHttpUtils
@@ -140,9 +139,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
                             Log.d("uid",""+user.getUser().getId());
                             SPUtils.saveString(getApplicationContext(),Cantents.MY_USERNAME,Cantents.MY_PWD);
+                            LoginUserBean user = XmlUtils.toBean(LoginUserBean.class, response.getBytes());
+                            SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
                             MyToast.show(LoginActivity.this, "登录成功");
                             //startActivity(new Intent(LoginActivity.this,MainActivity.class));
-
+                            loginFlag = true;
                             finish();
                         }
                     });
