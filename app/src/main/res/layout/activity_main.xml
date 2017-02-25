@@ -90,15 +90,12 @@
             android:text="动弹"
 
             />
-
-
         <TextView
             android:id="@+id/tv_post_tweet"
             style="@style/main_radiobtn_style"
             android:layout_gravity="center"
-            android:padding="15dp"
+            android:padding="5dp"
             android:drawableTop="@drawable/selector_bton_tweet" />
-
 
         <RadioButton
             android:id="@+id/rb_explore"
@@ -111,7 +108,6 @@
             style="@style/main_radiobtn_style"
             android:drawableTop="@drawable/tab_icon_me"
             android:text="我的" />
-
 
     </RadioGroup>
 

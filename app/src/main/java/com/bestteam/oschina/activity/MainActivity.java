@@ -88,7 +88,6 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
             @Override
             public void onClick(View v) {
 
-                //SPUtils.getString(getApplicationContext(), Cantents.MY_COOKIE,"");
                 String uid =  SPUtils.getString(getApplicationContext(),Cantents.MY_UID,"");
 
                 if (TextUtils.isEmpty(uid)){

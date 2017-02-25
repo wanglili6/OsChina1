@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.LoginUserBean;
+import com.bestteam.oschina.bean.UserInformation;
 import com.bestteam.oschina.util.MyToast;
 import com.bestteam.oschina.util.SPUtils;
 import com.bestteam.oschina.util.XmlUtils;
@@ -95,10 +96,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
         SPUtils.saveString(this, "username", "pwd");
+        String my_name =  SPUtils.getString(getApplicationContext(),Cantents.MY_USERNAME,"");
+        String my_pwd = SPUtils.getString(getApplicationContext(),"",Cantents.MY_PWD);
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(pwd)) {
             MyToast.show(LoginActivity.this, "账号或密码不能为空");
             return;
         } else {
+// else if (username.equals(my_name)&&pwd.equals(my_pwd)) {
 
 //           SPUtils.getString(LoginActivity.this,"username",null);
             OkHttpUtils
@@ -126,14 +130,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         public void onError(Call call, Exception e, int id) {
 
                             MyToast.show(LoginActivity.this, "用户名或者密码错误...");
-
+                            return;
                             //进入注册界面
                         }
 
                         @Override
                         public void onResponse(String response, int id) {
-                            LoginUserBean user = XmlUtils.toBean(LoginUserBean.class, response.getBytes());
-                            SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getId()+"");
+                            UserInformation user = XmlUtils.toBean(UserInformation.class, response.getBytes());
+                            SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
+                            Log.d("uid",""+user.getUser().getId());
+                            SPUtils.saveString(getApplicationContext(),Cantents.MY_USERNAME,Cantents.MY_PWD);
                             MyToast.show(LoginActivity.this, "登录成功");
                             //startActivity(new Intent(LoginActivity.this,MainActivity.class));
 
