@@ -102,6 +102,8 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == 1){
             loadNetData(PULL_REFRESH_ME);
+            rlWait.setVisibility(View.GONE);
+            mRv.setVisibility(View.VISIBLE);
         }
     }
 

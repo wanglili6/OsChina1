@@ -1,4 +1,4 @@
-package com.bestteam.oschina.adapter;
+package com.bestteam.oschina.adapter.softwareadapter;
 
 import android.content.Context;
 import android.content.Intent;

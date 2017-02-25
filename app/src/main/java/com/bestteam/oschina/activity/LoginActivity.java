@@ -186,7 +186,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onDestroy() {
         super.onDestroy();
         if(loginFlag){
-            setResult(1);
+            setResult(1,getIntent());
         }
     }
 }

@@ -12,18 +12,14 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.adapter.ClassifyRvAdapter;
+import com.bestteam.oschina.adapter.softwareadapter.ClassifyRvAdapter;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.SoftwareCatalogList;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.MyToast;
 import com.bestteam.oschina.util.XmlUtils;
-import com.zhy.http.okhttp.OkHttpUtils;
-import com.zhy.http.okhttp.callback.StringCallback;
 
 import java.util.Map;
-
-import okhttp3.Call;
 
 /**
  * Created by 王丽丽 on 2017/2/20.

@@ -34,5 +34,39 @@
     {
         "merged": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
         "source": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_search_url_text.xml"
+        "merged": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_dark.xml",
+        "source": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_disable_only_material_dark.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_dark.xml",
+        "source": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\switch_thumb_material_dark.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_disable_only_material_light.xml",
+        "source": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_disable_only_material_light.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_dark.xml",
+        "source": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_secondary_text_material_dark.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\res\\merged\\debug\\color\\abc_secondary_text_material_light.xml",
+        "source": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_secondary_text_material_light.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
+        "source": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\res\\merged\\debug\\color\\abc_search_url_text.xml",
+        "source": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_search_url_text.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_light.xml",
+        "source": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_material_light.xml"
+    },
+    {
+        "merged": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\res\\merged\\debug\\color\\abc_primary_text_material_dark.xml",
+        "source": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\color\\abc_primary_text_material_dark.xml"
     }
 ]

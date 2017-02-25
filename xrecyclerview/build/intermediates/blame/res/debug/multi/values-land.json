@@ -1,6 +1,10 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+=======
+        "outputFile": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
         "map": [
             {
                 "to": {
@@ -11,7 +15,11 @@
                     "endOffset": 112
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-land\\values-land.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-land\\values-land.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +38,11 @@
                     "endOffset": 184
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-land\\values-land.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-land\\values-land.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +61,11 @@
                     "endOffset": 254
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-land\\values-land.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-land\\values-land.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +84,11 @@
                     "endOffset": 318
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-land\\values-land.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-land\\values-land.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -87,7 +107,11 @@
                     "endOffset": 389
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-land\\values-land.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-land\\values-land.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -106,7 +130,11 @@
                     "endOffset": 457
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-land\\values-land.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-land\\values-land.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -126,7 +154,11 @@
                     "endOffset": 639
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\values-land\\values-land.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.4.0\\res\\values-land\\values-land.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
