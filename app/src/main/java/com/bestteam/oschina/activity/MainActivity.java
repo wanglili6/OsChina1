@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -14,10 +16,13 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.fragment.ExploreFragment;
 import com.bestteam.oschina.fragment.NewFragment;
 import com.bestteam.oschina.fragment.NewMeFragment;
 import com.bestteam.oschina.fragment.TweetFragment;
+import com.bestteam.oschina.util.MyToast;
+import com.bestteam.oschina.util.SPUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,8 +85,14 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                //SPUtils.getString(getApplicationContext(), Cantents.MY_COOKIE,"");
+                String uid =  SPUtils.getString(getApplicationContext(),Cantents.MY_UID,"");
 
+                if (TextUtils.isEmpty(uid)){
+                   startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                }else {
+                    startActivity(new Intent(MainActivity.this, FlipActivity.class));
+                }
             }
         });
 

@@ -11,25 +11,28 @@
         android:background="@color/actionbar_background">
 
         <ImageView
-            android:id="@+id/iv_back_newsdetail"
+            android:id="@+id/iv_back_blogdetail"
             android:layout_width="20dp"
             android:layout_height="20dp"
             android:layout_centerVertical="true"
             android:layout_margin="10dp"
             android:src="@drawable/ic_brows_back"
+
             />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_toRightOf="@id/iv_back_newsdetail"
+            android:layout_toRightOf="@id/iv_back_blogdetail"
             android:gravity="center_vertical"
-            android:text="资讯详情"
+            android:text="博客详情"
             android:textColor="#fff"
-            android:textSize="20sp"
-            />
+            android:textSize="20sp" />
+
     </RelativeLayout>
+
     <WebView
-        android:id="@+id/webView_newsdetail"
+        android:id="@+id/webView_blogdetail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"></WebView>
 </LinearLayout>

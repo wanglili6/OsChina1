@@ -1,16 +1,21 @@
 package com.bestteam.oschina.activity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.AttentionFriendAdapter;
 import com.bestteam.oschina.bean.Friend;
+import com.bestteam.oschina.fragment.MeFragment;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +28,7 @@ public class AttentionActivity extends AppCompatActivity implements View.OnClick
 
     private ImageButton ibBack;
     private TextView tvMe;
-    private RecyclerView rvAttention;
+    private XRecyclerView rvAttention;
     private List<Friend> friendDatas;
 
     @Override
@@ -63,7 +68,7 @@ public class AttentionActivity extends AppCompatActivity implements View.OnClick
     private void initView() {
         ibBack = (ImageButton) findViewById(R.id.ib_back);
         tvMe = (TextView) findViewById(R.id.tv_me);
-        rvAttention = (RecyclerView) findViewById(R.id.rv_attention);
+        rvAttention = (XRecyclerView) findViewById(R.id.rv_attention);
     }
 
     @Override
