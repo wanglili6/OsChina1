@@ -37,6 +37,7 @@ public interface Cantents {
     String MY_UID = "uid";  //uid值
     String MY_USERNAME = "username";  //用户名
     String MY_PWD = "pwd";  //密码
+    String MY_GENDER = "gender";    //获得男女
 
     //收藏
     public String SHOU_CANG_URL= "http://www.oschina.net/action/api/favorite_list";
@@ -45,4 +46,6 @@ public interface Cantents {
     public String DONG_TAN_URL= "http://www.oschina.net/action/api/tweet_list";
 
 
+    int RESULT_OK = 1;
+    int RESULT_FAIL = 0;
 }

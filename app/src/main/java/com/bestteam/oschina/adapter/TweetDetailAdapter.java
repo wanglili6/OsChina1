@@ -32,6 +32,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.Cookie;
 
 
@@ -82,7 +83,7 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
     class MyViewHolder extends RecyclerView.ViewHolder {
 
 
-        private final ImageView ivIconComment;
+        private final CircleImageView ivIconComment;
         private final TextView tvUserNameComment;
         private final TextView tvTimeComment;
         private final TextView tvComment;
@@ -94,7 +95,7 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            ivIconComment = (ImageView) itemView.findViewById(R.id.iv_icon_detail_comment);
+            ivIconComment = (CircleImageView) itemView.findViewById(R.id.iv_icon_detail_comment);
             tvUserNameComment = (TextView) itemView.findViewById(R.id.tv_username_detail_comment);
             tvTimeComment = (TextView) itemView.findViewById(R.id.tv_time_detail_comment);
             tvComment = (TextView) itemView.findViewById(R.id.tv_comment_detail);

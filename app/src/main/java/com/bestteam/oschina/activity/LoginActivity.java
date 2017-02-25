@@ -136,9 +136,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onResponse(String response, int id) {
 
+                         //   UserInformation gender = XmlUtils.toBean()
                             UserInformation user = XmlUtils.toBean(UserInformation.class, response.getBytes());
                             SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
                             SPUtils.saveString(getApplicationContext(),Cantents.MY_USERNAME,Cantents.MY_PWD);
+                            SPUtils.saveString(getApplicationContext(),Cantents.MY_GENDER,user.getUser().getGender()+"");
+                            Log.d("gender",user.getUser().getGender()+"" );
                             MyToast.show(LoginActivity.this, "登录成功");
                             loginFlag = true;
                             finish();

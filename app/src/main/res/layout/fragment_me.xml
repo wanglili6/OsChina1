@@ -53,7 +53,17 @@
                 android:src="@drawable/widget_default_face"
                 android:clickable="true" />
 
+            <de.hdodenhof.circleimageview.CircleImageView
+
+                android:id="@+id/img_gender"
+                android:layout_alignBottom="@+id/face_big"
+                android:layout_width="wrap_content"
+               android:layout_alignRight="@+id/face_big"
+                android:layout_height="wrap_content"
+                android:src="@drawable/userinfo_icon_female"
+                android:clickable="true" />
             <TextView
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/face_big"
@@ -61,20 +71,29 @@
                 android:layout_marginTop="10dp"
                 android:text="点击头像进入登录"
                 android:textColor="#fff"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/jifen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:text="积分0"
+                android:textColor="#fff"
+                android:textSize="14sp" />
 
         </RelativeLayout>
 
 
     </RelativeLayout>
     <!--收藏-->
-
     <ImageView
-    android:background="#e9e9ea"
-    android:layout_width="match_parent"
-    android:layout_height="0.1px"/>
+        android:background="#e8f7e5"
+        android:layout_width="match_parent"
+        android:layout_height="0.01px"/>
     <LinearLayout
-
         android:id="@+id/text_contant"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -104,7 +123,7 @@
                 android:layout_marginTop="5dp"
                 android:text="动弹"
                 android:textColor="#fff"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -130,7 +149,7 @@
                 android:layout_marginTop="5dp"
                 android:text="收藏"
                 android:textColor="#fff"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -156,7 +175,7 @@
                 android:layout_marginTop="5dp"
                 android:text="关注"
                 android:textColor="#fff"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -182,10 +201,11 @@
                 android:layout_marginTop="5dp"
                 android:text="粉丝"
                 android:textColor="#fff"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
     </LinearLayout>
+
 
     <LinearLayout
         android:orientation="vertical"
@@ -207,7 +227,7 @@
 
         <TextView
             android:layout_marginLeft="5sp"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textColor="#363434"
             android:layout_gravity="center_vertical"
             android:text="我的消息"
@@ -237,7 +257,7 @@
 
             <TextView
                 android:layout_marginLeft="5sp"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="#363434"
                 android:layout_gravity="center_vertical"
                 android:text="我的博客"
@@ -266,7 +286,7 @@
 
             <TextView
                 android:layout_marginLeft="5sp"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="#363434"
                 android:layout_gravity="center_vertical"
                 android:text="我的问答"
@@ -295,7 +315,7 @@
 
             <TextView
                 android:layout_marginLeft="5sp"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="#363434"
                 android:layout_gravity="center_vertical"
                 android:text="我的活动"
@@ -324,7 +344,7 @@
 
             <TextView
                 android:layout_marginLeft="5dp"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="#363434"
                 android:layout_gravity="center_vertical"
                 android:text="我的团队"
