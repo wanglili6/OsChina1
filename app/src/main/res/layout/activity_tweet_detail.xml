@@ -1,10 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_tweet_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clickable="true"
     android:orientation="vertical">
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/xrv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.jcodecraeer.xrecyclerview.XRecyclerView>
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_big_huifu"
+        android:background="#359832"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        >
+        <EditText
+            android:id="@+id/et_big_huifu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/comment_reply_container_bg"
+            android:hint="回复:"/>
+        <Button
+            android:id="@+id/bt_big_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_big_huifu"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:textSize="18sp"
+            android:text="发送"
+            android:visibility="gone"
+
+            />
+        <TextView
+            android:id="@+id/tv_at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/et_big_huifu"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:textSize="18sp"
+            android:textColor="#f00"
+            android:visibility="gone"
+            android:text="艾特"
+            android:clickable="true"
+            />
+
+    </RelativeLayout>
 </LinearLayout>

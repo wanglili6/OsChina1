@@ -10,9 +10,9 @@ public interface Cantents {
 
     //动弹用
     public String BASE_URL_TWEET = "http://www.oschina.net/action/api/tweet_list?";
-
     public String BASE_TWEET_DETAIL = "http://www.oschina.net/action/api/tweet_detail?id=";
     public String BASE_TWEET_COMMENT ="http://www.oschina.net/action/api/comment_list?";
+    public String BASE_TWEET_SEND = "http://www.oschina.net/action/api/comment_pub";
 
 
     public String CLISSIFTY_Item2_URl = "https://www.oschina.net/action/api/software_list?searchTag=";
@@ -24,6 +24,8 @@ public interface Cantents {
     String NEWS_HOT_URL = "http://www.oschina.net/action/api/news_list?";
     String BOLG_URL = "http://www.oschina.net/action/api/blog_list?";
     String BLOG_DETAIL_URL = "http://www.oschina.net/action/api/blog_detail?id=";
+    //综合轮播图
+    String SWITCH_IMAGEVIEW_URL = "http://www.oschina.net/action/apiv2/banner?catalog=1";
 
     //消息中心
     public String COMMENT_MESSAGE_CENTER = "http://www.oschina.net/action/api/active_list";
@@ -41,7 +43,15 @@ public interface Cantents {
     String MY_COOKIE = "cookie";    //cookie值
 
     String MY_UID = "uid";  //uid值
+    String MY_USERNAME = "username";  //用户名
+    String MY_PWD = "pwd";  //密码
+    String MY_GENDER = "gender";    //获得男女
+
+<<<<<<< HEAD
 
 
-
+=======
+    int RESULT_OK = 1;
+    int RESULT_FAIL = 0;
+>>>>>>> 35b9f1a5e8f311191d10a46563ea8b57f933c95e
 }

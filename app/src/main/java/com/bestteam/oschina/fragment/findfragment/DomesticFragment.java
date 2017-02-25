@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.ProgressBar;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.adapter.ClassifyRvAdapter3;
+import com.bestteam.oschina.adapter.softwareadapter.ClassifyRvAdapter3;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.SoftwareList;
 import com.bestteam.oschina.util.MyToast;

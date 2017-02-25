@@ -9,7 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.adapter.ClassifyRvAdapter3;
+import com.bestteam.oschina.adapter.softwareadapter.ClassifyRvAdapter3;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.SoftwareList;
 import com.bestteam.oschina.util.MyToast;
@@ -17,9 +17,6 @@ import com.bestteam.oschina.util.XmlUtils;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
-
-import java.util.HashMap;
-import java.util.Map;
 
 import okhttp3.Call;
 

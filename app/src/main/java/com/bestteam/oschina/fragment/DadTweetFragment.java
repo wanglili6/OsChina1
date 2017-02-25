@@ -1,18 +1,27 @@
 package com.bestteam.oschina.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+<<<<<<< HEAD
+=======
+import com.bestteam.oschina.R;
+import com.bestteam.oschina.activity.LoginActivity;
+import com.bestteam.oschina.activity.TweetDetailActivity;
+>>>>>>> 35b9f1a5e8f311191d10a46563ea8b57f933c95e
 import com.bestteam.oschina.adapter.NewTweetAdapter;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.TweetsList;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
+import com.bestteam.oschina.util.SPUtils;
 import com.bestteam.oschina.util.XmlUtils;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
@@ -37,6 +46,7 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
     final protected int LOAD_MORE_HOT = 3;
     final protected int PULL_REFRESH_ME = 4;
     final protected int LOAD_MORE_ME = 5;
+    final public int MYTWEET_CODE = 101;
     protected int refresh;
     protected int loadmore;
     private int tweetCount;
@@ -69,6 +79,23 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         loadNetData(refresh);
+        btLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getContext(),LoginActivity.class);
+                startActivityForResult(intent,MYTWEET_CODE);
+            }
+        });
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode == 1){
+            loadNetData(PULL_REFRESH_ME);
+            rlWait.setVisibility(View.GONE);
+            mRv.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
@@ -103,6 +130,7 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
 
     public void loadNetData(final int flag) {
         //String url = Cantents.BASE_URL_TWEET + Cantents.NEW_TWEET_URL;
+        String uid = SPUtils.getString(getContext(), Cantents.MY_UID, "");
         OKHttp3Helper okHttp3Helper = OKHttp3Helper.create();
         Map<String, String> params = new HashMap<>();
         params.put("uid", "0");
@@ -122,11 +150,18 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
             params.put("uid", "-1");
             params.put("pageIndex", String.valueOf(++pageIndex));
         } else if (flag == PULL_REFRESH_ME) {
+            if(TextUtils.isEmpty(uid)){
+                rlWait.setVisibility(View.VISIBLE);
+                mRv.setVisibility(View.GONE);
+            }else {
+                rlWait.setVisibility(View.GONE);
+                mRv.setVisibility(View.VISIBLE);
+            }
             pageIndex = 0;
-            params.put("uid", "3279999");
+            params.put("uid", uid);
             params.put("pageIndex", "0");
         } else if (flag == LOAD_MORE_ME) {
-            params.put("uid", "3279999");
+            params.put("uid", uid);
             params.put("pageIndex", String.valueOf(++pageIndex));
         }
 

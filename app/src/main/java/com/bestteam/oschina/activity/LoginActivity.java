@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.LoginUserBean;
+import com.bestteam.oschina.bean.UserInformation;
 import com.bestteam.oschina.util.MyToast;
 import com.bestteam.oschina.util.SPUtils;
 import com.bestteam.oschina.util.XmlUtils;
@@ -74,7 +75,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private String username;
     private String pwd;
-
+    private boolean loginFlag;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -95,6 +96,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
         SPUtils.saveString(this, "username", "pwd");
+        String my_name =  SPUtils.getString(getApplicationContext(),Cantents.MY_USERNAME,"");
+        String my_pwd = SPUtils.getString(getApplicationContext(),"",Cantents.MY_PWD);
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(pwd)) {
             MyToast.show(LoginActivity.this, "账号或密码不能为空");
             return;
@@ -126,18 +129,29 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         public void onError(Call call, Exception e, int id) {
 
                             MyToast.show(LoginActivity.this, "用户名或者密码错误...");
-
+                            return;
                             //进入注册界面
                         }
 
                         @Override
                         public void onResponse(String response, int id) {
+<<<<<<< HEAD
                             LoginUserBean user = XmlUtils.toBean(LoginUserBean.class, response.getBytes());
                             SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
                             /*Log.d("uid",""+user.getUser().getId());*/
                             MyToast.show(LoginActivity.this, "登录成功");
                             //startActivity(new Intent(LoginActivity.this,MainActivity.class));
+=======
+>>>>>>> 35b9f1a5e8f311191d10a46563ea8b57f933c95e
 
+                         //   UserInformation gender = XmlUtils.toBean()
+                            UserInformation user = XmlUtils.toBean(UserInformation.class, response.getBytes());
+                            SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
+                            SPUtils.saveString(getApplicationContext(),Cantents.MY_USERNAME,Cantents.MY_PWD);
+                            SPUtils.saveString(getApplicationContext(),Cantents.MY_GENDER,user.getUser().getGender()+"");
+                            Log.d("gender",user.getUser().getGender()+"" );
+                            MyToast.show(LoginActivity.this, "登录成功");
+                            loginFlag = true;
                             finish();
                         }
                     });

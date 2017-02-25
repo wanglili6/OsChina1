@@ -6,13 +6,7 @@
     android:orientation="vertical">
 
     <TextView
-
-        android:id="@+id/btn_friend"
-        style="@style/explore_btn_style"
-        android:drawableLeft="@drawable/ic_my_team"
-        android:text="好友圈" />
-
-    <TextView
+        android:layout_marginTop="25dp"
         android:id="@+id/btn_software"
         style="@style/explore_btn_style"
         android:drawableLeft="@drawable/ic_discover_softwares"
@@ -27,6 +21,7 @@
         android:background="#fff">
 
         <TextView
+
             android:id="@+id/btn_sweep"
             style="@style/explore_btn_style"
             android:drawableLeft="@drawable/ic_discover_scan"
@@ -47,12 +42,14 @@
 
 
     <TextView
+        android:layout_marginTop="25dp"
         style="@style/explore_btn_style"
         android:id="@+id/btn_coder"
         android:drawableLeft="@drawable/ic_discover_nearby"
         android:text="附近的程序员" />
 
     <TextView
+        android:layout_marginTop="25dp"
         android:id="@+id/btn_activity"
         style="@style/explore_btn_style"
         android:drawableLeft="@drawable/ic_my_event"

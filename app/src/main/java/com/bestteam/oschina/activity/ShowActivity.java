@@ -2,6 +2,7 @@ package com.bestteam.oschina.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 
 import com.bestteam.oschina.R;
@@ -19,8 +20,7 @@ import uk.co.senab.photoview.PhotoView;
 public class ShowActivity extends Activity {
     @BindView(R.id.photoView)
     PhotoView photoView;
-    @BindView(R.id.ib_back)
-    ImageButton ibBack;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,8 +33,9 @@ public class ShowActivity extends Activity {
         Picasso.with(this).load(url).into(photoView);
     }
 
-    @OnClick(R.id.ib_back)
-    public void onClick() {
+    public void back(View view) {
         finish();
+
     }
+
 }

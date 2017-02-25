@@ -1,8 +1,11 @@
-package com.bestteam.oschina.activity.newsfragmentActivity;
+package com.bestteam.oschina.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,8 +30,6 @@ public class NewsDetailActivity extends Activity {
     ImageView ivBack;
     @BindView(R.id.webView_newsdetail)
     WebView webView;
-    @BindView(R.id.tv_comment_newsdetail)
-    TextView tvComment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,13 @@ public class NewsDetailActivity extends Activity {
     private void initWebView() {
 
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+
+        webView.setWebViewClient(new WebViewClient());
+
+        //允许在webview里面弹出js的窗体
+        webView.setWebChromeClient(new WebChromeClient());
 
 
     }
@@ -61,8 +69,6 @@ public class NewsDetailActivity extends Activity {
             public void onResponse(String response, int id) {
                 NewsDetail newsDetail = XmlUtils.toBean(NewsDetail.class, response.getBytes());
                 webView.loadUrl(newsDetail.getNews().getUrl());
-                tvComment.setText(newsDetail.getNews().getCommentCount() + " ");
-
             }
         });
 

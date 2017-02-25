@@ -76,6 +76,9 @@ public class SoftwareActivity extends FragmentActivity {
         //让vp和tab关联起来
         softwareTab.setupWithViewPager(softwareVp);
 
+        //让viewPager缓存5个页面,默认缓存3个页面
+        softwareVp.setOffscreenPageLimit(5);
+
     }
 
     @OnClick(R.id.ib_back)

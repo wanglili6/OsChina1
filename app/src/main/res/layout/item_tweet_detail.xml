@@ -7,12 +7,12 @@
         android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
-        <ImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_icon_detail_comment"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_margin="5dp"
-            android:background="@mipmap/ic_launcher" />
+            android:src="@mipmap/ic_launcher" />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,19 +55,36 @@
         android:textSize="18sp"
         android:layout_marginTop="10dp"
         />
+
         <RelativeLayout
-            android:layout_marginTop="10dp"
-            android:background="#000"
-            android:layout_width="300dp"
-            android:layout_height="1dp"/>
+            android:id="@+id/rl_huifu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            >
         <EditText
             android:id="@+id/et_huifu"
             android:lines="2"
             android:hint="回复"
             android:textSize="16sp"
-            android:background="@drawable/comment_reply_container_bg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"/>
+            android:background="@drawable/comment_reply_container_bg"
+            />
+            <Button
+                android:id="@+id/bt_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_huifu"
+                android:text="发送"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:background="#000"
+            android:layout_width="300dp"
+            android:layout_height="1dp"/>
     </LinearLayout>
 </LinearLayout>
