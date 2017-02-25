@@ -15,6 +15,7 @@ import android.widget.TextView;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.ImgVPAdapter;
+
 import com.bestteam.oschina.adapter.NomalAdapter;
 import com.bestteam.oschina.bean.AcrivityMessageBean;
 import com.bestteam.oschina.bean.EventList;
