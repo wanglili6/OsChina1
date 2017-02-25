@@ -14,7 +14,7 @@ import com.bestteam.oschina.R;
 import com.bestteam.oschina.activity.LoginActivity;
 import com.bestteam.oschina.adapter.AtMeFragmentRVAdapter;
 import com.bestteam.oschina.base.Cantents;
-import com.bestteam.oschina.bean.CommentList;
+import com.bestteam.oschina.bean.ActiveList;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.SPUtils;
 import com.bestteam.oschina.util.XmlUtils;
@@ -30,7 +30,7 @@ import java.util.Map;
 public class AtMeFragment extends Fragment {
     private AtMeFragmentRVAdapter mAdapter;
     private int pageIndex = 0;
-    private String cataLog = "2";
+    private String cataLog = "3";
     private String pageSize = "20";
     private XRecyclerView xRecyclerView;
     private boolean isRefresh = true;
@@ -80,47 +80,54 @@ public class AtMeFragment extends Fragment {
             Intent intent = new Intent(getActivity(), LoginActivity.class);
             startActivity(intent);
         }else{
-            Map<String, String> parmas = new HashMap<>();
-            parmas.put("uid", uid);
-            parmas.put("pageIndex", String.valueOf(pageIndex));
-            parmas.put("pageSize", pageSize);
-            parmas.put("cataLog", cataLog);
+            request_data_1(url, uid, cookie);
 
-            Map<String, String> headers = new HashMap<>();
-
-            headers.put("cookie", cookie);
-
-            OKHttp3Helper.create().get(url, headers, parmas, new OKHttp3Helper.HttpCallback() {
-                @Override
-                public void onSuccess(String data) {
-
-                    CommentList commentList = XmlUtils.toBean(CommentList.class, data.getBytes());
-                    if (isRefresh) {
-                        mAdapter.clear();
-                        mAdapter.addAll(commentList.getList());
-                        xRecyclerView.refreshComplete();
-                        isRefresh = false;
-                    }
-                    if (isLoad) {
-                        mAdapter.addAll(commentList.getList());
-                        xRecyclerView.loadMoreComplete();
-                        isLoad = false;
-                    }
-
-
-                }
-
-                @Override
-                public void onFail(Exception e) {
-                    Toast.makeText(getContext(), "获取数据失败", Toast.LENGTH_SHORT).show();
-                }
-            });
         }
 
+    }
+
+
+    private void request_data_1(String url, String uid, String cookie) {
+        Map<String, String> parmas = new HashMap<>();
+        parmas.put("uid", uid);
+        parmas.put("pageIndex", String.valueOf(pageIndex));
+        parmas.put("pageSize", pageSize);
+        parmas.put("catalog", cataLog);
+
+        Map<String, String> headers = new HashMap<>();
+        headers.put("Cookie", cookie);
+
+        OKHttp3Helper.create().get(url, headers, parmas, new OKHttp3Helper.HttpCallback() {
+            @Override
+            public void onSuccess(String data) {
+
+               ActiveList activeList = XmlUtils.toBean(ActiveList.class, data.getBytes());
+
+                if(activeList.getList().isEmpty()){
+                   Toast.makeText(getContext(),"好像最近没有动态",Toast.LENGTH_SHORT).show();
+                }
+                if (isRefresh) {
+                    mAdapter.clear();
+
+                    mAdapter.addAll(activeList.getList());
+                    xRecyclerView.refreshComplete();
+                    isRefresh = false;
+                }
+                if (isLoad) {
+                    mAdapter.addAll(activeList.getList());
+                    xRecyclerView.loadMoreComplete();
+                    isLoad = false;
+                }
 
 
 
+            }
 
+            @Override
+            public void onFail(Exception e) {
+                Toast.makeText(getContext(), "获取数据失败", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 }

@@ -133,7 +133,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onResponse(String response, int id) {
                             LoginUserBean user = XmlUtils.toBean(LoginUserBean.class, response.getBytes());
-                            SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getId()+"");
+                            SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
+                            /*Log.d("uid",""+user.getUser().getId());*/
                             MyToast.show(LoginActivity.this, "登录成功");
                             //startActivity(new Intent(LoginActivity.this,MainActivity.class));
 

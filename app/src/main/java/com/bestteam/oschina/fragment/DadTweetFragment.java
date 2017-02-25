@@ -4,33 +4,20 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.NewTweetAdapter;
 import com.bestteam.oschina.base.Cantents;
-import com.bestteam.oschina.bean.Tweet;
 import com.bestteam.oschina.bean.TweetsList;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.XmlUtils;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
-import static com.bestteam.oschina.activity.MyApplication.getContext;
 
 
 /**
@@ -52,6 +39,9 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
     final protected int LOAD_MORE_ME = 5;
     protected int refresh;
     protected int loadmore;
+    private int tweetCount;
+    private int pageSize =20;
+
     private Handler handler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
@@ -73,6 +63,7 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
             }
         }
     };
+
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -115,30 +106,36 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
         OKHttp3Helper okHttp3Helper = OKHttp3Helper.create();
         Map<String, String> params = new HashMap<>();
         params.put("uid", "0");
-        params.put("pageSize", "20");
+        params.put("pageSize", pageSize+"");
         if (flag == PULL_REFRESH_NEW) {
+            pageIndex = 0;
             params.put("uid", "0");
-            params.put("pageIndex", "0");
+            params.put("pageIndex", pageIndex+"");
         } else if (flag == LOAD_MORE_NEW) {
             params.put("uid", "0");
             params.put("pageIndex", String.valueOf(++pageIndex));
         } else if (flag == PULL_REFRESH_HOT) {
+            pageIndex = 0;
             params.put("uid", "-1");
             params.put("pageIndex", "0");
         } else if (flag == LOAD_MORE_HOT) {
             params.put("uid", "-1");
             params.put("pageIndex", String.valueOf(++pageIndex));
         } else if (flag == PULL_REFRESH_ME) {
+            pageIndex = 0;
             params.put("uid", "3279999");
             params.put("pageIndex", "0");
         } else if (flag == LOAD_MORE_ME) {
             params.put("uid", "3279999");
             params.put("pageIndex", String.valueOf(++pageIndex));
         }
+
         okHttp3Helper.get(Cantents.BASE_URL_TWEET, null, params, new OKHttp3Helper.HttpCallback() {
             @Override
             public void onSuccess(String data) {
                 final TweetsList bean = XmlUtils.toBean(TweetsList.class, data.getBytes());
+                tweetCount = bean.getTweetCount();
+
                 Message msg = new Message();
 
                 if (flag == PULL_REFRESH_NEW || flag ==PULL_REFRESH_HOT || flag == PULL_REFRESH_ME) {

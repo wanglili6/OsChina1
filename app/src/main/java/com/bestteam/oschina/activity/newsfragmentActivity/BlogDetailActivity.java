@@ -59,6 +59,7 @@ public class BlogDetailActivity extends Activity {
             public void onResponse(String response, int id) {
                 BlogDetail blogDetail = XmlUtils.toBean(BlogDetail.class, response.getBytes());
                 webView.loadUrl(blogDetail.getBlog().getUrl());
+                tvComment.setText(blogDetail.getBlog().getCommentCount() + " ");
             }
         });
     }

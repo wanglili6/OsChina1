@@ -15,7 +15,7 @@
         android:layout_marginBottom="3dp">
 
         <ImageView
-            android:id="@+id/iv_icon_item_blog"
+            android:id="@+id/iv_icon_item_commend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
@@ -23,20 +23,20 @@
             android:src="@mipmap/ic_label_today" />
 
         <ImageView
-            android:id="@+id/iv_icon1_item_blog"
+            android:id="@+id/iv_icon1_item_commend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginRight="5dp"
-            android:layout_toRightOf="@+id/iv_icon_item_blog"
-            android:src="@mipmap/ic_label_originate" />
+            android:layout_toRightOf="@+id/iv_icon_item_commend"
+            android:src="@mipmap/ic_label_recommend" />
 
 
         <TextView
-            android:id="@+id/tv_title_item_blog"
+            android:id="@+id/tv_title_item_commend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/iv_icon1_item_blog"
+            android:layout_toRightOf="@id/iv_icon1_item_commend"
             android:ellipsize="end"
             android:maxLines="1"
             android:text="新闻标题"
@@ -45,7 +45,7 @@
     </RelativeLayout>
 
     <TextView
-        android:id="@+id/tv_content_item_blog"
+        android:id="@+id/tv_content_item_commend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="3dp"
@@ -60,18 +60,18 @@
         android:layout_height="wrap_content">
 
         <TextView
-            android:id="@+id/tv_name_item_blog"
+            android:id="@+id/tv_name_item_commend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="名字"
             android:textSize="12dp" />
 
         <TextView
-            android:id="@+id/tv_time_item_blog"
+            android:id="@+id/tv_time_item_commend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:layout_toRightOf="@id/tv_name_item_blog"
+            android:layout_toRightOf="@id/tv_name_item_commend"
             android:text="时间"
             android:textSize="12dp" />
 
@@ -89,7 +89,7 @@
                 android:background="@drawable/ic_comment" />
 
             <TextView
-                android:id="@+id/tv_comment_item_blog"
+                android:id="@+id/tv_comment_item_commend"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
