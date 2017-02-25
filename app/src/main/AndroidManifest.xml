@@ -48,6 +48,7 @@
 
         <activity android:name=".activity.PlayMeassgeActivity"/>
         <activity android:name=".activity.SwitchImageViewDetailActivity"/>
+        <activity android:name=".activity.SearchActivity"/>
     </application>
 
 </manifest>

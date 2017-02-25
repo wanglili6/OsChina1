@@ -40,4 +40,5 @@ public interface Cantents {
     String MY_GENDER = "gender";    //获得男女
 
 
+    String Result_URL = "http://www.oschina.net/action/api/search_list?";
 }
