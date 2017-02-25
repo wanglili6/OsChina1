@@ -33,6 +33,8 @@ public interface Cantents {
     String MY_COOKIE = "cookie";    //cookie值
 
     String MY_UID = "uid";  //uid值
-
+    //关注和粉丝
+    String ATTENTION_URL = "http://www.oschina.net/action/api/friends_list?uid=993896&pageIndex=0&pageSize=20&relation=1";
+    String FANS_URL = "http://www.oschina.net/action/api/friends_list?uid=993896&pageIndex=0&pageSize=20&relation=0";
 
 }

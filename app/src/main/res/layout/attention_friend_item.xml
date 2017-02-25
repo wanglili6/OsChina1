@@ -1,29 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="wrap_content">
+    android:layout_width="match_parent" android:layout_height="70dp"
+    android:padding="5dp"
+    android:background="@color/main_gray"
+    android:layout_margin="1dp">
+    <RelativeLayout
+        android:id="@+id/iv_cotainer"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="10dp">
     <ImageView
         android:id="@+id/iv_friend_item"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/bear"
+        />
+    <ImageView
+        android:id="@+id/iv_circle"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/bg_circle_shape"
+        />
+    </RelativeLayout>
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:background="@drawable/bear"/>
+        android:orientation="vertical"
+        android:layout_toRightOf="@+id/iv_cotainer">
     <TextView
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="titleName"
         android:textSize="16sp"
-        android:textColor="#000"
-        android:layout_toRightOf="@+id/iv_friend_item"
+        android:textColor="#00f"
         />
 
     <TextView
-        android:id="@+id/tv_null"
+        android:id="@+id/tv_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1111"
+        android:layout_marginTop="2dp"
+        android:text="address"
         android:textSize="10sp"
         android:textColor="#1a1919"
-        android:layout_toRightOf="@+id/iv_friend_item"
-        android:layout_marginTop="20dp"/>
+        />
+        <TextView
+        android:id="@+id/tv_position"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginTop="2dp"
+        android:text="position"
+        android:textSize="10sp"
+        android:textColor="#1a1919"
+        />
+    </LinearLayout>
 </RelativeLayout>
