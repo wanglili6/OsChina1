@@ -37,6 +37,7 @@ public interface Cantents {
     String MY_UID = "uid";  //uid值
     String MY_USERNAME = "username";  //用户名
     String MY_PWD = "pwd";  //密码
+    String MY_GENDER = "gender";    //获得男女
 
 
 }
