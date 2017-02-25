@@ -36,5 +36,6 @@ public interface Cantents {
 
     String MY_UID = "uid";  //uid值
 
-
+    int RESULT_OK = 1;
+    int RESULT_FAIL = 0;
 }
