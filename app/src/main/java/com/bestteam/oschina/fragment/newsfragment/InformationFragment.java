@@ -1,6 +1,5 @@
 package com.bestteam.oschina.fragment.newsfragment;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -11,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,6 +22,7 @@ import com.bestteam.oschina.bean.NewsList;
 import com.bestteam.oschina.bean.SwitchImageViewBean;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.XmlUtils;
+import com.bestteam.oschina.view.SwitchImageViewViewPager;
 import com.google.gson.Gson;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.squareup.picasso.Picasso;
@@ -49,11 +50,14 @@ public class InformationFragment extends Fragment implements ViewPager.OnPageCha
     private boolean isLoaderMore = false;
     private int pageIndex = 0;
     private InformationFragmentAdapter adapter;
-    private ViewPager viewPager;
+    private SwitchImageViewViewPager viewPager;
     private List<ImageView> imageViews;
     private SwitchImageViewBean switchImageViewBean;
     private TextView tvTitle;
     private Handler mHandler = new Handler();
+    private LinearLayout llPoint;
+    private boolean hasSwicth;
+
 
     @Nullable
     @Override
@@ -63,8 +67,6 @@ public class InformationFragment extends Fragment implements ViewPager.OnPageCha
         xRecyclerView = (XRecyclerView) view.findViewById(R.id.information_rv);
         xRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        viewPager = (ViewPager) view.findViewById(R.id.information_vp);
-        tvTitle = (TextView) view.findViewById(R.id.swtich_tv_title);
         return view;
 
     }
@@ -78,6 +80,8 @@ public class InformationFragment extends Fragment implements ViewPager.OnPageCha
 
         xRecyclerView.setPullRefreshEnabled(true);
         xRecyclerView.setLoadingMoreEnabled(true);
+
+
         xRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
@@ -94,11 +98,11 @@ public class InformationFragment extends Fragment implements ViewPager.OnPageCha
             }
         });
 
-
         initViewPager();
         requestData();
 
     }
+
 
     //初始化viewPager
     private void initViewPager() {
@@ -114,11 +118,36 @@ public class InformationFragment extends Fragment implements ViewPager.OnPageCha
                 Gson gson = new Gson();
                 switchImageViewBean = gson.fromJson(response, SwitchImageViewBean.class);
 
-                initSwitchImageView();
+                bindDataToView();
+
 
             }
         });
+
     }
+
+    private void bindDataToView() {
+
+        if (getHeaderView() != null) {
+            xRecyclerView.addHeaderView(getHeaderView());
+        }
+
+        initSwitchImageView();
+        initPoint();
+
+
+        viewPager.setSwitchImageView(this);
+    }
+
+    //添加头
+    private View getHeaderView() {
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.switch_imageview_viewpager, (ViewGroup) getView(), false);
+        viewPager = (SwitchImageViewViewPager) view.findViewById(R.id.information_vp);
+        tvTitle = (TextView) view.findViewById(R.id.swtich_tv_title);
+        llPoint = (LinearLayout) view.findViewById(R.id.ll_point_container);
+        return view;
+    }
+
 
     //初始化轮播图
     private void initSwitchImageView() {
@@ -126,26 +155,59 @@ public class InformationFragment extends Fragment implements ViewPager.OnPageCha
         imageViews = new ArrayList<>();
 
         int size = switchImageViewBean.getResult().getItems().size();
-        for (int i = 0; i < size; i++) {
+        SwitchImageViewBean.ResultBean.ItemsBean itemsBean = null;
+        for (int i = -1; i < size + 1; i++) {
+            if ( i == -1) {
+                itemsBean = switchImageViewBean.getResult().getItems().get(size - 1);
+
+            }else if (i == size) {
+                itemsBean =switchImageViewBean.getResult().getItems().get(0);
+            }else{
+                itemsBean =switchImageViewBean.getResult().getItems().get(i);
+            }
             ImageView imageView = new ImageView(getContext());
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
-            String url = switchImageViewBean.getResult().getItems().get(i).getImg();
-            Picasso.with(getContext()).load(url).into(imageView);
+           // String url = switchImageViewBean.getResult().getItems().get(i).getImg();
+
+            Picasso.with(getContext()).load(itemsBean.getImg()).into(imageView);
 
             imageViews.add(imageView);
 
-            tvTitle.setText(switchImageViewBean.getResult().getItems().get(0).getName());
+
         }
 
-        SwitchImageViewAdapter switchImageViewAdapter = new SwitchImageViewAdapter(imageViews);
+
+
+        SwitchImageViewAdapter switchImageViewAdapter = new SwitchImageViewAdapter(
+                getContext(),imageViews,switchImageViewBean.getResult().getItems());
+
         viewPager.setAdapter(switchImageViewAdapter);
+
+        tvTitle.setText(switchImageViewBean.getResult().getItems().get(0).getName());
 
         switchImageViewAdapter.notifyDataSetChanged();
 
         viewPager.addOnPageChangeListener(this);
 
+        viewPager.setCurrentItem(1, false);
+
         mHandler.postDelayed(new SwitchTask(),3000);
+    }
+
+
+    //初始化移动的点
+    private void initPoint() {
+        llPoint.removeAllViews();
+        for (int i = 0; i < switchImageViewBean.getResult().getItems().size(); i++) {
+            View view = new View(getContext());
+            view.setBackgroundResource(R.drawable.point_white_bg);
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(5, 5);
+            params.rightMargin = 20;
+            llPoint.addView(view, params);
+        }
+        llPoint.getChildAt(0).setBackgroundResource(R.drawable.point_green_bg);
+
     }
 
 
@@ -193,12 +255,52 @@ public class InformationFragment extends Fragment implements ViewPager.OnPageCha
 
     @Override
     public void onPageSelected(int position) {
-        tvTitle.setText(switchImageViewBean.getResult().getItems().get(position).getName());
+        int index = 0;
+        int size = switchImageViewBean.getResult().getItems().size();
+        if (position == 0) {
+            index =size -1;
+            viewPager.setCurrentItem(size,false);
+
+        }else if (position == size + 1) {
+            index = 0;
+            viewPager.setCurrentItem(1,false);
+
+        }else{
+            index = position -1;
+        }
+
+
+        tvTitle.setText(switchImageViewBean.getResult().getItems().get(index).getName());
+
+        int childCount = llPoint.getChildCount();
+        for (int i = 0; i < childCount; i++) {
+            View child = llPoint.getChildAt(i);
+            if (index == i) {
+                child.setBackgroundResource(R.drawable.point_green_bg);
+            } else {
+                child.setBackgroundResource(R.drawable.point_white_bg);
+            }
+        }
+
     }
 
     @Override
     public void onPageScrollStateChanged(int state) {
 
+    }
+
+
+    //开始轮播
+    public void startSwtich() {
+        if (!hasSwicth) {
+            mHandler.postDelayed(new SwitchTask(), 3000);
+        }
+    }
+
+    //结束轮播
+    public void stopSwtich() {
+        mHandler.removeCallbacksAndMessages(null);
+        hasSwicth = false;
     }
 
     private class SwitchTask implements Runnable {
@@ -207,14 +309,14 @@ public class InformationFragment extends Fragment implements ViewPager.OnPageCha
         public void run() {
             if (viewPager != null) {
                 int currentItem = viewPager.getCurrentItem();
-                if (currentItem == imageViews.size() -1) {
+                if (currentItem == imageViews.size() - 1) {
                     currentItem = 0;
-                }else {
-                    currentItem ++;
+                } else {
+                    currentItem++;
                 }
                 viewPager.setCurrentItem(currentItem);
             }
-            mHandler.postDelayed(new SwitchTask(),3000);
+            mHandler.postDelayed(new SwitchTask(), 3000);
         }
     }
 }

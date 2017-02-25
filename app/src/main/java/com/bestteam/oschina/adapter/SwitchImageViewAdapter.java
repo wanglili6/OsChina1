@@ -1,9 +1,15 @@
 package com.bestteam.oschina.adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v4.view.PagerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.bestteam.oschina.activity.SwitchImageViewDetailActivity;
+import com.bestteam.oschina.bean.Comment;
+import com.bestteam.oschina.bean.SwitchImageViewBean;
 
 import java.util.List;
 
@@ -12,10 +18,15 @@ import java.util.List;
  */
 
 public class SwitchImageViewAdapter extends PagerAdapter {
-    private List<ImageView> imageViews;
 
-    public SwitchImageViewAdapter(List<ImageView> imageViews) {
+    private Context context;
+    private List<ImageView> imageViews;
+    private List<SwitchImageViewBean.ResultBean.ItemsBean> itemsBeen;
+
+    public SwitchImageViewAdapter(Context context, List<ImageView> imageViews, List<SwitchImageViewBean.ResultBean.ItemsBean> itemsBeen) {
+        this.context = context;
         this.imageViews = imageViews;
+        this.itemsBeen = itemsBeen;
     }
 
     @Override
@@ -30,9 +41,18 @@ public class SwitchImageViewAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(final ViewGroup container, final int position) {
         View view = imageViews.get(position);
         container.addView(view);
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,SwitchImageViewDetailActivity.class);
+                intent.putExtra("href",itemsBeen.get(position -1).getHref());
+                context.startActivity(intent);
+
+            }
+        });
         return view;
     }
 

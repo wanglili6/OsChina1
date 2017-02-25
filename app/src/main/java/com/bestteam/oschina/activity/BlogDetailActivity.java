@@ -2,7 +2,11 @@ package com.bestteam.oschina.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,8 +29,6 @@ import okhttp3.Call;
 public class BlogDetailActivity extends Activity {
     @BindView(R.id.iv_back_blogdetail)
     ImageView ivBack;
-    @BindView(R.id.tv_comment_blogdetail)
-    TextView tvComment;
     @BindView(R.id.webView_blogdetail)
     WebView webView;
 
@@ -43,6 +45,12 @@ public class BlogDetailActivity extends Activity {
     private void initWebView() {
 
         webView.getSettings().setJavaScriptEnabled(true);
+        webView.getSettings().setUseWideViewPort(true);
+        webView.getSettings().setLoadWithOverviewMode(true);
+        webView.setWebViewClient(new WebViewClient());
+
+        //允许在webview里面弹出js的窗体
+        webView.setWebChromeClient(new WebChromeClient());
 
     }
 
@@ -59,7 +67,6 @@ public class BlogDetailActivity extends Activity {
             public void onResponse(String response, int id) {
                 BlogDetail blogDetail = XmlUtils.toBean(BlogDetail.class, response.getBytes());
                 webView.loadUrl(blogDetail.getBlog().getUrl());
-                tvComment.setText(blogDetail.getBlog().getCommentCount() + " ");
             }
         });
     }
