@@ -1,4 +1,4 @@
-package com.bestteam.oschina.adapter;
+package com.bestteam.oschina.adapter.softwareadapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

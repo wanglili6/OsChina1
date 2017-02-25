@@ -2,10 +2,89 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical">
-<TextView
-    android:id="@+id/tvtvtv"
-    android:text="测试"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content" />
+    android:orientation="horizontal">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_icon_detail_comment"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:background="@mipmap/ic_launcher" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <TextView
+            android:id="@+id/tv_username_detail_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
+            android:text="username"
+            android:textColor="#17e4f2"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_time_detail_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_username_detail_comment"
+            android:text="时间"
+            android:textColor="#b2b2ab" />
+        <ImageView
+            android:id="@+id/iv_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_comment_40"/>
+    </RelativeLayout>
+    <TextView
+        android:id="@+id/tv_comment_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_marginTop="10dp"
+        />
+
+        <RelativeLayout
+            android:id="@+id/rl_huifu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            >
+        <EditText
+            android:id="@+id/et_huifu"
+            android:lines="2"
+            android:hint="回复"
+            android:textSize="16sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/comment_reply_container_bg"
+            />
+            <Button
+                android:id="@+id/bt_send"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/et_huifu"
+                android:text="发送"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:background="#000"
+            android:layout_width="300dp"
+            android:layout_height="1dp"/>
+    </LinearLayout>
 </LinearLayout>

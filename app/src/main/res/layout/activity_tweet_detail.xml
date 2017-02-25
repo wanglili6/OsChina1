@@ -1,10 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/xrv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"></com.jcodecraeer.xrecyclerview.XRecyclerView>
-</LinearLayout>
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rl_big_huifu"
+        />
+    <RelativeLayout
+        android:id="@+id/rl_big_huifu"
+        android:background="#c0bebe"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        >
+        <EditText
+            android:id="@+id/et_big_huifu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_above="@+id/bt_big_send"
+            android:hint="回复:"/>
+        <Button
+            android:id="@+id/bt_big_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_margin="5dp"
+            android:textSize="18sp"
+            android:text="发送"/>
+
+    </RelativeLayout>
+</RelativeLayout>

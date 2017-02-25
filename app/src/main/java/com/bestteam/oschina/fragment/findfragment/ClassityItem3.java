@@ -9,16 +9,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ProgressBar;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.adapter.ClassifyRvAdapter3;
+import com.bestteam.oschina.adapter.softwareadapter.ClassifyRvAdapter3;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.SoftwareList;
 import com.bestteam.oschina.util.MyToast;
 import com.bestteam.oschina.util.XmlUtils;
 import com.bestteam.oschina.view.RefreshRecyleView;
-import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.zhy.http.okhttp.OkHttpUtils;
 import com.zhy.http.okhttp.callback.StringCallback;
 

@@ -10,7 +10,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.activity.FriendActivity;
 import com.bestteam.oschina.activity.PlayActivity;
 import com.bestteam.oschina.activity.SoftwareActivity;
 import com.bestteam.oschina.activity.UpdataActivity;
@@ -23,8 +22,6 @@ import butterknife.OnClick;
  * Created by 王丽丽 on 2017/2/18.
  */
 public class ExploreFragment extends Fragment {
-    @BindView(R.id.btn_friend)
-    TextView btnFriend;
     @BindView(R.id.btn_software)
     TextView btnSoftware;
     @BindView(R.id.btn_sweep)
@@ -44,12 +41,9 @@ public class ExploreFragment extends Fragment {
         return view;
     }
 
-    @OnClick({R.id.btn_friend, R.id.btn_software, R.id.btn_sweep, R.id.btn_shake, R.id.btn_coder, R.id.btn_activity})
+    @OnClick({R.id.btn_software, R.id.btn_sweep, R.id.btn_shake, R.id.btn_coder, R.id.btn_activity})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.btn_friend:
-                startActivity(new Intent(getContext(),FriendActivity.class));
-                break;
             case R.id.btn_software:
                 startActivity(new Intent(getContext(),SoftwareActivity.class));
 

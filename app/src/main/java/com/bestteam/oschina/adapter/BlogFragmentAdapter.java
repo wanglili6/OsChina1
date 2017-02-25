@@ -9,8 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.activity.newsfragmentActivity.BlogDetailActivity;
-import com.bestteam.oschina.activity.newsfragmentActivity.NewsDetailActivity;
+import com.bestteam.oschina.activity.BlogDetailActivity;
 import com.bestteam.oschina.bean.Blog;
 
 import java.util.ArrayList;

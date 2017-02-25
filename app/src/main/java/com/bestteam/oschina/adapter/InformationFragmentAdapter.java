@@ -2,21 +2,16 @@ package com.bestteam.oschina.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.database.sqlite.SQLiteStatement;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.activity.newsfragmentActivity.NewsDetailActivity;
+import com.bestteam.oschina.activity.NewsDetailActivity;
 import com.bestteam.oschina.bean.News;
-import com.bestteam.oschina.bean.NewsList;
-import com.bestteam.oschina.util.TimeZoneUtil;
 
-import java.io.LineNumberInputStream;
 import java.util.ArrayList;
 import java.util.List;
 

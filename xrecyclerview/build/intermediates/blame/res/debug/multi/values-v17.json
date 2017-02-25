@@ -1,6 +1,14 @@
 [
     {
+<<<<<<< HEAD
         "outputFile": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+        "outputFile": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+=======
+        "outputFile": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
         "map": [
             {
                 "to": {
@@ -12,7 +20,15 @@
                     "endOffset": 223
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -33,7 +49,15 @@
                     "endOffset": 451
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -54,7 +78,15 @@
                     "endOffset": 609
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -75,7 +107,15 @@
                     "endOffset": 759
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -96,7 +136,15 @@
                     "endOffset": 931
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -117,7 +165,15 @@
                     "endOffset": 1159
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -138,7 +194,15 @@
                     "endOffset": 1401
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,
@@ -159,7 +223,15 @@
                     "endOffset": 1572
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 26,
                         "startColumn": 4,
@@ -180,7 +252,15 @@
                     "endOffset": 1746
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,
@@ -201,7 +281,15 @@
                     "endOffset": 1915
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 32,
                         "startColumn": 4,
@@ -222,7 +310,15 @@
                     "endOffset": 2188
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 35,
                         "startColumn": 4,
@@ -243,7 +339,15 @@
                     "endOffset": 2388
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 39,
                         "startColumn": 4,
@@ -264,7 +368,15 @@
                     "endOffset": 2592
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 42,
                         "startColumn": 4,
@@ -285,7 +397,15 @@
                     "endOffset": 2921
                 },
                 "from": {
+<<<<<<< HEAD
                     "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v17\\values-v17.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
                     "position": {
                         "startLine": 46,
                         "startColumn": 4,
