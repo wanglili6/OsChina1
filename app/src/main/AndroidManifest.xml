@@ -43,15 +43,15 @@
         <activity android:name=".activity.DongTanActivity" />
         <activity android:name=".activity.ShouCangActivity" />
         <activity android:name=".activity.SuggestionActivity" />
-<<<<<<< HEAD
+
         <activity android:name=".activity.AtMeDetailActivity"/>
-=======
+
         <activity android:name=".activity.HisActivity"
             android:windowSoftInputMode="adjustPan"/>
 
         <activity android:name=".activity.PlayMeassgeActivity"/>
         <activity android:name=".activity.SwitchImageViewDetailActivity"/>
->>>>>>> 35b9f1a5e8f311191d10a46563ea8b57f933c95e
+
 
     </application>
 

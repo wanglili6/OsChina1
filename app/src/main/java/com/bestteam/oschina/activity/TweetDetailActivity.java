@@ -41,8 +41,6 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
-import static com.bestteam.oschina.R.styleable.CircleImageView;
-
 /**
  * Created by 45011 on 2017/2/23.
  */
