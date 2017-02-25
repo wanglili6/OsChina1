@@ -5,11 +5,13 @@ import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.view.Window;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -81,6 +83,12 @@ public class NewMeFragment extends Fragment {
     LinearLayout llFans;
     @BindView(R.id.text_contant)
     LinearLayout textContant;
+    @BindView(R.id.tv_name)
+    TextView tvName;
+    @BindView(R.id.jifen)
+    TextView jifen;
+    @BindView(R.id.img_gender)
+    CircleImageView imgGender;
 
     @Nullable
     @Override
@@ -89,19 +97,32 @@ public class NewMeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_me, container, false);
 
         ButterKnife.bind(this, view);
+        ViewTreeObserver viewTreeObserver = faceBig.getViewTreeObserver();
+        viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+            @Override
+            public void onGlobalLayout() {
+                initGalaxy();
+            }
+        });
+
         return view;
     }
 
-    @Override
-    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-        initGalaxy();
-    }
 
     /**
      * 初始化Galaxy的方法
      */
     private void initGalaxy() {
+
+
+        Window window = getActivity().getWindow();
+        Rect decorRect = new Rect();
+        window.getDecorView().getWindowVisibleDisplayFrame(decorRect);
+
+        int decorHeight = decorRect.height();
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        int statusBar = display.getHeight() - decorHeight;
+
         //计算中心点
         int[] location = new int[2];
         faceBig.getLocationInWindow(location);
@@ -111,17 +132,17 @@ public class NewMeFragment extends Fragment {
         int y = location[1] + drawRect.height() / 2;
         //设置Galaxy
         galaxy.setDefaultPlanets();
-        galaxy.setGalaxyCenter(240, 100);
+        galaxy.setGalaxyCenter(x, y - statusBar);
         galaxy.startRotate();
     }
 
     @OnClick({R.id.main_setting, R.id.main_code, R.id.rl_login, R.id.me_message, R.id.me_blog,
-            R.id.me_answers, R.id.me_activity, R.id.me_time,R.id.ll_move, R.id.ll_collect,
+            R.id.me_answers, R.id.me_activity, R.id.me_time, R.id.ll_move, R.id.ll_collect,
             R.id.ll_attention, R.id.ll_fans})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.main_setting://设置页面
-                Intent intent = new Intent(getContext(),SettingActivity.class);
+                Intent intent = new Intent(getContext(), SettingActivity.class);
                 startActivity(intent);
                 break;
             case R.id.main_code://二维码页面
