@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="130dp">
+
+        <com.bestteam.oschina.view.SwitchImageViewViewPager
+            android:id="@+id/information_vp"
+            android:layout_width="match_parent"
+            android:layout_height="130dp">
+        </com.bestteam.oschina.view.SwitchImageViewViewPager>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="#11000000"
+            android:layout_alignParentBottom="true">
+            <TextView
+                android:id="@+id/swtich_tv_title"
+                android:layout_margin="10dp"
+                android:textColor="#fff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="标题"/>
+            <LinearLayout
+                android:id="@+id/ll_point_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal"></LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</LinearLayout>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000"
-
-    android:clickable="true"
     android:orientation="vertical">
 
-
     <ImageButton
+        android:onClick="back"
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/ic_clear"
         android:id="@+id/ib_back"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true" />
+        android:layout_gravity="right"
+         />
+
 
     <uk.co.senab.photoview.PhotoView
         android:id="@+id/photoView"
@@ -23,4 +23,4 @@
         android:layout_height="match_parent" />
 
 
-</RelativeLayout>
+</LinearLayout>

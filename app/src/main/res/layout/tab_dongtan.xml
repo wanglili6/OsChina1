@@ -1,12 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/swipe_dongtan"
     >
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/rv_dongtan"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/rl_wait"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/iv_wait"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_tip_fail"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="130dp" />
+        <Button
+            android:id="@+id/bt_login_tweet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="马上登陆"
+            android:layout_below="@+id/iv_wait"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/bg_login_register"/>
+    </RelativeLayout>
+
+</FrameLayout>

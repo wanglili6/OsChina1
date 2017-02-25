@@ -2,31 +2,25 @@ package com.bestteam.oschina.adapter;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.text.Html;
 import android.text.Spannable;
-import android.text.SpannableStringBuilder;
 import android.text.TextUtils;
-import android.text.format.DateFormat;
 import android.text.method.LinkMovementMethod;
-import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.activity.HisActivity;
 import com.bestteam.oschina.activity.ImgBigActivity;
 import com.bestteam.oschina.activity.TweetDetailActivity;
 import com.bestteam.oschina.bean.Tweet;
 import com.bestteam.oschina.bean.TweetsList;
 import com.bestteam.oschina.bean.User;
-import com.bestteam.oschina.util.HTMLUtil;
 import com.bestteam.oschina.util.SpannableUtil;
 import com.squareup.picasso.Picasso;
 
@@ -39,6 +33,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * Created by 45011 on 2017/2/19.
@@ -86,7 +81,7 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
 
     class MyViewHolder extends ViewHolder {
         @BindView(R.id.iv_icon)
-        ImageView ivIcon;
+        CircleImageView ivIcon;
         @BindView(R.id.tv_username)
         TextView tvUsername;
         @BindView(R.id.tv_content)
@@ -107,6 +102,7 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
         private Tweet tweet;
         private int isLike;
         private String imgBig;
+        private int authorid;
 
 
         MyViewHolder(View view) {
@@ -116,6 +112,7 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
 
         public void setData(int position) {
             tweet = list.get(position);
+            authorid = tweet.getAuthorid();
             String portrait = tweet.getPortrait();
             String imgSmall = tweet.getImgSmall();
             imgBig = tweet.getImgBig();
@@ -154,12 +151,15 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
             } catch (ParseException e) {
                 e.printStackTrace();
             }
-            long currentTime = new Date().getTime();
+            long currentTime = new Date().getTime() + 8*60*60*1000;
+
+
             if (pub != null) {
                 long pubTime = pub.getTime();
-                int month = (int) ((currentTime - pubTime) / 1000 / 60 / 60 / 24 / 30);
-                int day = (int) ((currentTime - pubTime) / 1000 / 60 / 60 / 24);
-                int minute = (int) ((currentTime - pubTime) / 1000 / 60 / 60);
+                int month =  ((int)(currentTime - pubTime)) / 1000 / 60 / 60 / 24 / 30;
+                int day = ((int)(currentTime - pubTime)) / 1000 / 60 / 60 / 24 ;
+                int hour = ((int)(currentTime - pubTime)) / 1000 / 60 / 60  ;
+                int minute = ((int)(currentTime - pubTime)) / 1000 / 60 ;
 
                 if (month > 1) {
                     tvTime.setText(pubDate);
@@ -167,8 +167,10 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
                     if (month == 1) {
                         tvTime.setText("一个月前");
                     } else if (month < 1 && day >= 1) {
-                        tvTime.setText(day + "小时前");
-                    } else if (day < 1 && minute >= 1) {
+                        tvTime.setText(day + "天前");
+                    } else if (day < 1 && hour >= 1) {
+                        tvTime.setText(hour + "小时前");
+                    }else if(hour<1 && minute>=1){
                         tvTime.setText(minute + "分钟前");
                     } else if (minute < 1) {
                         tvTime.setText("刚刚");
@@ -223,7 +225,7 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(context,TweetDetailActivity.class);
+                    Intent intent = new Intent(context, TweetDetailActivity.class);
                     intent.putExtra("id",id);
                     context.startActivity(intent);
                 }
@@ -248,7 +250,9 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
                     }
                     break;
                 case R.id.iv_icon:
-
+                    Intent intentIcon = new Intent(context, HisActivity.class);
+                    intentIcon.putExtra("authorId",authorid);
+                    context.startActivity(intentIcon);
                     break;
             }
         }

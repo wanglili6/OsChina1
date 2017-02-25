@@ -87,27 +87,27 @@ public class AttentionActivity extends AppCompatActivity implements View.OnClick
         OKHttp3Helper
                 .create()
                 .get(url, null, params, new OKHttp3Helper.HttpCallback() {
-            @Override
-            public void onSuccess(String result) {
-                //MyLogger.e("网络数据:",result);
-                FriendsList bean = XmlUtils.toBean(FriendsList.class, result.getBytes());
+                    @Override
+                    public void onSuccess(String result) {
+                        //MyLogger.e("网络数据:",result);
+                        FriendsList bean = XmlUtils.toBean(FriendsList.class, result.getBytes());
 
-                Message msg = new Message();
+                        Message msg = new Message();
 
-                if (flag == PULL_REFRESH) {
-                    pageIndex = 0;
-                    msg.what = 0;
-                } else if (flag == LOAD_MORE) {
-                    msg.what = 1;
-                }
-                msg.obj = bean;
-                handler.sendMessage(msg);
-            }
-            @Override
-            public void onFail(Exception e) {
-                MyToast.show(getApplicationContext(),"获取网络数据失败");
-            }
-        });
+                        if (flag == PULL_REFRESH) {
+                            pageIndex = 0;
+                            msg.what = 0;
+                        } else if (flag == LOAD_MORE) {
+                            msg.what = 1;
+                        }
+                        msg.obj = bean;
+                        handler.sendMessage(msg);
+                    }
+                    @Override
+                    public void onFail(Exception e) {
+                        MyToast.show(getApplicationContext(),"获取网络数据失败");
+                    }
+                });
     }
 
     private void initEvent() {

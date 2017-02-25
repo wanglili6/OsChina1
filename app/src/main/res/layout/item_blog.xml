@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginRight="5dp"
-            android:src="@drawable/widget_today_icon" />
+            android:src="@mipmap/ic_label_today" />
 
         <ImageView
             android:id="@+id/iv_icon1_item_blog"
@@ -29,7 +29,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="5dp"
             android:layout_toRightOf="@+id/iv_icon_item_blog"
-            android:src="@drawable/widget_original_icon" />
+            android:src="@mipmap/ic_label_originate" />
 
 
         <TextView
@@ -41,7 +41,7 @@
             android:maxLines="1"
             android:text="新闻标题"
             android:textColor="#f8000000"
-            android:textSize="16dp" />
+            android:textSize="18dp" />
     </RelativeLayout>
 
     <TextView
@@ -53,7 +53,7 @@
         android:maxLines="2"
         android:text="内容"
         android:textColor="#c8383737"
-        android:textSize="12dp" />
+        android:textSize="14dp" />
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="名字"
-            android:textSize="10dp" />
+            android:textSize="12dp" />
 
         <TextView
             android:id="@+id/tv_time_item_blog"
@@ -73,7 +73,7 @@
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/tv_name_item_blog"
             android:text="时间"
-            android:textSize="10dp" />
+            android:textSize="12dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -95,7 +95,7 @@
                 android:layout_gravity="center"
                 android:layout_marginRight="3dp"
                 android:text="1"
-                android:textSize="10dp" />
+                android:textSize="12dp" />
         </LinearLayout>
 
 

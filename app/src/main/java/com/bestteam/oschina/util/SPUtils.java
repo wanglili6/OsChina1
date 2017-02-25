@@ -57,4 +57,9 @@ public final class SPUtils {
 		return sp.getString(key, defValue);
 	}
 
+	public static void clear(Context context){
+		SharedPreferences sp = context.getSharedPreferences(name, mode);
+		sp.edit().clear().commit();
+	}
+
 }

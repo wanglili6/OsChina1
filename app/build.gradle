@@ -50,4 +50,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:5.1.1'
     compile project(':okhttp3-library-source')
     compile files('libs/photoview.jar')
+    compile 'com.android.support:design:25.1.1'
+    //圆形图片
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }

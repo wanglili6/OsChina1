@@ -156,12 +156,14 @@
     </LinearLayout>
 
     <RelativeLayout
+
         android:id="@+id/rl_me_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp">
+        android:layout_margin="15dp">
 
         <ImageView
+            android:layout_centerVertical="true"
             android:id="@+id/me_ib_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -172,7 +174,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_margin="10dp"
             android:src="@drawable/ic_item_goto_right_tip" />
 
         <TextView
@@ -185,6 +186,7 @@
     </RelativeLayout>
 
     <View
+        android:layout_marginLeft="40dp"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
@@ -192,12 +194,14 @@
         android:paddingTop="10dp" />
 
     <RelativeLayout
+        android:layout_margin="15dp"
         android:id="@+id/rl_me_boke"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
 
         <ImageView
+            android:layout_centerVertical="true"
             android:id="@+id/me_ib_moke"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -208,7 +212,6 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_margin="10dp"
             android:src="@drawable/ic_item_goto_right_tip" />
 
         <TextView
@@ -221,6 +224,7 @@
     </RelativeLayout>
 
     <View
+        android:layout_marginLeft="40dp"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
@@ -228,12 +232,14 @@
         android:paddingTop="10dp" />
 
     <RelativeLayout
+        android:layout_margin="15dp"
         android:id="@+id/rl_me_question"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
 
         <ImageView
+            android:layout_centerVertical="true"
             android:id="@+id/me_ib_question"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -257,6 +263,7 @@
     </RelativeLayout>
 
     <View
+        android:layout_marginLeft="40dp"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
@@ -264,12 +271,14 @@
         android:paddingTop="10dp" />
 
     <RelativeLayout
+        android:layout_margin="15dp"
         android:id="@+id/rl_me_sports"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
 
         <ImageView
+            android:layout_centerVertical="true"
             android:id="@+id/me_ib_sport"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -293,6 +302,7 @@
     </RelativeLayout>
 
     <View
+        android:layout_marginLeft="40dp"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"
@@ -300,12 +310,14 @@
         android:paddingTop="10dp" />
 
     <RelativeLayout
+        android:layout_margin="15dp"
         android:id="@+id/rl_me_team"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp">
 
         <ImageView
+            android:layout_centerVertical="true"
             android:id="@+id/me_ib_team"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -329,6 +341,7 @@
     </RelativeLayout>
 
     <View
+        android:layout_marginLeft="40dp"
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginTop="10dp"

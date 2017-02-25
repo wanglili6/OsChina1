@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.Toolbar;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
@@ -14,10 +16,13 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.fragment.ExploreFragment;
-import com.bestteam.oschina.fragment.MeFragment;
 import com.bestteam.oschina.fragment.NewFragment;
+import com.bestteam.oschina.fragment.NewMeFragment;
 import com.bestteam.oschina.fragment.TweetFragment;
+import com.bestteam.oschina.util.MyToast;
+import com.bestteam.oschina.util.SPUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -48,12 +53,9 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
     RadioGroup radiogroup;
     @BindView(R.id.main_search)
     ImageButton mainSearch;
-    @BindView(R.id.main_setting)
-    ImageButton mainSetting;
     @BindView(R.id.tv_title)
     TextView tvTitle;
-    @BindView(R.id.main_code)
-    ImageButton mainCode;
+
 
     private List<Fragment> fragments;
     private boolean tweetHasLoad;
@@ -83,8 +85,13 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
             @Override
             public void onClick(View v) {
 
-                startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                String uid =  SPUtils.getString(getApplicationContext(),Cantents.MY_UID,"");
 
+                if (TextUtils.isEmpty(uid)){
+                   startActivity(new Intent(MainActivity.this,LoginActivity.class));
+                }else {
+                    startActivity(new Intent(MainActivity.this, FlipActivity.class));
+                }
             }
         });
 
@@ -123,7 +130,7 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
         fragments.add(new NewFragment());
         fragments.add(tweet);
         fragments.add(new ExploreFragment());
-        fragments.add(new MeFragment());
+        fragments.add(new NewMeFragment());
     }
 
     /**
@@ -137,37 +144,31 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
     public void onCheckedChanged(RadioGroup group, int checkedId) {
         switch (checkedId) {
             case R.id.rb_new:
+                toolbar.setVisibility(View.VISIBLE);
                 switchFragments(0);
                 tvTitle.setText("综合");
-                mainSetting.setVisibility(View.GONE);
                 mainSearch.setVisibility(View.VISIBLE);
-                mainCode.setVisibility(View.GONE);
-
                 break;
             case R.id.rb_tweet:
-
+                toolbar.setVisibility(View.VISIBLE);
                 switchFragments(1);
                 tvTitle.setText("动弹");
-                mainSetting.setVisibility(View.GONE);
                 mainSearch.setVisibility(View.VISIBLE);
-                mainCode.setVisibility(View.GONE);
+
                 //((DadTweetFragment)((TweetFragment)fragments.get(1)).fragments.get(0)).loadNetData();
                 break;
             case R.id.rb_explore:
-
+                toolbar.setVisibility(View.VISIBLE);
                 switchFragments(2);
                 tvTitle.setText("发现");
-                mainSetting.setVisibility(View.GONE);
                 mainSearch.setVisibility(View.VISIBLE);
-                mainCode.setVisibility(View.GONE);
+
 
                 break;
             case R.id.rb_me:
-
+                toolbar.setVisibility(View.GONE);
                 switchFragments(3);
                 mainSearch.setVisibility(View.GONE);
-                mainSetting.setVisibility(View.VISIBLE);
-                mainCode.setVisibility(View.VISIBLE);
                 tvTitle.setText("");
                 break;
         }
@@ -178,16 +179,10 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
      *
      * @param view
      */
-    @OnClick({R.id.main_setting, R.id.main_search, R.id.main_code})
+    @OnClick({R.id.main_search})
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.main_setting:
-                Intent intent = new Intent(this,SettingActivity.class);
-                startActivity(intent);
-                break;
             case R.id.main_search:
-                break;
-            case R.id.main_code:
                 break;
         }
     }

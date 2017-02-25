@@ -1,0 +1,555 @@
+[
+    {
+<<<<<<< HEAD
+        "outputFile": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+        "outputFile": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sr\\values-sr.xml",
+=======
+        "outputFile": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 108,
+                    "endOffset": 159
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 108,
+                        "endOffset": 159
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 164,
+                    "endColumn": 107,
+                    "endOffset": 267
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 164,
+                        "endColumn": 107,
+                        "endOffset": 267
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 272,
+                    "endColumn": 122,
+                    "endOffset": 390
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 272,
+                        "endColumn": 122,
+                        "endOffset": 390
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 395,
+                    "endColumn": 102,
+                    "endOffset": 493
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 395,
+                        "endColumn": 102,
+                        "endOffset": 493
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 498,
+                    "endColumn": 105,
+                    "endOffset": 599
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 498,
+                        "endColumn": 105,
+                        "endOffset": 599
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 604,
+                    "endColumn": 85,
+                    "endOffset": 685
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 604,
+                        "endColumn": 85,
+                        "endOffset": 685
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 690,
+                    "endColumn": 103,
+                    "endOffset": 789
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 690,
+                        "endColumn": 103,
+                        "endOffset": 789
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 794,
+                    "endColumn": 117,
+                    "endOffset": 907
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 794,
+                        "endColumn": 117,
+                        "endOffset": 907
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 912,
+                    "endColumn": 80,
+                    "endOffset": 988
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 10,
+                        "startColumn": 4,
+                        "startOffset": 912,
+                        "endColumn": 80,
+                        "endOffset": 988
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 993,
+                    "endColumn": 79,
+                    "endOffset": 1068
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 11,
+                        "startColumn": 4,
+                        "startOffset": 993,
+                        "endColumn": 79,
+                        "endOffset": 1068
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 1073,
+                    "endColumn": 87,
+                    "endOffset": 1156
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 12,
+                        "startColumn": 4,
+                        "startOffset": 1073,
+                        "endColumn": 87,
+                        "endOffset": 1156
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 13,
+                    "startColumn": 4,
+                    "startOffset": 1161,
+                    "endColumn": 104,
+                    "endOffset": 1261
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 13,
+                        "startColumn": 4,
+                        "startOffset": 1161,
+                        "endColumn": 104,
+                        "endOffset": 1261
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 1266,
+                    "endColumn": 107,
+                    "endOffset": 1369
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 14,
+                        "startColumn": 4,
+                        "startOffset": 1266,
+                        "endColumn": 107,
+                        "endOffset": 1369
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1374,
+                    "endColumn": 100,
+                    "endOffset": 1470
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 15,
+                        "startColumn": 4,
+                        "startOffset": 1374,
+                        "endColumn": 100,
+                        "endOffset": 1470
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1475,
+                    "endColumn": 103,
+                    "endOffset": 1574
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 16,
+                        "startColumn": 4,
+                        "startOffset": 1475,
+                        "endColumn": 103,
+                        "endOffset": 1574
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 17,
+                    "startColumn": 4,
+                    "startOffset": 1579,
+                    "endColumn": 107,
+                    "endOffset": 1682
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 17,
+                        "startColumn": 4,
+                        "startOffset": 1579,
+                        "endColumn": 107,
+                        "endOffset": 1682
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 18,
+                    "startColumn": 4,
+                    "startOffset": 1687,
+                    "endColumn": 100,
+                    "endOffset": 1783
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 18,
+                        "startColumn": 4,
+                        "startOffset": 1687,
+                        "endColumn": 100,
+                        "endOffset": 1783
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 19,
+                    "startColumn": 4,
+                    "startOffset": 1788,
+                    "endColumn": 127,
+                    "endOffset": 1911
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 19,
+                        "startColumn": 4,
+                        "startOffset": 1788,
+                        "endColumn": 127,
+                        "endOffset": 1911
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 20,
+                    "startColumn": 4,
+                    "startOffset": 1916,
+                    "endColumn": 96,
+                    "endOffset": 2008
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 20,
+                        "startColumn": 4,
+                        "startOffset": 1916,
+                        "endColumn": 96,
+                        "endOffset": 2008
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 21,
+                    "startColumn": 4,
+                    "startOffset": 2013,
+                    "endColumn": 100,
+                    "endOffset": 2109
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-sr\\values-sr.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 21,
+                        "startColumn": 4,
+                        "startOffset": 2013,
+                        "endColumn": 100,
+                        "endOffset": 2109
+                    }
+                }
+            }
+        ]
+    }
+]

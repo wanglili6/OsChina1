@@ -1,0 +1,127 @@
+[
+    {
+<<<<<<< HEAD
+        "outputFile": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v22\\values-v22.xml",
+=======
+<<<<<<< HEAD
+        "outputFile": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v22\\values-v22.xml",
+=======
+        "outputFile": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values-v22\\values-v22.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 74,
+                    "endOffset": 125
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v22\\values-v22.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v22\\values-v22.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v22\\values-v22.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 74,
+                        "endOffset": 125
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 130,
+                    "endColumn": 86,
+                    "endOffset": 212
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v22\\values-v22.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v22\\values-v22.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v22\\values-v22.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 130,
+                        "endColumn": 86,
+                        "endOffset": 212
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 217,
+                    "endLine": 8,
+                    "endColumn": 12,
+                    "endOffset": 548
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v22\\values-v22.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v22\\values-v22.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v22\\values-v22.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 217,
+                        "endLine": 8,
+                        "endColumn": 12,
+                        "endOffset": 548
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 553,
+                    "endLine": 13,
+                    "endColumn": 12,
+                    "endOffset": 896
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v22\\values-v22.xml",
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v22\\values-v22.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.4.0\\res\\values-v22\\values-v22.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 4,
+                        "startOffset": 553,
+                        "endLine": 13,
+                        "endColumn": 12,
+                        "endOffset": 896
+                    }
+                }
+            }
+        ]
+    }
+]

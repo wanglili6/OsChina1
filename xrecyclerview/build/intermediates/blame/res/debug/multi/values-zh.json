@@ -1,0 +1,279 @@
+[
+    {
+<<<<<<< HEAD
+        "outputFile": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
+=======
+<<<<<<< HEAD
+        "outputFile": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
+=======
+        "outputFile": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 60,
+                    "endOffset": 111
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+                    "position": {
+                        "startLine": 1,
+                        "startColumn": 4,
+                        "startOffset": 16,
+                        "endColumn": 60,
+                        "endOffset": 72
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+                    "position": {
+                        "startLine": 1,
+                        "startColumn": 4,
+                        "startOffset": 17,
+                        "endColumn": 60,
+                        "endOffset": 73
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 116,
+                    "endColumn": 63,
+                    "endOffset": 175
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 77,
+                        "endColumn": 63,
+                        "endOffset": 136
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 79,
+                        "endColumn": 63,
+                        "endOffset": 138
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 180,
+                    "endColumn": 61,
+                    "endOffset": 237
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 380,
+                        "endColumn": 61,
+                        "endOffset": 437
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 4,
+                        "startOffset": 388,
+                        "endColumn": 61,
+                        "endOffset": 445
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 5,
+                    "startColumn": 4,
+                    "startOffset": 242,
+                    "endColumn": 52,
+                    "endOffset": 290
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 141,
+                        "endColumn": 52,
+                        "endOffset": 189
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 144,
+                        "endColumn": 52,
+                        "endOffset": 192
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 6,
+                    "startColumn": 4,
+                    "startOffset": 295,
+                    "endColumn": 45,
+                    "endOffset": 336
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 334,
+                        "endColumn": 45,
+                        "endOffset": 375
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 4,
+                        "startOffset": 341,
+                        "endColumn": 45,
+                        "endOffset": 382
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 341,
+                    "endColumn": 46,
+                    "endOffset": 383
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 194,
+                        "endColumn": 46,
+                        "endOffset": 236
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 198,
+                        "endColumn": 46,
+                        "endOffset": 240
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 388,
+                    "endColumn": 45,
+                    "endOffset": 429
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 288,
+                        "endColumn": 45,
+                        "endOffset": 329
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 294,
+                        "endColumn": 45,
+                        "endOffset": 335
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 434,
+                    "endColumn": 46,
+                    "endOffset": 476
+                },
+                "from": {
+<<<<<<< HEAD
+                    "file": "D:\\android_studio_work_space\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 241,
+                        "endColumn": 46,
+                        "endOffset": 283
+=======
+<<<<<<< HEAD
+                    "file": "C:\\Users\\45011\\Documents\\OSChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+=======
+                    "file": "E:\\AndroidWorkSpace\\androidStudio\\OsChina\\xrecyclerview\\src\\main\\res\\values-zh\\strings.xml",
+>>>>>>> 1d77b73af03b482c0898c8594100567f0f482167
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 4,
+                        "startOffset": 246,
+                        "endColumn": 46,
+                        "endOffset": 288
+>>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                    }
+                }
+            }
+        ]
+    }
+]
