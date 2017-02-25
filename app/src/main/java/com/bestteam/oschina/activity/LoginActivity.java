@@ -96,8 +96,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
         SPUtils.saveString(this, "username", "pwd");
-        String my_name =  SPUtils.getString(getApplicationContext(),Cantents.MY_USERNAME,"");
-        String my_pwd = SPUtils.getString(getApplicationContext(),"",Cantents.MY_PWD);
+        String my_name = SPUtils.getString(getApplicationContext(), Cantents.MY_USERNAME, "");
+        String my_pwd = SPUtils.getString(getApplicationContext(), "", Cantents.MY_PWD);
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(pwd)) {
             MyToast.show(LoginActivity.this, "账号或密码不能为空");
             return;
@@ -135,14 +135,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                         @Override
                         public void onResponse(String response, int id) {
-<<<<<<< HEAD
                             LoginUserBean user = XmlUtils.toBean(LoginUserBean.class, response.getBytes());
                             SPUtils.saveString(getApplicationContext(), Cantents.MY_UID, user.getUser().getId() + "");
-=======
                             UserInformation user = XmlUtils.toBean(UserInformation.class, response.getBytes());
-                            SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
-                            SPUtils.saveString(getApplicationContext(),Cantents.MY_USERNAME,Cantents.MY_PWD);
->>>>>>> 9a734b4a8412fead7d774f3a78f48b1e498b6f53
+                            SPUtils.saveString(getApplicationContext(), Cantents.MY_UID, user.getUser().getId() + "");
+                            SPUtils.saveString(getApplicationContext(), Cantents.MY_USERNAME, Cantents.MY_PWD);
                             MyToast.show(LoginActivity.this, "登录成功");
                             loginFlag = true;
                             finish();

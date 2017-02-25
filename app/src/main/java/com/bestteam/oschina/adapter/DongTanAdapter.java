@@ -11,10 +11,9 @@ import android.widget.TextView;
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.bean.Tweet;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.List;
+
 
 
 /**
