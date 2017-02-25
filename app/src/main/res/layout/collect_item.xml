@@ -1,26 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <ImageButton
-            android:layout_centerVertical="true"
-            android:src="@drawable/widget_bar_me_nor"
-            android:id="@+id/collect_ib_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
         <TextView
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="10dp"
-            android:text="文字"
-            android:layout_toRightOf="@id/collect_ib_icon"
+            android:background="#9f9292"
             android:id="@+id/collect_tv_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_margin="5dp"
+
+            android:text="类型" />
+        <TextView
+            android:id="@+id/collect_tv_wenzi"
+            android:layout_margin="5dp"
+            android:layout_toRightOf="@id/collect_tv_text"
+            android:text="文字"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_shoucang_juzhang"
+                android:text="局长"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/tv_shoucang_time"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/tv_shoucang_juzhang"
+                android:text="30分钟前"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+        <LinearLayout
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_gravity="center"
+                android:src="@drawable/ic_unlike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="5dp"
+                android:text="6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+    </RelativeLayout>
+    <View
+        android:layout_marginTop="15dp"
+        android:background="#819293"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"/>
 
 </LinearLayout>

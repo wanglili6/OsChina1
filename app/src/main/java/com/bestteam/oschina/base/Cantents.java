@@ -33,5 +33,11 @@ public interface Cantents {
 
     String MY_UID = "uid";  //uid值
 
+    //收藏
+    public String SHOU_CANG_URL= "http://www.oschina.net/action/api/favorite_list";
+
+    //动弹
+    public String DONG_TAN_URL= "http://www.oschina.net/action/api/tweet_list";
+
 
 }

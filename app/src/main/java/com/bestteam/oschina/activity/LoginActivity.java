@@ -116,7 +116,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             String cookie = response.header("Set-Cookie", "");
                             Log.d("KYZG", cookie);
                             //把cookie值存入sp中,用时get
-                            SPUtils.saveString(getApplicationContext(), Cantents.MY_COOKIE,cookie);
+                            SPUtils.saveString(getApplicationContext(), Cantents.MY_COOKIE, cookie);
                             //cookie
                             return response.body().string();
 
@@ -133,7 +133,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onResponse(String response, int id) {
                             LoginUserBean user = XmlUtils.toBean(LoginUserBean.class, response.getBytes());
-                            SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getId()+"");
+                            SPUtils.saveString(getApplicationContext(), Cantents.MY_UID, user.getUser().getId() + "");
                             MyToast.show(LoginActivity.this, "登录成功");
                             //startActivity(new Intent(LoginActivity.this,MainActivity.class));
 
