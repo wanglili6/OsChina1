@@ -135,6 +135,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                         @Override
                         public void onResponse(String response, int id) {
+
                             UserInformation user = XmlUtils.toBean(UserInformation.class, response.getBytes());
                             SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
                             SPUtils.saveString(getApplicationContext(),Cantents.MY_USERNAME,Cantents.MY_PWD);
