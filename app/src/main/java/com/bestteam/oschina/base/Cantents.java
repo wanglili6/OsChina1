@@ -48,9 +48,19 @@ public interface Cantents {
     String MY_GENDER = "gender";    //获得男女
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 =======
+=======
+    //收藏
+    public String SHOU_CANG_URL= "http://www.oschina.net/action/api/favorite_list";
+
+    //动弹
+    public String DONG_TAN_URL= "http://www.oschina.net/action/api/tweet_list";
+
+
+>>>>>>> e2cda94a33a0b236cfa4b842648ca151288f51b3
     int RESULT_OK = 1;
     int RESULT_FAIL = 0;
 >>>>>>> 35b9f1a5e8f311191d10a46563ea8b57f933c95e
