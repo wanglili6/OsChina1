@@ -9,14 +9,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.adapter.MyHavaHeardAdapter;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import com.bestteam.oschina.adapter.softwareadapter.MyHavaHeardAdapter;
 
 /**
  * Created by 王丽丽 on 2017/2/21.
@@ -109,17 +105,6 @@ public class RefreshRecyleView extends RecyclerView {
     @Override
     public void onScrollStateChanged(int state) {
         super.onScrollStateChanged(state);
-        switch (state) {
-            case RecyclerView.SCROLL_STATE_DRAGGING://拖拽
-                break;
-
-            case RecyclerView.SCROLL_STATE_SETTLING://惯性滑动
-                break;
-
-            case RecyclerView.SCROLL_STATE_IDLE://静止
-
-                break;
-        }
         //在静止状态下并且是最后也个条目
         boolean isState = state == RecyclerView.SCROLL_STATE_IDLE;
         //最后一个条目
