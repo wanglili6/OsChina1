@@ -13,8 +13,8 @@
             android:orientation="horizontal">
             <ImageButton
                 android:id="@+id/ib_myblog"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:layout_alignParentLeft="true"
                 android:layout_centerInParent="true"
                 android:background="@drawable/btn_back_selector"
@@ -27,7 +27,7 @@
                 android:layout_height="wrap_content"
                 android:textColor="#fff"
                 android:layout_centerInParent="true"
-                android:textSize="12sp"
+                android:textSize="18sp"
                 android:text="我的"
                 />
             <TextView

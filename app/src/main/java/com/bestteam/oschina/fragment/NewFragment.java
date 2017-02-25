@@ -22,7 +22,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by 王丽丽 on 2017/2/18.
+ * Created by 王丽丽 on 2017/2/18
+ * 综合
  */
 public class NewFragment extends android.support.v4.app.Fragment {
 

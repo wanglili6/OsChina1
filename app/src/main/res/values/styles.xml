@@ -366,7 +366,6 @@
     <style name="explore_btn_style">
         <item name="android:textColor">#333232</item>
         <item name="android:elevation">2dp</item>
-        <item name="android:layout_marginTop">25dp</item>
         <item name="android:clickable">true</item>
         <item name="android:padding">12dp</item>
         <item name="android:drawablePadding">5dp</item>

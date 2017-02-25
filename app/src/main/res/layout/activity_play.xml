@@ -3,6 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <LinearLayout
+
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:background="@color/actionbar_background"
@@ -23,17 +24,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </LinearLayout>
-
-
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/srefresh"
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ProgressBar
+        android:id="@+id/load"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/play_rv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <com.bestteam.oschina.view.RefreshRecyleView
-            android:id="@+id/base_rv"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        android:layout_height="match_parent"/>
+</RelativeLayout>
 
-        </com.bestteam.oschina.view.RefreshRecyleView>
-    </android.support.v4.widget.SwipeRefreshLayout>
+
 </LinearLayout>
