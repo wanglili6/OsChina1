@@ -35,6 +35,9 @@ public interface Cantents {
     String MY_COOKIE = "cookie";    //cookie值
 
     String MY_UID = "uid";  //uid值
+    String MY_USERNAME = "username";  //用户名
+    String MY_PWD = "pwd";  //密码
+    String MY_GENDER = "gender";    //获得男女
 
     int RESULT_OK = 1;
     int RESULT_FAIL = 0;
