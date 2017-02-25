@@ -11,12 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-<<<<<<< HEAD
-=======
-import com.bestteam.oschina.R;
 import com.bestteam.oschina.activity.LoginActivity;
-import com.bestteam.oschina.activity.TweetDetailActivity;
->>>>>>> 35b9f1a5e8f311191d10a46563ea8b57f933c95e
 import com.bestteam.oschina.adapter.NewTweetAdapter;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.TweetsList;
