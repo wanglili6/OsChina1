@@ -94,6 +94,8 @@ public class TweetDetailActivity extends AppCompatActivity implements View.OnCli
     private TweetDetailAdapter adapter;
     private int allCount = 100000;
     private int pageSize = 20;
+    private ImageView ivBack;
+    private int uid;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -124,10 +126,12 @@ public class TweetDetailActivity extends AppCompatActivity implements View.OnCli
         tv_count_pinglun = (TextView) headView.findViewById(R.id.tv_count_pinglun_detail);
         tvZan = (TextView) headView.findViewById(R.id.tv_zan_detail);
         iv_zan = (ImageView) headView.findViewById(R.id.iv_zan_detail);
+        ivBack = (ImageView) headView.findViewById(R.id.iv_back);
 
         iv_zan.setOnClickListener(this);
         iv_icon.setOnClickListener(this);
         iv_small.setOnClickListener(this);
+        ivBack.setOnClickListener(this);
 
         xRv.addHeaderView(headView);
 
@@ -207,6 +211,7 @@ public class TweetDetailActivity extends AppCompatActivity implements View.OnCli
         String imgSmall = tweet.getImgSmall();
         imgBig = tweet.getImgBig();
         String username = tweet.getAuthor();
+        uid = tweet.getAuthorid();
         String body = tweet.getBody();
         String time = tweet.getPubDate();
         int likeCount = tweet.getLikeCount();
@@ -280,7 +285,12 @@ public class TweetDetailActivity extends AppCompatActivity implements View.OnCli
                 }
                 break;
             case R.id.iv_icon_detail:
-
+                Intent intentIcon = new Intent(this,HisActivity.class);
+                intentIcon.putExtra("authorId",uid);
+                startActivity(intentIcon);
+                break;
+            case R.id.iv_back:
+                finish();
                 break;
         }
     }

@@ -20,6 +20,30 @@ import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.bestteam.oschina.R;
+import com.bestteam.oschina.adapter.CommendFragmentAdapter;
+import com.bestteam.oschina.base.Cantents;
+import com.bestteam.oschina.bean.BlogList;
+import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
+import com.bestteam.oschina.util.MyToast;
+import com.bestteam.oschina.util.XmlUtils;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import com.bestteam.oschina.R;
+import com.bestteam.oschina.adapter.CommendFragmentAdapter;
+import com.bestteam.oschina.base.Cantents;
+import com.bestteam.oschina.bean.BlogList;
+import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
+import com.bestteam.oschina.util.MyToast;
+import com.bestteam.oschina.util.XmlUtils;
+import com.jcodecraeer.xrecyclerview.XRecyclerView;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Created by Why on 2017/2/19.
  */

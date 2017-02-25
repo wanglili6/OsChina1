@@ -21,6 +21,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.activity.HisActivity;
 import com.bestteam.oschina.activity.ImgBigActivity;
 import com.bestteam.oschina.activity.TweetDetailActivity;
 import com.bestteam.oschina.bean.Tweet;
@@ -107,6 +108,7 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
         private Tweet tweet;
         private int isLike;
         private String imgBig;
+        private int authorid;
 
 
         MyViewHolder(View view) {
@@ -116,6 +118,7 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
 
         public void setData(int position) {
             tweet = list.get(position);
+            authorid = tweet.getAuthorid();
             String portrait = tweet.getPortrait();
             String imgSmall = tweet.getImgSmall();
             imgBig = tweet.getImgBig();
@@ -248,7 +251,9 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
                     }
                     break;
                 case R.id.iv_icon:
-
+                    Intent intentIcon = new Intent(context, HisActivity.class);
+                    intentIcon.putExtra("authorId",authorid);
+                    context.startActivity(intentIcon);
                     break;
             }
         }

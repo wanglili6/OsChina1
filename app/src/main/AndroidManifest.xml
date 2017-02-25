@@ -17,7 +17,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.MessageActivity" />
         <activity android:name=".activity.SettingActivity" />
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.UpdataActivity" />
@@ -44,6 +43,8 @@
         <activity android:name=".activity.DongTanActivity" />
         <activity android:name=".activity.ShouCangActivity" />
         <activity android:name=".activity.SuggestionActivity" />
+        <activity android:name=".activity.HisActivity"
+            android:windowSoftInputMode="adjustPan"/>
 
     </application>
 

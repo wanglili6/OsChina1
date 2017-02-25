@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private String username;
     private String pwd;
-
+    private boolean loginFlag;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -133,10 +133,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onResponse(String response, int id) {
                             LoginUserBean user = XmlUtils.toBean(LoginUserBean.class, response.getBytes());
-                            SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getId()+"");
+                            SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
                             MyToast.show(LoginActivity.this, "登录成功");
                             //startActivity(new Intent(LoginActivity.this,MainActivity.class));
-
+                            loginFlag = true;
                             finish();
                         }
                     });
@@ -182,5 +182,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         }
     }
 
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(loginFlag){
+            setResult(1);
+        }
+    }
 }
