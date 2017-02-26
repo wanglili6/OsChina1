@@ -28,6 +28,7 @@
         <activity android:name=".activity.RegisterUserActivity" />
         <activity android:name=".activity.FlipActivity" />
         <activity android:name=".activity.AttentionActivity" />
+        <activity android:name=".activity.FriendActivity" />
         <activity android:name=".activity.FansActivity" />
         <activity android:name=".activity.NewsDetailActivity" />
         <activity android:name=".activity.MyBlogActivity" />

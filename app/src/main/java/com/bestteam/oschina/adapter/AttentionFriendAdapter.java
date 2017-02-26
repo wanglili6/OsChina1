@@ -1,6 +1,7 @@
 package com.bestteam.oschina.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.activity.FriendActivity;
 import com.bestteam.oschina.bean.Friend;
 import com.bestteam.oschina.bean.FriendsList;
 import com.squareup.picasso.Picasso;
@@ -46,8 +48,8 @@ public class AttentionFriendAdapter extends RecyclerView.Adapter{
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        FriendViewHolder viewHolder = (FriendViewHolder) holder;
-        Friend friend = friendDatas.get(position);
+        final FriendViewHolder viewHolder = (FriendViewHolder) holder;
+        final Friend friend = friendDatas.get(position);
         String portrait = friend.getPortrait();
         if (!TextUtils.isEmpty(portrait)) {
             Picasso.with(context).load(portrait).into(viewHolder.ivFriendItem);
@@ -58,7 +60,11 @@ public class AttentionFriendAdapter extends RecyclerView.Adapter{
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(context,FriendActivity.class);
+                intent.putExtra("gender",friend.getPortrait());
+                intent.putExtra("name",friend.getName());
+                intent.putExtra("expertise",friend.getExpertise());
+                context.startActivity(intent);
             }
         });
     }

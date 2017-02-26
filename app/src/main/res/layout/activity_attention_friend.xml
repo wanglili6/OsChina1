@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rl_login"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="#40AA53"
+        android:clickable="true">
+
+        <com.bestteam.oschina.view.GalaxyView
+            android:id="@+id/galaxy"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <!--这是上面设置和二维码-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/ib_back_attention"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="5dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/btn_back_selector" />
+            <TextView
+                android:id="@+id/tv_back_attention"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/ib_back_attention"
+                android:layout_centerVertical="true"
+                android:text="返回"
+                android:textColor="@color/attention_text_selector"
+                android:textSize="25sp" />
+
+        </RelativeLayout>
+        <!--这是中间登录头像-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/face_big"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/widget_default_face"
+                android:clickable="true" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+
+                android:id="@+id/img_gender"
+                android:layout_alignBottom="@+id/face_big"
+                android:layout_width="wrap_content"
+                android:layout_alignRight="@+id/face_big"
+                android:layout_height="wrap_content"
+                android:src="@drawable/userinfo_icon_female"
+                android:clickable="true" />
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/face_big"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="点击头像进入登录"
+                android:textColor="#fff"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/jifen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:text="积分0"
+                android:textColor="#fff"
+                android:textSize="10sp" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+    <!--收藏-->
+    <ImageView
+        android:background="#e8f7e5"
+        android:layout_width="match_parent"
+        android:layout_height="0.01px"/>
+    <LinearLayout
+        android:id="@+id/text_contant"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#40AA53"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/ll_move"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/move_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/move"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="动弹"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_collect"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/collect_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/collect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="收藏"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_attention"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/attention_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/attention"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="关注"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_fans"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/fans_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textColor="#fff"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/fans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="粉丝"
+                android:textColor="#fff"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rv_attention_friend"/>
+</LinearLayout>

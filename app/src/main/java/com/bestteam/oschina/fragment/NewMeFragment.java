@@ -177,10 +177,11 @@ public class NewMeFragment extends Fragment {
             case R.id.ll_attention://关注
                 Intent intent3 = new Intent(getContext(), AttentionActivity.class);
                 startActivity(intent3);
-                Intent intent4 = new Intent(getContext(), FansActivity.class);
-                startActivity(intent4);
+
                 break;
             case R.id.ll_fans://粉丝
+                Intent intent4 = new Intent(getContext(), FansActivity.class);
+                startActivity(intent4);
                 break;
 
         }

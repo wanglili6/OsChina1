@@ -23,8 +23,8 @@ public class HisActivity extends AppCompatActivity{
         Intent intent = getIntent();
         authorid = intent.getIntExtra("authorId", 0);
 
-        tv = (TextView) findViewById(R.id.tv);
-        tv.setText(authorid +"");
+        /*tv = (TextView) findViewById(R.id.tv);
+        tv.setText(authorid +"");*/
 
     }
 }
