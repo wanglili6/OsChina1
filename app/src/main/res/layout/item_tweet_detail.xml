@@ -67,6 +67,7 @@
             android:lines="2"
             android:hint="回复"
             android:textSize="16sp"
+            android:textColor="#000"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginRight="5dp"
@@ -78,6 +79,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/et_huifu"
                 android:text="发送"
+                android:textColor="#000"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"/>
         </RelativeLayout>

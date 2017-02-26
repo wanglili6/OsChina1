@@ -10,9 +10,8 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
-import android.view.Display;
-import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -23,6 +22,7 @@ import com.bestteam.oschina.fragment.HotTweetFragment;
 import com.bestteam.oschina.fragment.MyTweetFragment;
 import com.bestteam.oschina.fragment.NewTweetFragment;
 import com.bestteam.oschina.view.GalaxyView;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -57,8 +57,12 @@ public class HisActivity extends AppCompatActivity {
     AppBarLayout idAppbarlayout;
     @BindView(R.id.vp_me)
     ViewPager vpMe;
+    @BindView(R.id.name)
+    TextView tvName;
     private int authorid;
     private List<Fragment> fragments;
+    private String face;
+    private String name;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,9 +72,10 @@ public class HisActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         authorid = intent.getIntExtra("authorId", 0);
-
+        face = intent.getStringExtra("face");
+        name = intent.getStringExtra("name");
         initViewPager();
-
+        initData();
     }
 
     @Override
@@ -85,7 +90,7 @@ public class HisActivity extends AppCompatActivity {
         fragments.add(new HotTweetFragment());
         fragments.add(new MyTweetFragment());
         fragments.add(new NewTweetFragment());
-        MeVpFragAdapter adapter = new MeVpFragAdapter(getSupportFragmentManager(),fragments);
+        MeVpFragAdapter adapter = new MeVpFragAdapter(getSupportFragmentManager(), fragments);
 
         vpMe.setAdapter(adapter);
         tabMe.setupWithViewPager(vpMe);
@@ -94,7 +99,12 @@ public class HisActivity extends AppCompatActivity {
     }
 
     private void initData() {
-
+        if(!TextUtils.isEmpty(face)){
+            Picasso.with(this).load(face).into(faceBig);
+        }
+        if(!TextUtils.isEmpty(name)){
+            tvName.setText(name);
+        }
     }
 
     private void initGalaxy() {
@@ -102,18 +112,18 @@ public class HisActivity extends AppCompatActivity {
         rlCollapsing.getLocationOnScreen(location);
         int x = location[0];
         int y = location[1];
-        System.out.println("x:"+x+"y:"+y);
-        Log.e("xyxyxyxyxyxyxyx",x+"...."+y);
+        System.out.println("x:" + x + "y:" + y);
+        Log.e("xyxyxyxyxyxyxyx", x + "...." + y);
         int bottom = faceBig.getBottom();
         int right = faceBig.getRight();
         int left = faceBig.getLeft();
         int top = faceBig.getTop();
-        int xxx = (right-left)/2+x+left;
-        int yyy = (bottom-top)/2+y+top;
+        int xxx = (right - left) / 2 + x + left;
+        int yyy = (bottom - top) / 2 + y + top;
         Rect frame = new Rect();
         getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
         int statusBarHeight = frame.top;
-        yyy = yyy-statusBarHeight;
+        yyy = yyy - statusBarHeight;
        /* Window window = getWindow();
         Rect decorRect = new Rect();
         window.getDecorView().getWindowVisibleDisplayFrame(decorRect);

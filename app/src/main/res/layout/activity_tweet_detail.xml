@@ -24,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
+            android:textColor="#000"
             android:layout_margin="10dp"
             android:layout_alignParentLeft="true"
             android:background="@drawable/comment_reply_container_bg"
@@ -36,6 +37,7 @@
             android:layout_alignParentRight="true"
             android:layout_margin="5dp"
             android:textSize="18sp"
+            android:textColor="#000"
             android:text="发送"
             android:visibility="gone"
 

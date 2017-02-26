@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.activity.HisActivity;
 import com.bestteam.oschina.activity.ImgBigActivity;
 import com.bestteam.oschina.activity.TweetDetailActivity;
 import com.bestteam.oschina.bean.Tweet;
@@ -102,6 +103,8 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
         private int isLike;
         private String imgBig;
         private int authorid;
+        private String portrait;
+        private String author;
 
 
         MyViewHolder(View view) {
@@ -112,7 +115,7 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
         public void setData(int position) {
             tweet = list.get(position);
             authorid = tweet.getAuthorid();
-            String portrait = tweet.getPortrait();
+            portrait = tweet.getPortrait();
             String imgSmall = tweet.getImgSmall();
             imgBig = tweet.getImgBig();
             //加载头像
@@ -120,7 +123,8 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
                 Picasso.with(context).load(portrait).into(ivIcon);
             }
             //加载用户名
-            tvUsername.setText(tweet.getAuthor());
+            author = tweet.getAuthor();
+            tvUsername.setText(author);
 
             //加载文本内容
             tvContent.setText(tweet.getBody());
@@ -249,9 +253,11 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
                     }
                     break;
                 case R.id.iv_icon:
-//                    Intent intentIcon = new Intent(context, HisActivity.class);
-//                    intentIcon.putExtra("authorId",authorid);
-//                    context.startActivity(intentIcon);
+                    Intent intentIcon = new Intent(context, HisActivity.class);
+                    intentIcon.putExtra("authorId",authorid);
+                    intentIcon.putExtra("face", portrait);
+                    intentIcon.putExtra("name", author);
+                    context.startActivity(intentIcon);
                     break;
             }
         }

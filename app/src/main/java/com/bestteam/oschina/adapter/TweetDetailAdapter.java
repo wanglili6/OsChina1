@@ -2,6 +2,7 @@ package com.bestteam.oschina.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.util.Log;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.activity.HisActivity;
 import com.bestteam.oschina.activity.LoginActivity;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.Comment;
@@ -91,6 +93,8 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
         private int authorId;
         private final Button btSend;
         private InputMethodManager imm;
+        private String author;
+        private String portrait;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -108,8 +112,8 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
         public void setData(int position) {
             Comment comment = list.get(position);
             final int id = comment.getId();
-            String portrait = comment.getPortrait();
-            String author = comment.getAuthor();
+            portrait = comment.getPortrait();
+            author = comment.getAuthor();
             authorId = comment.getAuthorId();
             String pubDate = comment.getPubDate();
             final String content = comment.getContent();
@@ -121,8 +125,9 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
             tvUserNameComment.setText(author);
             tvTimeComment.setText(pubDate);
             tvComment.setText(content);
-            final String huifu = "回复:@"+author+":";
+            final String huifu = "回复:@"+ author +":";
             etComment.setText(huifu);
+            //etComment.setTextColor(Color.BLACK);
             etComment.setSelection(huifu.length());
 
             final String myUid = SPUtils.getString(context,Cantents.MY_UID,"");
@@ -150,9 +155,11 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
             ivIconComment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-//                    Intent intentIcon = new Intent(context,HisActivity.class);
-//                    intentIcon.putExtra("authorId",authorId);
-//                    context.startActivity(intentIcon);
+                    Intent intentIcon = new Intent(context,HisActivity.class);
+                    intentIcon.putExtra("authorId",authorId);
+                    intentIcon.putExtra("face", portrait);
+                    intentIcon.putExtra("name", author);
+                    context.startActivity(intentIcon);
                 }
             });
 

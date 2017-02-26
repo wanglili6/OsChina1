@@ -110,6 +110,8 @@ public class TweetDetailActivity extends AppCompatActivity implements View.OnCli
     private TextView tvAt;
     private RelativeLayout rl;
     private InputMethodManager imm;
+    private String username;
+    private String portrait;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -253,10 +255,10 @@ public class TweetDetailActivity extends AppCompatActivity implements View.OnCli
 
     public void initHeadDetail(Tweet tweet) {
         isLike = tweet.getIsLike();
-        String portrait = tweet.getPortrait();
+        portrait = tweet.getPortrait();
         String imgSmall = tweet.getImgSmall();
         imgBig = tweet.getImgBig();
-        String username = tweet.getAuthor();
+        username = tweet.getAuthor();
         uid = tweet.getAuthorid();
         String body = tweet.getBody();
         String time = tweet.getPubDate();
@@ -336,9 +338,11 @@ public class TweetDetailActivity extends AppCompatActivity implements View.OnCli
                 }
                 break;
             case R.id.iv_icon_detail:
-//               Intent intentIcon = new Intent(this, HisActivity.class);
-//                intentIcon.putExtra("authorId", uid);
-//                startActivity(intentIcon);
+               Intent intentIcon = new Intent(this, HisActivity.class);
+                intentIcon.putExtra("authorId", uid);
+                intentIcon.putExtra("face", portrait);
+                intentIcon.putExtra("name", username);
+                startActivity(intentIcon);
                 break;
             case R.id.iv_back:
                 finish();
