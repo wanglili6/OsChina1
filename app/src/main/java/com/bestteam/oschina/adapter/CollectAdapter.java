@@ -49,24 +49,47 @@ public class CollectAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     //给adapter设置数据的方法,(写一个方法进行拿到传递过来的数据)
     public void addAll(List<Favorite> favoritesList) {
-        this.favoriteList = favoritesList;
+        this.favoriteList.addAll(favoritesList);
+    }
+
+    public void clear() {
+        this.favoriteList.clear();
     }
 
     private class CollectViewHolder extends RecyclerView.ViewHolder {
 
-        private final ImageButton collect_icon;
-        private final TextView collect_text;
+        private final TextView collect_tv_text;
+        private final TextView collect_tv_wenzi;
 
         public CollectViewHolder(View view) {
             super(view);
-            collect_icon = (ImageButton) view.findViewById(R.id.collect_ib_icon);
-            collect_text = (TextView) view.findViewById(R.id.collect_tv_text);
+            collect_tv_text = (TextView) view.findViewById(R.id.collect_tv_text);
+            collect_tv_wenzi = (TextView) view.findViewById(R.id.collect_tv_wenzi);
         }
 
         //设置一个方法，进行数据的填充
         public void setData(Favorite favorites) {
-            collect_icon.setImageResource(R.drawable.actionbar_back_icon_normal);
-            collect_text.setText(favorites.getTitle());
+            switch (favorites.getType()) {
+                case Favorite.CATALOG_ALL:
+                    collect_tv_text.setText("所有");
+                    break;
+                case Favorite.CATALOG_BLOGS:
+                    collect_tv_text.setText("博客");
+                    break;
+                case Favorite.CATALOG_CODE:
+                    collect_tv_text.setText("焦点");
+                    break;
+                case Favorite.CATALOG_NEWS:
+                    collect_tv_text.setText("资讯");
+                    break;
+                case Favorite.CATALOG_SOFTWARE:
+                    collect_tv_text.setText("软件");
+                    break;
+                case Favorite.CATALOG_TOPIC:
+                    collect_tv_text.setText("标题");
+                    break;
+            }
+            collect_tv_wenzi.setText(favorites.getTitle());
         }
     }
 }

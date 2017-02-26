@@ -39,6 +39,20 @@ public interface Cantents {
     String MY_PWD = "pwd";  //密码
     String MY_GENDER = "gender";    //获得男女
 
+    //收藏
+    public String SHOU_CANG_URL= "http://www.oschina.net/action/api/favorite_list";
+    //关注和粉丝
+    String ATTENTION_URL = "http://www.oschina.net/action/api/friends_list?uid=993896&pageIndex=0&pageSize=20&relation=1";
+    String FANS_URL = "http://www.oschina.net/action/api/friends_list?uid=993896&pageIndex=0&pageSize=20&relation=0";
 
+<<<<<<< HEAD
     String Result_URL = "http://www.oschina.net/action/api/search_list?";
+=======
+    //动弹
+    public String DONG_TAN_URL= "http://www.oschina.net/action/api/tweet_list";
+
+
+    int RESULT_OK = 1;
+    int RESULT_FAIL = 0;
+>>>>>>> 4cd78e591b60406bd24f300f90a7a3c2ecb9f6d2
 }
