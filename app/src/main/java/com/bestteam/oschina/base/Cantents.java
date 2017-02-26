@@ -47,10 +47,14 @@ public interface Cantents {
     String ATTENTION_URL = "http://www.oschina.net/action/api/friends_list?uid=993896&pageIndex=0&pageSize=20&relation=1";
     String FANS_URL = "http://www.oschina.net/action/api/friends_list?uid=993896&pageIndex=0&pageSize=20&relation=0";
 
+
+    String Result_URL = "http://www.oschina.net/action/api/search_list?";
+
     //动弹
     public String DONG_TAN_URL= "http://www.oschina.net/action/api/tweet_list";
 
 
     int RESULT_OK = 1;
     int RESULT_FAIL = 0;
+
 }

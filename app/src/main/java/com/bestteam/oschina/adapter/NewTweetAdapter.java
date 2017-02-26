@@ -15,7 +15,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.activity.HisActivity;
 import com.bestteam.oschina.activity.ImgBigActivity;
 import com.bestteam.oschina.activity.TweetDetailActivity;
 import com.bestteam.oschina.bean.Tweet;
@@ -250,9 +249,9 @@ public class NewTweetAdapter extends RecyclerView.Adapter {
                     }
                     break;
                 case R.id.iv_icon:
-                    Intent intentIcon = new Intent(context, HisActivity.class);
-                    intentIcon.putExtra("authorId",authorid);
-                    context.startActivity(intentIcon);
+//                    Intent intentIcon = new Intent(context, HisActivity.class);
+//                    intentIcon.putExtra("authorId",authorid);
+//                    context.startActivity(intentIcon);
                     break;
             }
         }

@@ -45,6 +45,7 @@ public class ImgVPAdapter extends PagerAdapter {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.putExtra("url",itemsBean.getHref());
+                intent.putExtra("img",itemsBean.getImg());
                 intent.setClass(context, PlayMeassgeActivity.class);
                 context.startActivity(intent);
             }

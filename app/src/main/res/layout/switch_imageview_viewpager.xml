@@ -6,12 +6,12 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="130dp">
+        android:layout_height="150dp">
 
         <com.bestteam.oschina.view.SwitchImageViewViewPager
             android:id="@+id/information_vp"
             android:layout_width="match_parent"
-            android:layout_height="130dp">
+            android:layout_height="150dp">
         </com.bestteam.oschina.view.SwitchImageViewViewPager>
         <RelativeLayout
             android:layout_width="match_parent"

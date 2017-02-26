@@ -336,9 +336,9 @@ public class TweetDetailActivity extends AppCompatActivity implements View.OnCli
                 }
                 break;
             case R.id.iv_icon_detail:
-                Intent intentIcon = new Intent(this, HisActivity.class);
-                intentIcon.putExtra("authorId", uid);
-                startActivity(intentIcon);
+//               Intent intentIcon = new Intent(this, HisActivity.class);
+//                intentIcon.putExtra("authorId", uid);
+//                startActivity(intentIcon);
                 break;
             case R.id.iv_back:
                 finish();
