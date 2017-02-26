@@ -1,6 +1,7 @@
 package com.bestteam.oschina.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
+import com.bestteam.oschina.activity.SearchDetailActivity;
 import com.bestteam.oschina.bean.News;
 import com.bestteam.oschina.bean.Result;
 import com.bestteam.oschina.bean.SearchList;
@@ -44,10 +46,18 @@ public class SearchAdapter extends RecyclerView.Adapter {
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         ViewHolder viewHolder = (ViewHolder) holder;
 
-        SearchResult searchResult = searchResults.get(position);
+        final SearchResult searchResult = searchResults.get(position);
         viewHolder.tvTitle.setText(searchResult.getTitle());
         viewHolder.tvContent.setText(searchResult.getDescription());
 
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context,SearchDetailActivity.class);
+                intent.putExtra("url",searchResult.getUrl());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

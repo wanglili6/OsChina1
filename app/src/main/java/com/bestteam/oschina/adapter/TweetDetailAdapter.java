@@ -3,7 +3,6 @@ package com.bestteam.oschina.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,12 +16,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.activity.HisActivity;
 import com.bestteam.oschina.activity.LoginActivity;
-import com.bestteam.oschina.activity.TweetDetailActivity;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.Comment;
-import com.bestteam.oschina.bean.TweetsList;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.SPUtils;
 import com.squareup.picasso.Picasso;
@@ -33,7 +29,6 @@ import java.util.List;
 import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
-import okhttp3.Cookie;
 
 
 /**
@@ -146,9 +141,9 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
             ivIconComment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intentIcon = new Intent(context,HisActivity.class);
-                    intentIcon.putExtra("authorId",authorId);
-                    context.startActivity(intentIcon);
+//                    Intent intentIcon = new Intent(context,HisActivity.class);
+//                    intentIcon.putExtra("authorId",authorId);
+//                    context.startActivity(intentIcon);
                 }
             });
 

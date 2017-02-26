@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -32,10 +31,13 @@ import java.util.Map;
 public class SearchActivity extends AppCompatActivity {
 
     private SearchEditText search;
-    private RecyclerView recyclerView;
+    private XRecyclerView xRecyclerView;
     private String pageSize = "20";
     private ImageView iv;
-    private SearchList searchList;
+    private int pageIndex = 0;
+    private SearchAdapter adapter;
+    private boolean isRefresh = true;
+    private boolean isLoaderMore = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +45,16 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
 
         search = (SearchEditText) findViewById(R.id.query);
-        recyclerView = (RecyclerView) findViewById(R.id.search_rv);
+        xRecyclerView = (XRecyclerView) findViewById(R.id.search_rv);
         iv = (ImageView) findViewById(R.id.iv_search);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setVisibility(View.GONE);
 
+
+        initSeachView();
+        initRecyclerView();
         requestData();
+    }
 
-
-
+    private void initSeachView() {
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -67,9 +70,9 @@ public class SearchActivity extends AppCompatActivity {
             public void afterTextChanged(Editable s) {
                 String content = search.getText().toString().trim();
                 if (TextUtils.isEmpty(content)) {
-                    recyclerView.setVisibility(View.VISIBLE);
-                    if (recyclerView.getVisibility() == View.VISIBLE){
-                        recyclerView.setVisibility(View.GONE);
+                    xRecyclerView.setVisibility(View.VISIBLE);
+                    if (xRecyclerView.getVisibility() == View.VISIBLE) {
+                        xRecyclerView.setVisibility(View.GONE);
                     }
                 }
             }
@@ -79,36 +82,74 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 String content = search.getText().toString().trim();
-                if(TextUtils.isEmpty(content)) {
+                if (TextUtils.isEmpty(content)) {
                     return false;
-                }else {
-                    recyclerView.setVisibility(View.VISIBLE);
+                } else {
+                    xRecyclerView.setVisibility(View.VISIBLE);
                 }
                 return true;
             }
         });
+    }
 
 
+    private void initRecyclerView() {
 
+        xRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+        adapter = new SearchAdapter(SearchActivity.this);
+        xRecyclerView.setAdapter(adapter);
+
+        xRecyclerView.setPullRefreshEnabled(true);
+        xRecyclerView.setLoadingMoreEnabled(true);
+        xRecyclerView.setVisibility(View.GONE);
+
+        RecyclerViewFresh();
+
+    }
+
+    private void RecyclerViewFresh() {
+        xRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
+            @Override
+            public void onRefresh() {
+                isRefresh = true;
+                pageIndex = 0;
+                requestData();
+            }
+
+            @Override
+            public void onLoadMore() {
+                isLoaderMore = true;
+                pageIndex = pageIndex + 1;
+                requestData();
+            }
+        });
     }
 
     private void requestData() {
         String url = Cantents.Result_URL;
         //catalog=news&content=java&pageIndex=0&pageSize=20"
-        Map<String,String> params = new HashMap<>();
-        params.put("catalog","news");
-        params.put("content","java");
-        params.put("pageIndex","0");
-        params.put("pageSize",pageSize);
+        Map<String, String> params = new HashMap<>();
+        params.put("catalog", "news");
+        params.put("content", "java");
+        params.put("pageIndex", String.valueOf(pageIndex));
+        params.put("pageSize", pageSize);
         OKHttp3Helper.create().get(url, null, params, new OKHttp3Helper.HttpCallback() {
             @Override
             public void onSuccess(String result) {
-                searchList = XmlUtils.toBean(SearchList.class, result.getBytes());
+                SearchList searchList = XmlUtils.toBean(SearchList.class, result.getBytes());
 
-                SearchAdapter adapter = new SearchAdapter(SearchActivity.this);
-                adapter.clear();
-                adapter.addAll(searchList.getList());
-                recyclerView.setAdapter(adapter);
+                if (isRefresh) {
+                    adapter.clear();
+                    adapter.addAll(searchList.getList());
+                    xRecyclerView.refreshComplete();
+                    isRefresh = false;
+                }
+
+                if (isLoaderMore) {
+                    adapter.addAll(searchList.getList());
+                    xRecyclerView.loadMoreComplete();
+                    isLoaderMore = false;
+                }
 
 
             }
@@ -118,7 +159,6 @@ public class SearchActivity extends AppCompatActivity {
                 iv.setVisibility(View.VISIBLE);
             }
         });
-
 
 
     }
