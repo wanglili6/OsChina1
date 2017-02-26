@@ -50,6 +50,8 @@ public class TweetFragment extends android.support.v4.app.Fragment {
         TweetFragmentAdapter adapter = new TweetFragmentAdapter(getChildFragmentManager(), fragments);
         vp_tweet.setAdapter(adapter);
         tab_tweet.setupWithViewPager(vp_tweet);
+
+        vp_tweet.setOffscreenPageLimit(3);
     }
 
 
