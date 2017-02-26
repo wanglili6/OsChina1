@@ -55,7 +55,6 @@
 
         <activity android:name=".activity.SearchActivity"/>
         <activity android:name=".activity.SearchDetailActivity"/>
-        <activity android:name=".activity.HisActivity"/>
     </application>
 
 </manifest>
