@@ -37,14 +37,16 @@ public class ImgVPAdapter extends PagerAdapter {
     }
 
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Object instantiateItem(ViewGroup container, final int position) {
         ImageView imageView = imageViewList.get(position);
-        final AcrivityMessageBean.ResultBean.ItemsBean itemsBean = itemsBeenList.get(position);
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                final AcrivityMessageBean.ResultBean.ItemsBean itemsBean = itemsBeenList.get(position);
                 Intent intent = new Intent();
                 intent.putExtra("url",itemsBean.getHref());
+                intent.putExtra("img",itemsBean.getImg());
                 intent.setClass(context, PlayMeassgeActivity.class);
                 context.startActivity(intent);
             }

@@ -31,8 +31,6 @@ public class ClassityItem3 extends Fragment implements RefreshRecyleView.OnLoadM
     private RefreshRecyleView recyclerView;
     private int tag;
     private String url;
-    private SwipeRefreshLayout swipeRefreshLayout;
-    private Handler mHandler = new Handler();
     private SoftwareList softwareList;
 
 

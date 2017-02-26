@@ -5,6 +5,8 @@
         by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
     -->
     <style name="AppBaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textColorPrimary">#fff</item>
+
         <!--
             Theme customizations available in newer API levels can go in
             res/values-vXX/styles.xml, while customizations related to
@@ -12,6 +14,7 @@
         -->
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:colorPrimaryDark">@color/actionbar_background</item>
+        <!--<item name="android:statusBarColor">@android:color/transparent</item>-->
         <!--&lt;!&ndash; 设置activity切换动画 &ndash;&gt;-->
         <item name="android:windowAnimationStyle">@style/activityAnimation</item>
 
@@ -22,7 +25,7 @@
     <style name="AppTheme" parent="AppBaseTheme">
         <!--设置沉浸式状态栏-->
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-
+        <item name="android:colorPrimaryDark">@color/actionbar_background</item>
         <!-- All customizations that are NOT specific to a particular API-level can go here. -->
     </style>
 

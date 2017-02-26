@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="@color/actionbar_background"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+
+            android:layout_centerVertical="true"
+            android:id="@+id/ib_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="5dp"
+            android:background="@drawable/btn_back_selector" />
+
+        <TextView
+            android:id="@+id/tv_me"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:text="我的资料"
+            android:textColor="#fff"
+            android:textSize="20sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_my"
+        >
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/username_img"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center_horizontal"
+            android:src="@drawable/widget_default_face"
+            android:layout_centerHorizontal="true"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#fff"
+            android:layout_marginTop="45dp"/>
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户名:"
+            android:layout_gravity="center_horizontal"
+            android:textSize="16sp"
+            android:textColor="#fff"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="120dp"/>
+
+    </RelativeLayout>
+<ImageView
+    android:background="#e9e8e8"
+    android:layout_width="match_parent"
+    android:layout_height="6dp" />
+    <LinearLayout
+        android:clickable="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="?android:attr/selectableItemBackground"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#bebebe"
+            android:text="加入于:  " />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="2017/02/17" />
+    </LinearLayout>
+    <ImageView
+        android:background="#e9e8e8"
+        android:layout_width="match_parent"
+        android:layout_height="6dp" />
+    <LinearLayout
+        android:clickable="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="?android:attr/selectableItemBackground"
+       >
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#bebebe"
+            android:text="所在地区:  " />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="无" />
+    </LinearLayout>
+    <ImageView
+        android:background="#e9e8e8"
+        android:layout_width="match_parent"
+        android:layout_height="6dp" />
+    <LinearLayout
+        android:clickable="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="?android:attr/selectableItemBackground">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#bebebe"
+            android:text="开发平台:  " />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="无" />
+    </LinearLayout>
+    <ImageView
+        android:background="#e9e8e8"
+        android:layout_width="match_parent"
+        android:layout_height="6dp" />
+    <LinearLayout
+        android:clickable="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="?android:attr/selectableItemBackground">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#bebebe"
+            android:text="专长领域:  " />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="无" />
+    </LinearLayout>
+    <ImageView
+        android:background="#e9e8e8"
+        android:layout_width="match_parent"
+        android:layout_height="6dp" />
+    <LinearLayout
+        android:clickable="true"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="?android:attr/selectableItemBackground">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:textColor="#bebebe"
+            android:text="个性签名:  " />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#000"
+            android:text="这个家伙很懒,啥也没写!" />
+    </LinearLayout>
+    <ImageView
+        android:background="#e9e8e8"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

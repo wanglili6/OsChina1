@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.softwareadapter.ClassifyRvAdapter3;
@@ -30,6 +31,7 @@ public class RecommendFragment extends Fragment implements XRecyclerView.Loading
     private ClassifyRvAdapter3 classifyRvAdapter3;
     private boolean isRefresh = true;
     private boolean isLoadMoare = false;
+    private LinearLayout loadBar;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -44,6 +46,7 @@ public class RecommendFragment extends Fragment implements XRecyclerView.Loading
         recyclerView.setLoadingListener(this);
         recyclerView.setLoadingMoreEnabled(true);
         recyclerView.setPullRefreshEnabled(true);
+        loadBar.setVisibility(View.VISIBLE);
         onLoadMaore();
 
     }
@@ -53,6 +56,7 @@ public class RecommendFragment extends Fragment implements XRecyclerView.Loading
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.refresh_recyleview, container, false);
         recyclerView = (XRecyclerView) view.findViewById(R.id.refresh_xrv);
+        loadBar = (LinearLayout) view.findViewById(R.id.load);
         return view;
     }
 
@@ -71,6 +75,7 @@ public class RecommendFragment extends Fragment implements XRecyclerView.Loading
 
                     @Override
                     public void onResponse(String response, int id) {
+                        loadBar.setVisibility(View.GONE);
                         SoftwareList softwareList = XmlUtils.toBean(SoftwareList.class, response.getBytes());
                         if (isRefresh){
                             classifyRvAdapter3.clear();

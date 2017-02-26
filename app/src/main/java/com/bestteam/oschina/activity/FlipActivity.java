@@ -58,6 +58,8 @@ public class FlipActivity extends Activity {
             case R.id.tv_send:
                 break;
             case R.id.ib_picture:
+                startActivity(new Intent(this,PhotoActivity.class));
+                finish();
                 break;
             case R.id.ib_mention:
                 break;

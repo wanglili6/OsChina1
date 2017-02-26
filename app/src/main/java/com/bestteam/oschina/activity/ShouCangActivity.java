@@ -33,8 +33,6 @@ public class ShouCangActivity extends Activity {
     ImageButton ibBack;
     @BindView(R.id.tv_me)
     TextView tvMe;
-    @BindView(R.id.tv_attention)
-    TextView tvAttention;
     @BindView(R.id.xRecyclerView)
     XRecyclerView xRecyclerView;
 

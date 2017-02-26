@@ -13,8 +13,8 @@
 
         <ImageButton
             android:id="@+id/ib_back"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_marginLeft="5dp"
             android:layout_centerVertical="true"
             android:background="@drawable/btn_back_selector" />
@@ -24,16 +24,8 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/ib_back"
             android:layout_centerVertical="true"
-            android:text="我的"
+            android:text="粉丝列表"
             android:textColor="@color/attention_text_selector"
-            android:textSize="25sp" />
-        <TextView
-            android:id="@+id/tv_attention"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="粉丝"
-            android:textColor="#fff"
             android:textSize="20sp" />
     </RelativeLayout>
     <LinearLayout

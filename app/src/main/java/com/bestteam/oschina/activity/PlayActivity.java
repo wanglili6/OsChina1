@@ -35,6 +35,8 @@ import butterknife.ButterKnife;
 import butterknife.OnClick;
 import okhttp3.Call;
 
+import static android.R.id.list;
+
 /**
  * Created by 王丽丽 on 2017/2/18.
  * <p>
@@ -56,12 +58,12 @@ public class PlayActivity extends Activity implements XRecyclerView.LoadingListe
     private boolean isRefresh = true;
     private boolean isLoadMore = false;
     private int pageIndex = 0;
-    private List<ImageView> imgs;
+    private List<ImageView> imgs=new ArrayList<>();
     private AcrivityMessageBean acrivityMessageBean;
-    private AcrivityMessageBean.ResultBean.ItemsBean itemsBean;
     private ViewPager imgVp;
     private LinearLayout pointContant;
-    private Handler handler = new Handler();
+    private Handler mHandler = new Handler();
+    private List<AcrivityMessageBean.ResultBean.ItemsBean> itemsBeen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +72,7 @@ public class PlayActivity extends Activity implements XRecyclerView.LoadingListe
         ButterKnife.bind(this);
         //初始化View
         initRecyleView();
+        load.setVisibility(View.VISIBLE);
         //加载数据
         loadData();
 
@@ -80,15 +83,19 @@ public class PlayActivity extends Activity implements XRecyclerView.LoadingListe
         playRv.setAdapter(adapter);
         adapter.notifyDataSetChanged();
 
-
-//        initPoint();
+        //加载轮播图片数据
+        loadIMg();
+        initPoint();
+        //让轮播图显示第一张图片
+        imgVp.setCurrentItem(1,false);
+        //给ViewPager设置滑动监听
+        imgVp.addOnPageChangeListener(this);
+        startSwitch();
     }
 
     private void initRecyleView() {
         //设置布局管理器
         playRv.setLayoutManager(new LinearLayoutManager(this));
-
-
         playRv.setLoadingMoreEnabled(true);
         playRv.setPullRefreshEnabled(true);
         playRv.setLoadingListener(this);
@@ -104,33 +111,30 @@ public class PlayActivity extends Activity implements XRecyclerView.LoadingListe
         View view = LayoutInflater.from(this).inflate(R.layout.img_viewpage, null);
         imgVp = (ViewPager) view.findViewById(R.id.img_vp);
         pointContant = (LinearLayout) view.findViewById(R.id.point_contant);
-
-        //加载轮播图片数据
-        loadIMg();
-        //创建点
-
-
-        //给ViewPager设置滑动监听
-        imgVp.addOnPageChangeListener(this);
-        //开始轮播
-        startSwitch();
-
-        initPoint();
         return view;
     }
 
     private void initPoint() {
 
-        for (int i = 0; i < 3; i++) {
-            View view = new View(this);
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(8, 8);
-            view.setBackgroundResource(R.drawable.guide_point_gray_shape);
-            params.rightMargin = 10;
-            pointContant.addView(view, params);
+        //清空容器里面的布局
+        pointContant.removeAllViews();
+        //给容器添加布局
 
+        for (int i = 0; i < 3; i++) {
+            //小圆点
+            View view = new View(this);
+            //设置背景颜色
+            view.setBackgroundResource(R.drawable.guide_point_gray_shape);
+            //设置布局
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(5,5);
+            //设置右边距
+            params.leftMargin = 10;
+            //添加到布局
+            pointContant.addView(view,params);
         }
-        //让第一个为红色
+        //设置第一个点为绿色点
         pointContant.getChildAt(0).setBackgroundResource(R.drawable.guide_point_red_shape);
+
     }
 
     /**
@@ -169,18 +173,27 @@ public class PlayActivity extends Activity implements XRecyclerView.LoadingListe
 
     private void initViewPager() {
         imgs = new ArrayList<>();
-        for (int i = 0; i < acrivityMessageBean.getResult().getItems().size(); i++) {
-            itemsBean = acrivityMessageBean.getResult().getItems().get(i);
-            ImageView imageView = new ImageView(this);
+        itemsBeen = acrivityMessageBean.getResult().getItems();
+        int size = acrivityMessageBean.getResult().getItems().size();
+        for (int i = -1; i < size +1; i++) {
+            String imagPath = null;
+            if (i == size) {
+                //加载第一张图片
+                imagPath = itemsBeen.get(size-1).getImg();
+            }else if(i == -1){
+                imagPath = itemsBeen.get(0).getImg();
+            }else {
+                imagPath = itemsBeen.get(i).getImg();
+            }
+            ImageView imageView = new ImageView(PlayActivity.this);
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            Picasso.with(this).load(itemsBean.getImg()).into(imageView);
+            Picasso.with(PlayActivity.this).load(imagPath).into(imageView);
             imgs.add(imageView);
         }
         ImgVPAdapter imgadapter = new ImgVPAdapter(imgs, acrivityMessageBean.getResult().getItems(), this);
+//        ImgVPAdapter imgadapter = new ImgVPAdapter(imgs);
         imgVp.setAdapter(imgadapter);
-
-        //让轮播图片显示第一个
-        imgVp.setCurrentItem(1, false);
+        imgadapter.notifyDataSetChanged();
 
 
     }
@@ -188,7 +201,7 @@ public class PlayActivity extends Activity implements XRecyclerView.LoadingListe
 
     //加载rv的条目
     private void loadData() {
-        load.setVisibility(View.VISIBLE);
+
 
         String url = "http://www.oschina.net/action/api/event_list?uid=-1&pageIndex=0&pageSize=20";
         OkHttpUtils
@@ -245,7 +258,43 @@ public class PlayActivity extends Activity implements XRecyclerView.LoadingListe
         loadData();
     }
 
+    //开始切换
+    public void startSwitch() {
+        //注意：如果轮播图未切换轮播，开始发送消失进行，否则反之
+        if(!hasSwitch){
+            //往Handler里面的消息队列里面发送一个延时的消息
+            mHandler.postDelayed(new SwitchTask(),3000);
+        }
+    }
+    private boolean hasSwitch;
+    /**
+     * 使轮播图自动轮播
+     */
+    private class SwitchTask implements  Runnable {
 
+        @Override
+        public void run() {
+            if (imgVp != null) {
+                //切换逻辑
+                int currentItem = imgVp.getCurrentItem();
+                //判断是否在最后一页
+                if (currentItem == 0) {
+                    currentItem = imgs.size() - 1;
+                }else {
+                    currentItem ++;
+                }
+                imgVp.setCurrentItem(currentItem);
+            }
+
+            mHandler.postDelayed(this,3000);
+        }
+    }
+    //停止切换
+    public void stopSwitch(){
+        //清空消息列队
+        mHandler.removeCallbacksAndMessages(null);
+        hasSwitch = false;
+    }
     @Override
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -254,15 +303,33 @@ public class PlayActivity extends Activity implements XRecyclerView.LoadingListe
     @Override
     public void onPageSelected(int position) {
 
-        // 获取所有孩子
-        int childCount = pointContant.getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            if (position == i) {
-                pointContant.getChildAt(i).setBackgroundResource(R.drawable.guide_point_red_shape);
-            } else {
-                pointContant.getChildAt(i).setBackgroundResource(R.drawable.guide_point_gray_shape);
+        //修正下标
+        int index;
+        //正确数据的大小
+        int size = itemsBeen.size();
+        if(position == 0){
+            index = size - 1;
+            //切换到最后一个页面
+            imgVp.setCurrentItem(size,false);
+        }else if(position == size + 1){
+            index = 0;
+            //切换到第一个页面
+            imgVp.setCurrentItem(1,false);
+        }else{
+            index = position - 1;
+        }
+        //修改轮播图点的背景
+        int childCount =pointContant.getChildCount();
+        for (int i = 0; i <childCount ; i++) {
+            View child = pointContant.getChildAt(i);
+            //此处应改成修正后的角标
+            if(index == i){
+                //选中的页面
+                child.setBackgroundResource(R.drawable.guide_point_red_shape);
+            }else{
+                //未选中的页面
+                child.setBackgroundResource(R.drawable.guide_point_gray_shape);
             }
-
         }
 
     }
@@ -273,33 +340,6 @@ public class PlayActivity extends Activity implements XRecyclerView.LoadingListe
     }
 
 
-    private class SwitchTask implements Runnable {
-
-        @Override
-        public void run() {
-            if (imgVp != null) {
-                int currentItem = imgVp.getCurrentItem();
-
-                if (currentItem == imgs.size() - 1) {
-                    //切换到第一页
-                    currentItem = 0;
-                } else {
-                    //进入到下一页
-                    currentItem++;
-                }
-                imgVp.setCurrentItem(currentItem);
-                handler.postDelayed(this, 3000);
-            }
-
-        }
-    }
-
-    //开始切换
-    public void startSwitch() {
-
-        handler.postDelayed(new SwitchTask(), 3000);
-
-    }
 
 
 }

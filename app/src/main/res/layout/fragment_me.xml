@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#fff"
     android:orientation="vertical">
 
@@ -9,7 +10,7 @@
         android:id="@+id/rl_login"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="#40AA53"
+        android:background="@color/actionbar_background"
         android:clickable="true">
 
         <com.bestteam.oschina.view.GalaxyView
@@ -47,14 +48,16 @@
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/face_big"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
                 android:layout_centerInParent="true"
                 android:src="@drawable/widget_default_face"
+                app:civ_border_width="2dp"
+                app:civ_border_color="#fff"
                 android:clickable="true" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-
+                android:visibility="gone"
                 android:id="@+id/img_gender"
                 android:layout_alignBottom="@+id/face_big"
                 android:layout_width="wrap_content"
@@ -68,18 +71,19 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/face_big"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="点击头像进入登录"
                 android:textColor="#fff"
                 android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/jifen"
+                android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_name"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:text="积分0"
                 android:textColor="#fff"
                 android:textSize="14sp" />
@@ -97,7 +101,7 @@
         android:id="@+id/text_contant"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="#40AA53"
+        android:background="@color/actionbar_background"
         android:orientation="horizontal">
 
         <LinearLayout

@@ -45,9 +45,10 @@
         <activity android:name=".activity.SuggestionActivity" />
         <activity android:name=".activity.HisActivity"
             android:windowSoftInputMode="adjustPan"/>
-
         <activity android:name=".activity.PlayMeassgeActivity"/>
         <activity android:name=".activity.SwitchImageViewDetailActivity"/>
+        <activity android:name=".activity.ShowMeActivity"/>
+        <activity android:name=".activity.PhotoActivity"/>
     </application>
 
 </manifest>

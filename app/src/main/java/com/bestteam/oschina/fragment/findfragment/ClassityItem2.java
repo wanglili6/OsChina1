@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 
 import com.bestteam.oschina.R;
@@ -29,14 +30,14 @@ public class ClassityItem2 extends Fragment{
 
     private RecyclerView recyclerView;
     private int tag;
-    private ProgressBar loadBar;
+    private LinearLayout loadBar;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.layout_sub_classify_fragment,container,false);
         recyclerView = (RecyclerView) view.findViewById(R.id.fragment_rv);
-        loadBar = (ProgressBar) view.findViewById(R.id.load);
+        loadBar = (LinearLayout) view.findViewById(R.id.load);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         loadData();
         return view;

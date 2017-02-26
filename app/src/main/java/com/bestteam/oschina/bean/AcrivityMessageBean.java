@@ -117,6 +117,8 @@ public class AcrivityMessageBean {
             this.items = items;
         }
 
+
+
         public static class ItemsBean {
             /**
              * detail : 春暖花开的三月，OSC源创会将时隔一年回到深圳，与各位OSCer在春天来一场久违的约会，我们一如既往秉承着“自由，开放，分享”的思想，献上干货满满的主题，时下最热的开源项目，就等你来啦！

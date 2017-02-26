@@ -17,6 +17,8 @@ import android.widget.TextView;
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.LoginUserBean;
+import com.bestteam.oschina.bean.Result;
+import com.bestteam.oschina.bean.ResultBean;
 import com.bestteam.oschina.bean.UserInformation;
 import com.bestteam.oschina.util.MyToast;
 import com.bestteam.oschina.util.SPUtils;
@@ -96,8 +98,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
         SPUtils.saveString(this, "username", "pwd");
-        String my_name =  SPUtils.getString(getApplicationContext(),Cantents.MY_USERNAME,"");
-        String my_pwd = SPUtils.getString(getApplicationContext(),"",Cantents.MY_PWD);
         if (TextUtils.isEmpty(username) || TextUtils.isEmpty(pwd)) {
             MyToast.show(LoginActivity.this, "账号或密码不能为空");
             return;
@@ -128,7 +128,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onError(Call call, Exception e, int id) {
 
-                            MyToast.show(LoginActivity.this, "用户名或者密码错误...");
+                            MyToast.show(LoginActivity.this, "数据加载失败");
                             return;
                             //进入注册界面
                         }
@@ -136,15 +136,24 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onResponse(String response, int id) {
 
-                         //   UserInformation gender = XmlUtils.toBean()
                             UserInformation user = XmlUtils.toBean(UserInformation.class, response.getBytes());
-                            SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
-                            SPUtils.saveString(getApplicationContext(),Cantents.MY_USERNAME,Cantents.MY_PWD);
-                            SPUtils.saveString(getApplicationContext(),Cantents.MY_GENDER,user.getUser().getGender()+"");
-                            Log.d("gender",user.getUser().getGender()+"" );
-                            MyToast.show(LoginActivity.this, "登录成功");
-                            loginFlag = true;
-                            finish();
+                            ResultBean result = XmlUtils.toBean(ResultBean.class, response.getBytes());
+                            int errorCode = result.getResult().getErrorCode();
+                            if (errorCode==0){
+                                MyToast.show(LoginActivity.this, "用户名密码错误");
+                                return;
+                            }else if(errorCode==1){
+                                SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
+                                SPUtils.saveString(getApplicationContext(),Cantents.MY_GENDER,user.getUser().getGender()+"");
+                                SPUtils.saveString(LoginActivity.this,Cantents.MY_NMAE,user.getUser().getName());
+                                Log.e("wllNAme",user.getUser().getName());
+                                SPUtils.saveString(LoginActivity.this,Cantents.MY_IMG,user.getUser().getPortrait());
+                                Log.d("gender",user.getUser().getGender()+"" );
+                                Log.d("uid",user.getUser().getId()+"" );
+                                MyToast.show(LoginActivity.this, "登录成功");
+                                loginFlag = true;
+                                finish();
+                            }
                         }
                     });
         }
@@ -167,8 +176,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_brows_back:    // 返回主界面
-                startActivity(new Intent(this, MainActivity.class));
-                // finish();
+//                startActivity(new Intent(this, MainActivity.class));
+                 finish();
                 break;
             case R.id.tv_login_forget_pwd:  //忘记密码
 

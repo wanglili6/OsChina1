@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.activity.PlayMeassgeActivity;
+import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.Event;
 import com.bestteam.oschina.view.RefreshRecyleView;
 import com.squareup.picasso.Picasso;
@@ -85,7 +86,8 @@ public class NomalAdapter extends RefreshRecyleView.Adapter {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.putExtra("url",entity.getUrl());
+                intent.putExtra("url", Cantents.PLAY_URL+entity.getUrl());
+                intent.putExtra("img",entity.getCover());
                 intent.setClass(context, PlayMeassgeActivity.class);
                 context.startActivity(intent);
             }

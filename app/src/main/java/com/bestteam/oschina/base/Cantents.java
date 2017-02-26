@@ -38,6 +38,9 @@ public interface Cantents {
     String MY_USERNAME = "username";  //用户名
     String MY_PWD = "pwd";  //密码
     String MY_GENDER = "gender";    //获得男女
+    String MY_NMAE= "name";    //获得名字
+    String MY_IMG= "img";    //获得头像
 
+    String PLAY_URL="https://www.oschina.net";
 
 }

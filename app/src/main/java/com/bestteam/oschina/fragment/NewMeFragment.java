@@ -1,10 +1,14 @@
 package com.bestteam.oschina.fragment;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,11 +24,22 @@ import com.bestteam.oschina.R;
 import com.bestteam.oschina.activity.AttentionActivity;
 import com.bestteam.oschina.activity.DongTanActivity;
 import com.bestteam.oschina.activity.FansActivity;
+import com.bestteam.oschina.activity.LoginActivity;
+import com.bestteam.oschina.activity.MainActivity;
 import com.bestteam.oschina.activity.MessageCenterActivity;
 import com.bestteam.oschina.activity.MyBlogActivity;
 import com.bestteam.oschina.activity.SettingActivity;
 import com.bestteam.oschina.activity.ShouCangActivity;
+import com.bestteam.oschina.activity.ShowMeActivity;
+import com.bestteam.oschina.activity.UpdataActivity;
+import com.bestteam.oschina.base.Cantents;
+import com.bestteam.oschina.bean.User;
+import com.bestteam.oschina.util.MyToast;
+import com.bestteam.oschina.util.SPUtils;
 import com.bestteam.oschina.view.GalaxyView;
+import com.squareup.picasso.Picasso;
+
+import java.util.jar.Attributes;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -44,6 +59,7 @@ public class NewMeFragment extends Fragment {
     ImageButton mainSetting;
     @BindView(R.id.main_code)
     ImageButton mainCode;
+    //这个是动弹那一行
     @BindView(R.id.rl_login)
     RelativeLayout rlLogin;
     @BindView(R.id.move_count)
@@ -62,7 +78,6 @@ public class NewMeFragment extends Fragment {
     TextView fansCount;
     @BindView(R.id.fans)
     TextView fans;
-    //这个是动弹那一行
     @BindView(R.id.me_message)
     LinearLayout meMessage;
     @BindView(R.id.me_blog)
@@ -89,6 +104,22 @@ public class NewMeFragment extends Fragment {
     TextView jifen;
     @BindView(R.id.img_gender)
     CircleImageView imgGender;
+    private String uid;
+    private String gender;
+    private String name;
+    private String img;
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        uid = SPUtils.getString(getContext(), Cantents.MY_UID, "");
+        gender = SPUtils.getString(getContext(), Cantents.MY_GENDER, "");
+        name = SPUtils.getString(getContext(), Cantents.MY_NMAE, "");
+        img = SPUtils.getString(getContext(), Cantents.MY_IMG, "");
+        //判断是否登录
+        showUid();
+    }
 
     @Nullable
     @Override
@@ -97,6 +128,7 @@ public class NewMeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_me, container, false);
 
         ButterKnife.bind(this, view);
+        //初始化背景图---自定义的宇宙背景
         ViewTreeObserver viewTreeObserver = faceBig.getViewTreeObserver();
         viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
             @Override
@@ -105,7 +137,32 @@ public class NewMeFragment extends Fragment {
             }
         });
 
+
+
         return view;
+    }
+
+    private void showUid() {
+        if (TextUtils.isEmpty(uid)){
+            faceBig.setImageResource(R.drawable.widget_default_face);
+            textContant.setVisibility(View.GONE);
+            imgGender.setVisibility(View.GONE);
+            tvName.setText("点击头像登录");
+           jifen.setVisibility(View.GONE);
+
+        }else {
+            imgGender.setVisibility(View.VISIBLE);
+            Picasso.with(getContext()).load(img).into(faceBig);
+            textContant.setVisibility(View.VISIBLE);
+            tvName.setText(name);
+            jifen.setVisibility(View.VISIBLE);
+        }
+
+        if ("2".equals(gender)){
+            imgGender.setImageResource(R.drawable.userinfo_icon_female);
+        }else if ("1".equals(gender)){
+            imgGender.setImageResource(R.drawable.userinfo_icon_male);
+        }
     }
 
 
@@ -113,12 +170,10 @@ public class NewMeFragment extends Fragment {
      * 初始化Galaxy的方法
      */
     private void initGalaxy() {
-
-
+        //获取窗体对象
         Window window = getActivity().getWindow();
         Rect decorRect = new Rect();
         window.getDecorView().getWindowVisibleDisplayFrame(decorRect);
-
         int decorHeight = decorRect.height();
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         int statusBar = display.getHeight() - decorHeight;
@@ -138,32 +193,59 @@ public class NewMeFragment extends Fragment {
 
     @OnClick({R.id.main_setting, R.id.main_code, R.id.rl_login, R.id.me_message, R.id.me_blog,
             R.id.me_answers, R.id.me_activity, R.id.me_time, R.id.ll_move, R.id.ll_collect,
-            R.id.ll_attention, R.id.ll_fans})
+            R.id.ll_attention, R.id.ll_fans,R.id.face_big})
     public void onClick(View view) {
+
         switch (view.getId()) {
             case R.id.main_setting://设置页面
                 Intent intent = new Intent(getContext(), SettingActivity.class);
                 startActivity(intent);
                 break;
             case R.id.main_code://二维码页面
+                setCode();
+
                 break;
             case R.id.rl_login://整个登录页面
+                if (TextUtils.isEmpty(uid)){
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }else {
+                    startActivity(new Intent(getContext(), ShowMeActivity.class));
+                }
                 break;
             case R.id.me_message://我的消息
-
-                Intent intent5 = new Intent(getContext(), MessageCenterActivity.class);
-                startActivity(intent5);
+                if (TextUtils.isEmpty(uid)){
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }else {
+                    startActivity(new Intent(getContext(), MessageCenterActivity.class));
+                }
                 break;
             case R.id.me_blog://我的博客
-
-                Intent intent6 = new Intent(getContext(), MyBlogActivity.class);
-                startActivity(intent6);
+                if (TextUtils.isEmpty(uid)){
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }else {
+                    startActivity(new Intent(getContext(), MyBlogActivity.class));
+                }
                 break;
             case R.id.me_answers://我的问答
+                if (TextUtils.isEmpty(uid)){
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }else {
+                    startActivity(new Intent(getContext(), UpdataActivity.class));
+                }
                 break;
             case R.id.me_activity://我的活动
+                if (TextUtils.isEmpty(uid)){
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }else {
+                    startActivity(new Intent(getContext(), UpdataActivity.class));
+                }
                 break;
             case R.id.me_time://我的团队
+                if (TextUtils.isEmpty(uid)){
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }else {
+                    startActivity(new Intent(getContext(), UpdataActivity.class));
+                }
                 break;
             case R.id.ll_move://动弹
 
@@ -177,14 +259,51 @@ public class NewMeFragment extends Fragment {
             case R.id.ll_attention://关注
                 Intent intent3 = new Intent(getContext(), AttentionActivity.class);
                 startActivity(intent3);
+
+                break;
+            case R.id.ll_fans://粉丝
                 Intent intent4 = new Intent(getContext(), FansActivity.class);
                 startActivity(intent4);
                 break;
-            case R.id.ll_fans://粉丝
+            case R.id.face_big://用户头像
+                if (TextUtils.isEmpty(uid)){
+                    startActivity(new Intent(getContext(), LoginActivity.class));
+                }else {
+                    //TODO:弹出对话框
+                    showListDialog();
+                }
                 break;
+
 
         }
     }
+    private void showListDialog() {
+        final String[] items = { "更换头像","查看大图像"};
+        AlertDialog.Builder listDialog =
+                new AlertDialog.Builder(getContext());
+        listDialog.setTitle("选择操作");
+        listDialog.setItems(items, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
 
-
+                MyToast.show(getContext(),"点击了"+which);
+            }
+        });
+        listDialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                dialogInterface.dismiss();
+            }
+        });
+        listDialog.show();
+    }
+        public void setCode(){
+            AlertDialog.Builder customizeDialog =
+                    new AlertDialog.Builder(getContext());
+            final View dialogView = LayoutInflater.from(getContext())
+                    .inflate(R.layout.code_diaglo,null);
+            customizeDialog.setTitle("我是一个自定义Dialog");
+            customizeDialog.setView(dialogView);
+            customizeDialog.show();
+        }
 }

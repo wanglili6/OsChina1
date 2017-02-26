@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
@@ -71,6 +72,7 @@ public class SettingActivity extends Activity {
             case R.id.rl_setting_update:
                 break;
             case R.id.tv_setting_zhuxiao:
+
                 TaskStack();
                 //点击注册清空数据,隐藏按键
                 tvSettingZhuxiao.setVisibility(View.GONE);

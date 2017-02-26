@@ -24,22 +24,16 @@
 
                />
            <TextView
-
+               android:id="@+id/tv_message"
+               android:clickable="true"
                android:layout_toRightOf="@id/ib_messagecenter"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:textColor="#fff"
                android:layout_centerInParent="true"
-               android:textSize="18sp"
-               android:text="我的"
-               />
-           <TextView
-               android:layout_width="wrap_content"
-               android:layout_height="wrap_content"
-               android:textColor="#fff"
-               android:layout_centerInParent="true"
                android:textSize="20sp"
-               android:text="消息中心"/>
+               android:text="消息中心"
+               />
        </RelativeLayout>
 
     </android.support.v7.widget.Toolbar>
