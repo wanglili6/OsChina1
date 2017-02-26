@@ -135,6 +135,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onResponse(String response, int id) {
 
+                         //   UserInformation gender = XmlUtils.toBean()
                             UserInformation user = XmlUtils.toBean(UserInformation.class, response.getBytes());
                             ResultBean result = XmlUtils.toBean(ResultBean.class, response.getBytes());
                             int errorCode = result.getResult().getErrorCode();

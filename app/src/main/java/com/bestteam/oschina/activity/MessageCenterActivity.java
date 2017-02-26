@@ -45,8 +45,8 @@ public class MessageCenterActivity extends AppCompatActivity {
             }
         });
         fragments = new ArrayList<>();
-        fragments.add(setTitile(new AtMeFragment(),"@我"));
-        fragments.add(setTitile(new CommentFragment(),"评论"));
+        fragments.add(setTitile(new AtMeFragment(),"评论"));
+        fragments.add(setTitile(new CommentFragment(),"@我"));
         fragments.add(setTitile(new PrivateMessageFragment(),"私信"));
         viewPager.setAdapter(new MyPagerAdapter(getSupportFragmentManager()));
         tablayout.setupWithViewPager(viewPager);

@@ -137,7 +137,7 @@ public class FansActivity extends Activity implements View.OnClickListener {
         rvFans = (XRecyclerView) findViewById(R.id.rv_fans);
         LinearLayoutManager lm = new LinearLayoutManager(this);
         rvFans.setLayoutManager(lm);
-        adapter = new AttentionFriendAdapter(getApplicationContext());
+        adapter = new AttentionFriendAdapter(this);
         rvFans.setAdapter(adapter);
     }
 

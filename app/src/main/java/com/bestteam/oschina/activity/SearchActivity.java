@@ -15,6 +15,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.adapter.SearchAdapter;
@@ -55,6 +56,13 @@ public class SearchActivity extends AppCompatActivity {
     }
 
     private void initSeachView() {
+        search.setOnSearchClickListener(new SearchEditText.OnSearchClickListener() {
+            @Override
+            public void onSearchClick(View view) {
+            }
+        });
+
+
         search.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

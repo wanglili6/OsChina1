@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <com.jcodecraeer.xrecyclerview.XRecyclerView
-        android:id="@+id/rv_atme"
+        android:id="@+id/rv_privatemessage"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

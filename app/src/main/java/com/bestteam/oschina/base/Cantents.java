@@ -28,7 +28,15 @@ public interface Cantents {
     String SWITCH_IMAGEVIEW_URL = "http://www.oschina.net/action/apiv2/banner?catalog=1";
 
     //消息中心
-    public String COMMENT_MESSAGE_CENTER = "http://www.oschina.net/action/api/active_list?uid=993896&pageIndex=0&catalog=3&pageSize=20";
+    public String COMMENT_MESSAGE_CENTER = "http://www.oschina.net/action/api/active_list";
+    public String  COMMENT_DETAIL = "http://www.oschina.net/action/api/comment_list";
+
+
+
+
+
+
+
 
    String  KEY_HAS_READ = "new_id";
 
@@ -40,6 +48,8 @@ public interface Cantents {
     String MY_GENDER = "gender";    //获得男女
     String MY_NMAE= "name";    //获得名字
     String MY_IMG= "img";    //获得头像
+
+
 
     //收藏
     public String SHOU_CANG_URL= "http://www.oschina.net/action/api/favorite_list";
@@ -56,5 +66,4 @@ public interface Cantents {
 
     int RESULT_OK = 1;
     int RESULT_FAIL = 0;
-
 }

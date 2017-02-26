@@ -88,6 +88,7 @@ public class InformationFragment extends Fragment implements ViewPager.OnPageCha
                 isRefresh = true;
                 pageIndex = 0;
                 requestData();
+                startSwtich();
             }
 
             @Override

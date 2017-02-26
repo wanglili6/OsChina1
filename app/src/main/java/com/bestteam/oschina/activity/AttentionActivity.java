@@ -140,7 +140,7 @@ public class AttentionActivity extends AppCompatActivity implements View.OnClick
         rvAttention = (XRecyclerView) findViewById(R.id.rv_attention);
         LinearLayoutManager lm = new LinearLayoutManager(this);
         rvAttention.setLayoutManager(lm);
-        adapter = new AttentionFriendAdapter(getApplicationContext());
+        adapter = new AttentionFriendAdapter(this);
         rvAttention.setAdapter(adapter);
     }
 

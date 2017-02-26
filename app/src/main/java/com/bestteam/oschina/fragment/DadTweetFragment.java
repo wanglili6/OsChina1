@@ -5,37 +5,23 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.bestteam.oschina.R;
 import com.bestteam.oschina.activity.LoginActivity;
-import com.bestteam.oschina.activity.TweetDetailActivity;
 import com.bestteam.oschina.adapter.NewTweetAdapter;
 import com.bestteam.oschina.base.Cantents;
-import com.bestteam.oschina.bean.Tweet;
 import com.bestteam.oschina.bean.TweetsList;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.SPUtils;
 import com.bestteam.oschina.util.XmlUtils;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
-import static com.bestteam.oschina.activity.MyApplication.getContext;
 
 
 /**
