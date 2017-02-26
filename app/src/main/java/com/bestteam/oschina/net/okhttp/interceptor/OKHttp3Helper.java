@@ -3,9 +3,6 @@ package com.bestteam.oschina.net.okhttp.interceptor;
 import android.net.Uri;
 import android.os.Handler;
 
-
-import com.bestteam.oschina.activity.MyApplication;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
@@ -13,7 +10,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
-import okhttp3.Cache;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.FormBody;

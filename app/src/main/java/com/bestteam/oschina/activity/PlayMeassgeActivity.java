@@ -7,8 +7,10 @@ import android.webkit.JavascriptInterface;
 import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ImageView;
 
 import com.bestteam.oschina.R;
+import com.squareup.picasso.Picasso;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -20,6 +22,8 @@ import butterknife.ButterKnife;
 public class PlayMeassgeActivity extends Activity {
     @BindView(R.id.webView_message)
     WebView webViewMessage;
+    @BindView(R.id.image_activity)
+    ImageView imageActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,7 @@ public class PlayMeassgeActivity extends Activity {
         setContentView(R.layout.play_meassge);
         ButterKnife.bind(this);
         String url = getIntent().getStringExtra("url");
+        String img = getIntent().getStringExtra("img");
         //让webView支持js
         webViewMessage.getSettings().setJavaScriptEnabled(true);
         webViewMessage.setWebChromeClient(new WebChromeClient());
@@ -41,6 +46,7 @@ public class PlayMeassgeActivity extends Activity {
         });
         //加载网页
         webViewMessage.loadUrl(url);
+        Picasso.with(this).load(img).into(imageActivity);
 
         //让给js传递java对象
         webViewMessage.addJavascriptInterface(new SoftwareMessgeActivity.JsCallJava() {

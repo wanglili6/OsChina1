@@ -44,12 +44,17 @@
         <activity android:name=".activity.DongTanActivity" />
         <activity android:name=".activity.ShouCangActivity" />
         <activity android:name=".activity.SuggestionActivity" />
+
+        <activity android:name=".activity.AtMeDetailActivity"/>
+
         <activity android:name=".activity.HisActivity"
             android:windowSoftInputMode="adjustPan"/>
 
         <activity android:name=".activity.PlayMeassgeActivity"/>
         <activity android:name=".activity.SwitchImageViewDetailActivity"/>
 
+        <activity android:name=".activity.SearchActivity"/>
+        <activity android:name=".activity.SearchDetailActivity"/>
     </application>
 
 </manifest>

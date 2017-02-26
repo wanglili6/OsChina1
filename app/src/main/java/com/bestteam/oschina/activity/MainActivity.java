@@ -183,6 +183,8 @@ public class MainActivity extends FragmentActivity implements RadioGroup.OnCheck
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.main_search:
+                Intent intent = new Intent(this,SearchActivity.class);
+                startActivity(intent);
                 break;
         }
     }
