@@ -58,8 +58,9 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
     final public int MYTWEET_CODE = 101;
     protected int refresh;
     protected int loadmore;
-    private int tweetCount;
+    public int tweetCount;
     private int pageSize =20;
+    public boolean init;
 
     private Handler handler = new Handler() {
         @Override
@@ -179,7 +180,7 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
             public void onSuccess(String data) {
                 final TweetsList bean = XmlUtils.toBean(TweetsList.class, data.getBytes());
                 tweetCount = bean.getTweetCount();
-
+                
                 Message msg = new Message();
 
                 if (flag == PULL_REFRESH_NEW || flag ==PULL_REFRESH_HOT || flag == PULL_REFRESH_ME) {
