@@ -40,7 +40,6 @@ public interface Cantents {
 
    String  KEY_HAS_READ = "new_id";
 
-
     String MY_COOKIE = "cookie";    //cookie值
 
     String MY_UID = "uid";  //uid值
@@ -54,6 +53,12 @@ public interface Cantents {
 
     //收藏
     public String SHOU_CANG_URL= "http://www.oschina.net/action/api/favorite_list";
+    //关注和粉丝
+    String ATTENTION_URL = "http://www.oschina.net/action/api/friends_list?uid=993896&pageIndex=0&pageSize=20&relation=1";
+    String FANS_URL = "http://www.oschina.net/action/api/friends_list?uid=993896&pageIndex=0&pageSize=20&relation=0";
+
+
+    String Result_URL = "http://www.oschina.net/action/api/search_list?";
 
     //动弹
     public String DONG_TAN_URL= "http://www.oschina.net/action/api/tweet_list";

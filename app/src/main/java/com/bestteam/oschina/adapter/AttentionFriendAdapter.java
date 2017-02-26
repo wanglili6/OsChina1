@@ -2,6 +2,7 @@ package com.bestteam.oschina.adapter;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,10 @@ import android.widget.TextView;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.bean.Friend;
+import com.bestteam.oschina.bean.FriendsList;
+import com.squareup.picasso.Picasso;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,13 +23,21 @@ import java.util.List;
 
 public class AttentionFriendAdapter extends RecyclerView.Adapter{
     private Context context;
-    private List<Friend> friendDatas;
+    private List<Friend> friendDatas = new ArrayList<>();
 
-    public AttentionFriendAdapter(Context context, List<Friend> friendDatas) {
+    public AttentionFriendAdapter(Context context) {
         this.context = context;
-        this.friendDatas = friendDatas;
+    }
+    public void loadMore(FriendsList bean) {
+        friendDatas.addAll(bean.getFriendlist());
+        notifyDataSetChanged();
     }
 
+    public void refresh(FriendsList bean) {
+        friendDatas.clear();
+        friendDatas.addAll(bean.getFriendlist());
+        notifyDataSetChanged();
+    }
     @Override
     public FriendViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.attention_friend_item,parent,false);
@@ -36,10 +48,19 @@ public class AttentionFriendAdapter extends RecyclerView.Adapter{
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
         FriendViewHolder viewHolder = (FriendViewHolder) holder;
         Friend friend = friendDatas.get(position);
-        viewHolder.ivFriendItem.setImageResource(R.drawable.bear);
+        String portrait = friend.getPortrait();
+        if (!TextUtils.isEmpty(portrait)) {
+            Picasso.with(context).load(portrait).into(viewHolder.ivFriendItem);
+        }
         viewHolder.tvName.setText(friend.getName());
-        viewHolder.tvNull.setText(friend.getFrom());
+        viewHolder.tvAddress.setText(friend.getFrom());
+        viewHolder.tvPosition.setText(friend.getExpertise());
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+            }
+        });
     }
 
     @Override
@@ -49,13 +70,15 @@ public class AttentionFriendAdapter extends RecyclerView.Adapter{
     class FriendViewHolder extends RecyclerView.ViewHolder{
         public ImageView ivFriendItem;
         public TextView tvName;
-        public TextView tvNull;
+        public TextView tvAddress;
+        public TextView tvPosition;
 
         public FriendViewHolder(View itemView) {
             super(itemView);
             ivFriendItem = (ImageView) itemView.findViewById(R.id.iv_friend_item);
             tvName = (TextView) itemView.findViewById(R.id.tv_name);
-            tvNull = (TextView) itemView.findViewById(R.id.tv_null);
+            tvAddress = (TextView) itemView.findViewById(R.id.tv_address);
+            tvPosition = (TextView) itemView.findViewById(R.id.tv_position);
         }
     }
 }

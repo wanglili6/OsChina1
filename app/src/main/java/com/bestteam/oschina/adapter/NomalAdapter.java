@@ -86,6 +86,7 @@ public class NomalAdapter extends RefreshRecyleView.Adapter {
             public void onClick(View view) {
                 Intent intent = new Intent();
                 intent.putExtra("url",entity.getUrl());
+                intent.putExtra("img",entity.getCover());
                 intent.setClass(context, PlayMeassgeActivity.class);
                 context.startActivity(intent);
             }
