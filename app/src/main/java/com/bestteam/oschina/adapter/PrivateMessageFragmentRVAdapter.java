@@ -10,29 +10,26 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bestteam.oschina.R;
-import com.bestteam.oschina.bean.Active;
+import com.bestteam.oschina.bean.Messages;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by zheng_000 on 2017/2/25.
+ * Created by zheng_000 on 2017/2/26.
  */
 
-public class CommentFragmentRVAdapter extends RecyclerView.Adapter {
+public class PrivateMessageFragmentRVAdapter extends RecyclerView.Adapter {
     private Context context;
-    private List<Active> activeList = new ArrayList<>();
-    private ViewHolder viewHolder;
-
-    public CommentFragmentRVAdapter(Context context) {
+    private List<Messages> messagesList = new ArrayList<>();
+   private ViewHolder viewHolder;
+    public PrivateMessageFragmentRVAdapter(Context context){
         this.context = context;
     }
-
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_comment_message, parent, false);
-        viewHolder = new ViewHolder(view);
         return viewHolder;
     }
 
@@ -45,11 +42,11 @@ public class CommentFragmentRVAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return activeList != null ? activeList.size() : 0;
+        return messagesList != null ? messagesList.size() : 0;
     }
 
-    public void addAll(List<Active> activeList) {
-        this.activeList.addAll(activeList);
+    public void addAll(List<Messages> messagesList) {
+        this.messagesList.addAll(messagesList);
         notifyDataSetChanged();
     }
 
@@ -74,23 +71,23 @@ public class CommentFragmentRVAdapter extends RecyclerView.Adapter {
         }
 
         public void loadData(int position) {
-            Active active = activeList.get(position);
-            String portrait = active.getPortrait();
-            String commentCount = String.valueOf(active.getCommentCount());
+            Messages messages = messagesList.get(position);
+            String portrait = messages.getPortrait();
+            String commentCount = String.valueOf(messages.getMessageCount());
             if (!TextUtils.isEmpty(portrait)) {
                 Picasso.with(context).load(portrait).into(viewHolder.ivIcon);
             }
 
 
-            viewHolder.tvUsername.setText(active.getAuthor());
-            viewHolder.tvContent.setText(active.getMessage());
-            viewHolder.tvTime.setText(active.getPubDate());
+            viewHolder.tvUsername.setText(messages.getFriendName());
+            viewHolder.tvContent.setText(messages.getContent());
+            viewHolder.tvTime.setText(messages.getPubDate());
            /* viewHolder.tvMyDetail.setText(active.getObjectReply().getObjectBody());
             viewHolder.tvMyId.setText(active.getObjectReply().getObjectName()+" :");*/
             viewHolder.tvCount.setText(commentCount);
 
 
-            switch (active.getAppClient()) {
+            switch (messages.getAppClient()) {
                 case 2:
                     viewHolder.tvPhone.setText("Moblile");
                     break;
@@ -110,6 +107,7 @@ public class CommentFragmentRVAdapter extends RecyclerView.Adapter {
 
     }
     public void clear() {
-        this.activeList.clear();
+        this.messagesList.clear();
     }
+
 }

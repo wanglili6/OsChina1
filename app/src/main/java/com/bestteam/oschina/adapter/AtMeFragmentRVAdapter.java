@@ -41,7 +41,7 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         viewHolder = (ViewHolder) holder;
 
         final Active active = activeList.get(position);
@@ -112,7 +112,8 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
             public void onClick(View view) {
                 Intent intent = new Intent(context,AtMeDetailActivity.class);
 
-                intent.putExtra("id",active.getId()+"");
+                intent.putExtra("index",position+"");
+                intent.putExtra("id",active.getId());
                 context.startActivity(intent);
             }
         });
@@ -152,7 +153,7 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
         public void loadData(int position){
             Active active = activeList.get(position);
             String portrait = active.getPortrait();
-            String commentCount = String.valueOf(active.getCommentCount());
+           /* String commentCount = String.valueOf(active.getCommentCount());*/
             if (!TextUtils.isEmpty(portrait)) {
                 Picasso.with(context).load(portrait).into(viewHolder.ivIcon);
             }
@@ -163,7 +164,7 @@ public class AtMeFragmentRVAdapter extends RecyclerView.Adapter {
             viewHolder.tvTime.setText(active.getPubDate());
             viewHolder.tvMyDetail.setText(active.getObjectReply().getObjectBody());
             viewHolder.tvMyId.setText(active.getObjectReply().getObjectName()+" :");
-            viewHolder.tvCount.setText(commentCount);
+            viewHolder.tvCount.setText(active.getCommentCount());
 
            /* String pubDate = active.getPubDate();
             SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

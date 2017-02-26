@@ -29,6 +29,7 @@ public interface Cantents {
 
     //消息中心
     public String COMMENT_MESSAGE_CENTER = "http://www.oschina.net/action/api/active_list";
+    public String  COMMENT_DETAIL = "http://www.oschina.net/action/api/comment_list";
 
 
 
@@ -46,6 +47,9 @@ public interface Cantents {
     String MY_USERNAME = "username";  //用户名
     String MY_PWD = "pwd";  //密码
     String MY_GENDER = "gender";    //获得男女
+    String MY_NMAE= "name";    //获得名字
+    String MY_IMG= "img";    //获得头像
+
 
 
     //收藏

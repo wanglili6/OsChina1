@@ -16,7 +16,8 @@ import android.widget.TextView;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.base.Cantents;
-import com.bestteam.oschina.bean.LoginUserBean;
+import com.bestteam.oschina.bean.ResultBean;
+import com.bestteam.oschina.bean.UserInformation;
 import com.bestteam.oschina.util.MyToast;
 import com.bestteam.oschina.util.SPUtils;
 import com.bestteam.oschina.util.XmlUtils;
@@ -74,7 +75,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private String username;
     private String pwd;
-
+    private boolean loginFlag;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -125,20 +126,32 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         @Override
                         public void onError(Call call, Exception e, int id) {
 
-                            MyToast.show(LoginActivity.this, "用户名或者密码错误...");
-
+                            MyToast.show(LoginActivity.this, "数据加载失败");
+                            return;
                             //进入注册界面
                         }
 
                         @Override
                         public void onResponse(String response, int id) {
-                            LoginUserBean user = XmlUtils.toBean(LoginUserBean.class, response.getBytes());
-                            SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
-                            /*Log.d("uid",""+user.getUser().getId());*/
-                            MyToast.show(LoginActivity.this, "登录成功");
-                            //startActivity(new Intent(LoginActivity.this,MainActivity.class));
 
-                            finish();
+                            UserInformation user = XmlUtils.toBean(UserInformation.class, response.getBytes());
+                            ResultBean result = XmlUtils.toBean(ResultBean.class, response.getBytes());
+                            int errorCode = result.getResult().getErrorCode();
+                            if (errorCode==0){
+                                MyToast.show(LoginActivity.this, "用户名密码错误");
+                                return;
+                            }else if(errorCode==1){
+                                SPUtils.saveString(getApplicationContext(),Cantents.MY_UID,user.getUser().getId()+"");
+                                SPUtils.saveString(getApplicationContext(),Cantents.MY_GENDER,user.getUser().getGender()+"");
+                                SPUtils.saveString(LoginActivity.this,Cantents.MY_NMAE,user.getUser().getName());
+                                Log.e("wllNAme",user.getUser().getName());
+                                SPUtils.saveString(LoginActivity.this,Cantents.MY_IMG,user.getUser().getPortrait());
+                                Log.d("gender",user.getUser().getGender()+"" );
+                                Log.d("uid",user.getUser().getId()+"" );
+                                MyToast.show(LoginActivity.this, "登录成功");
+                                loginFlag = true;
+                                finish();
+                            }
                         }
                     });
         }
@@ -161,8 +174,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.tv_brows_back:    // 返回主界面
-                startActivity(new Intent(this, MainActivity.class));
-                // finish();
+//                startActivity(new Intent(this, MainActivity.class));
+                 finish();
                 break;
             case R.id.tv_login_forget_pwd:  //忘记密码
 
