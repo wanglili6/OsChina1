@@ -5,37 +5,23 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
-import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.bestteam.oschina.R;
 import com.bestteam.oschina.activity.LoginActivity;
-import com.bestteam.oschina.activity.TweetDetailActivity;
 import com.bestteam.oschina.adapter.NewTweetAdapter;
 import com.bestteam.oschina.base.Cantents;
-import com.bestteam.oschina.bean.Tweet;
 import com.bestteam.oschina.bean.TweetsList;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.SPUtils;
 import com.bestteam.oschina.util.XmlUtils;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.Response;
-
-import static com.bestteam.oschina.activity.MyApplication.getContext;
 
 
 /**
@@ -59,7 +45,7 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
     protected int refresh;
     protected int loadmore;
     public int tweetCount;
-    private int pageSize =20;
+    private int pageSize = 20;
     public boolean init;
 
     private Handler handler = new Handler() {
@@ -92,8 +78,8 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
         btLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getContext(),LoginActivity.class);
-                startActivityForResult(intent,MYTWEET_CODE);
+                Intent intent = new Intent(getContext(), LoginActivity.class);
+                startActivityForResult(intent, MYTWEET_CODE);
             }
         });
     }
@@ -101,10 +87,12 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(resultCode == 1){
-            loadNetData(PULL_REFRESH_ME);
-            rlWait.setVisibility(View.GONE);
-            mRv.setVisibility(View.VISIBLE);
+        if (requestCode == MYTWEET_CODE) {
+            if (resultCode == 1) {
+                loadNetData(PULL_REFRESH_ME);
+                rlWait.setVisibility(View.GONE);
+                mRv.setVisibility(View.VISIBLE);
+            }
         }
     }
 
@@ -144,11 +132,11 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
         OKHttp3Helper okHttp3Helper = OKHttp3Helper.create();
         Map<String, String> params = new HashMap<>();
         params.put("uid", "0");
-        params.put("pageSize", pageSize+"");
+        params.put("pageSize", pageSize + "");
         if (flag == PULL_REFRESH_NEW) {
             pageIndex = 0;
             params.put("uid", "0");
-            params.put("pageIndex", pageIndex+"");
+            params.put("pageIndex", pageIndex + "");
         } else if (flag == LOAD_MORE_NEW) {
             params.put("uid", "0");
             params.put("pageIndex", String.valueOf(++pageIndex));
@@ -160,10 +148,10 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
             params.put("uid", "-1");
             params.put("pageIndex", String.valueOf(++pageIndex));
         } else if (flag == PULL_REFRESH_ME) {
-            if(TextUtils.isEmpty(uid)){
+            if (TextUtils.isEmpty(uid)) {
                 rlWait.setVisibility(View.VISIBLE);
                 mRv.setVisibility(View.GONE);
-            }else {
+            } else {
                 rlWait.setVisibility(View.GONE);
                 mRv.setVisibility(View.VISIBLE);
             }
@@ -180,10 +168,10 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
             public void onSuccess(String data) {
                 final TweetsList bean = XmlUtils.toBean(TweetsList.class, data.getBytes());
                 tweetCount = bean.getTweetCount();
-                
+
                 Message msg = new Message();
 
-                if (flag == PULL_REFRESH_NEW || flag ==PULL_REFRESH_HOT || flag == PULL_REFRESH_ME) {
+                if (flag == PULL_REFRESH_NEW || flag == PULL_REFRESH_HOT || flag == PULL_REFRESH_ME) {
                     pageIndex = 0;
                     msg.what = 0;
                 } else if (flag == LOAD_MORE_NEW || flag == LOAD_MORE_HOT || flag == LOAD_MORE_ME) {
@@ -197,7 +185,7 @@ public abstract class DadTweetFragment extends BaseTweetFragment {
 
             @Override
             public void onFail(Exception e) {
-                Toast.makeText(getActivity(),"获取网络失败",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), "获取网络失败", Toast.LENGTH_SHORT).show();
                 mRv.refreshComplete();
                 mRv.loadMoreComplete();
             }

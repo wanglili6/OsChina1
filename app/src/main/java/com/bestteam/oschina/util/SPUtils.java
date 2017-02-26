@@ -31,7 +31,7 @@ public final class SPUtils {
 		SharedPreferences sp = context.getSharedPreferences(name, mode);
 		Editor edit = sp.edit();
 		edit.putString(key, value);
-		edit.commit();
+		edit.apply();
 	}
 	
 	
