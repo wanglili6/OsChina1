@@ -173,7 +173,7 @@ public class TweetDetailActivity extends AppCompatActivity implements View.OnCli
         ll.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
+                imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
                 return imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
             }
         });
@@ -304,8 +304,13 @@ public class TweetDetailActivity extends AppCompatActivity implements View.OnCli
             }
             sb.append("赞了该动弹");
             String textLike = sb.toString();
-            tvZan.setText(textLike);
-            tvZan.setVisibility(View.VISIBLE);
+            if(likeCount>0){
+                tvZan.setText(textLike);
+                tvZan.setVisibility(View.VISIBLE);
+            }else {
+                tvZan.setVisibility(View.GONE);
+            }
+
         }
     }
 

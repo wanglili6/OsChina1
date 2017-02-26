@@ -24,7 +24,7 @@
                 android:id="@+id/rl_collapsing"
                 android:layout_width="match_parent"
                 android:layout_height="240dp"
-                android:background="#f00"
+                android:background="@drawable/bg_topic_2"
                 app:layout_scrollFlags="enterAlwaysCollapsed">
                 <com.bestteam.oschina.view.GalaxyView
                     android:id="@+id/galaxy"

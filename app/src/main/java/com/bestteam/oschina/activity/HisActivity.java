@@ -10,6 +10,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Display;
 import android.view.Window;
 import android.widget.ImageButton;
@@ -68,9 +69,14 @@ public class HisActivity extends AppCompatActivity {
         Intent intent = getIntent();
         authorid = intent.getIntExtra("authorId", 0);
 
-        initGalaxy();
         initViewPager();
 
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        initGalaxy();
     }
 
     private void initViewPager() {
@@ -92,9 +98,23 @@ public class HisActivity extends AppCompatActivity {
     }
 
     private void initGalaxy() {
-
-
-        Window window = getWindow();
+        int[] location = new int[2];
+        rlCollapsing.getLocationOnScreen(location);
+        int x = location[0];
+        int y = location[1];
+        System.out.println("x:"+x+"y:"+y);
+        Log.e("xyxyxyxyxyxyxyx",x+"...."+y);
+        int bottom = faceBig.getBottom();
+        int right = faceBig.getRight();
+        int left = faceBig.getLeft();
+        int top = faceBig.getTop();
+        int xxx = (right-left)/2+x+left;
+        int yyy = (bottom-top)/2+y+top;
+        Rect frame = new Rect();
+        getWindow().getDecorView().getWindowVisibleDisplayFrame(frame);
+        int statusBarHeight = frame.top;
+        yyy = yyy-statusBarHeight;
+       /* Window window = getWindow();
         Rect decorRect = new Rect();
         window.getDecorView().getWindowVisibleDisplayFrame(decorRect);
 
@@ -108,10 +128,10 @@ public class HisActivity extends AppCompatActivity {
         Rect drawRect = new Rect();
         faceBig.getDrawingRect(drawRect);
         int x = location[0] + drawRect.width() / 2;
-        int y = location[1] + drawRect.height() / 2;
+        int y = location[1] + drawRect.height() / 2;*/
         //设置Galaxy
         galaxy.setDefaultPlanets();
-        galaxy.setGalaxyCenter(x, y - statusBar);
+        galaxy.setGalaxyCenter(xxx, yyy);
         galaxy.startRotate();
     }
 

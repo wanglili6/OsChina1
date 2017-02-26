@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -34,6 +35,8 @@ import java.util.Map;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import okhttp3.Cookie;
+
+import static android.content.Context.INPUT_METHOD_SERVICE;
 
 
 /**
@@ -92,6 +95,7 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
         private final RelativeLayout rlHuifu;
         private int authorId;
         private final Button btSend;
+        private InputMethodManager imm;
 
         public MyViewHolder(View itemView) {
             super(itemView);
@@ -135,10 +139,15 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
                         context.startActivity(new Intent(context, LoginActivity.class));
                         return;
                     }
+                    imm = (InputMethodManager) context.getSystemService(INPUT_METHOD_SERVICE);
                     if(rlHuifu.getVisibility() == View.VISIBLE){
                         rlHuifu.setVisibility(View.GONE);
+                        imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+                        etComment.clearFocus();
                     }else {
                         rlHuifu.setVisibility(View.VISIBLE);
+                        imm.toggleSoftInput(0, InputMethodManager.RESULT_SHOWN);
+                        etComment.requestFocus();
                     }
                 }
             });
