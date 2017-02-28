@@ -116,7 +116,7 @@
                 android:id="@+id/move_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="2"
                 android:textColor="#fff"
                 android:textSize="18sp" />
 
@@ -142,7 +142,7 @@
                 android:id="@+id/collect_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="3"
                 android:textColor="#fff"
                 android:textSize="18sp" />
 
@@ -168,7 +168,7 @@
                 android:id="@+id/attention_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="6"
                 android:textColor="#fff"
                 android:textSize="18sp" />
 
@@ -194,7 +194,7 @@
                 android:id="@+id/fans_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0"
+                android:text="6"
                 android:textColor="#fff"
                 android:textSize="18sp" />
 

@@ -52,7 +52,7 @@ public class InformationFragment extends Fragment implements ViewPager.OnPageCha
     private InformationFragmentAdapter adapter;
     private SwitchImageViewViewPager viewPager;
     private List<ImageView> imageViews;
-    private SwitchImageViewBean switchImageViewBean;
+    public SwitchImageViewBean switchImageViewBean;
     private TextView tvTitle;
     private Handler mHandler = new Handler();
     private LinearLayout llPoint;
@@ -88,6 +88,7 @@ public class InformationFragment extends Fragment implements ViewPager.OnPageCha
                 isRefresh = true;
                 pageIndex = 0;
                 requestData();
+                startSwtich();
             }
 
             @Override

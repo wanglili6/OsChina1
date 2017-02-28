@@ -28,7 +28,15 @@ public interface Cantents {
     String SWITCH_IMAGEVIEW_URL = "http://www.oschina.net/action/apiv2/banner?catalog=1";
 
     //消息中心
-    public String COMMENT_MESSAGE_CENTER = "http://www.oschina.net/action/api/active_list?uid=993896&pageIndex=0&catalog=3&pageSize=20";
+    public String COMMENT_MESSAGE_CENTER = "http://www.oschina.net/action/api/active_list";
+    public String  COMMENT_DETAIL = "http://www.oschina.net/action/api/message_list";
+
+
+
+
+
+
+
 
    String  KEY_HAS_READ = "new_id";
 
@@ -43,4 +51,20 @@ public interface Cantents {
 
     String PLAY_URL="https://www.oschina.net";
 
+
+    //收藏
+    public String SHOU_CANG_URL= "http://www.oschina.net/action/api/favorite_list";
+    //关注和粉丝
+    String ATTENTION_URL = "http://www.oschina.net/action/api/friends_list?uid=993896&pageIndex=0&pageSize=20&relation=1";
+    String FANS_URL = "http://www.oschina.net/action/api/friends_list?uid=993896&pageIndex=0&pageSize=20&relation=0";
+
+
+    String Result_URL = "http://www.oschina.net/action/api/search_list?";
+
+    //动弹
+    public String DONG_TAN_URL= "http://www.oschina.net/action/api/tweet_list";
+
+
+    int RESULT_OK = 1;
+    int RESULT_FAIL = 0;
 }

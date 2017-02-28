@@ -28,6 +28,7 @@
         <activity android:name=".activity.RegisterUserActivity" />
         <activity android:name=".activity.FlipActivity" />
         <activity android:name=".activity.AttentionActivity" />
+        <activity android:name=".activity.FriendActivity" />
         <activity android:name=".activity.FansActivity" />
         <activity android:name=".activity.NewsDetailActivity" />
         <activity android:name=".activity.MyBlogActivity" />
@@ -43,12 +44,18 @@
         <activity android:name=".activity.DongTanActivity" />
         <activity android:name=".activity.ShouCangActivity" />
         <activity android:name=".activity.SuggestionActivity" />
+
+        <activity android:name=".activity.AtMeDetailActivity"/>
+
         <activity android:name=".activity.HisActivity"
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".activity.PlayMeassgeActivity"/>
         <activity android:name=".activity.SwitchImageViewDetailActivity"/>
         <activity android:name=".activity.ShowMeActivity"/>
         <activity android:name=".activity.PhotoActivity"/>
+
+        <activity android:name=".activity.SearchActivity"/>
+        <activity android:name=".activity.SearchDetailActivity"/>
     </application>
 
 </manifest>

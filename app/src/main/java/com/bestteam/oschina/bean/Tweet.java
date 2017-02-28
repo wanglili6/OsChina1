@@ -1,8 +1,5 @@
 package com.bestteam.oschina.bean;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Parcel;
@@ -17,6 +14,9 @@ import android.widget.TextView;
 import android.widget.TextView.BufferType;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 动弹实体类

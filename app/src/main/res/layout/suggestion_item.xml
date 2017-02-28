@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#f2eaea"
+    android:background="@color/light_gray"
     android:orientation="vertical">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/actionbar_background"
+        android:padding="10dp">
 
         <ImageButton
             android:id="@+id/ib_suggestion_icon"
@@ -15,7 +17,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
-            android:src="@drawable/actionbar_back_icon_normal" />
+            android:background="@drawable/ic_brows_back" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -23,7 +25,9 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="15dp"
             android:layout_toRightOf="@id/ib_suggestion_icon"
-            android:text="意见反馈" />
+            android:text="意见反馈"
+            android:textColor="#fff"
+            android:textSize="20sp" />
     </RelativeLayout>
 
     <RadioGroup
@@ -48,14 +52,16 @@
     </RadioGroup>
 
     <RelativeLayout
+        android:background="#fff"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:layout_margin="10dp">
 
-        <TextView
+        <EditText
+            android:textColor="#000"
+            android:id="@+id/et_suggestion"
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:background="#fff"
             android:hint="我们将不断改进"
             android:padding="5dp" />
     </RelativeLayout>
@@ -79,16 +85,19 @@
 
     </LinearLayout>
 
-    <RelativeLayout
+
+    <Button
+        android:onClick="send"
+        android:id="@+id/send_suggestion"
+        android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="60dp">
+        android:background="@drawable/suggestion_shape"
+        android:gravity="center"
+        android:text="提交反馈"
+        android:textSize="16sp"
 
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_brows_refresh" />
-    </RelativeLayout>
+        />
+
 
 </LinearLayout>

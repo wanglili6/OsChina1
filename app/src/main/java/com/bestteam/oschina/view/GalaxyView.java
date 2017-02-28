@@ -188,6 +188,7 @@ public class GalaxyView extends View {
         timer.cancel();
     }
 
+
     /**
      * 行星的实体类
      */

@@ -55,13 +55,15 @@ public class SwitchImageViewViewPager extends ViewPager {
                 break;
             case MotionEvent.ACTION_UP :
                 fragment.startSwtich();
-//                int upX = (int) ev.getX();
-//                int upY = (int) ev.getY();
-//                if (startX == upX && startY == upY) {
-//                    Intent intent = new Intent(getContext(), SwitchImageViewDetailActivity.class);
-//                    getContext().startActivity(intent);
-//
-//                }
+                int upX = (int) ev.getX();
+                int upY = (int) ev.getY();
+                if (startX == upX && startY == upY) {
+                    Intent intent = new Intent(getContext(), SwitchImageViewDetailActivity.class);
+                    intent.putExtra("href",fragment.switchImageViewBean.getResult().getItems().get(getCurrentItem() - 1).getHref());
+                    getContext().startActivity(intent);
+
+                }
+
                 break;
         }
         return super.dispatchTouchEvent(ev);

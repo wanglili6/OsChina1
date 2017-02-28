@@ -2,13 +2,14 @@ package com.bestteam.oschina.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -19,10 +20,8 @@ import android.widget.Toast;
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.activity.HisActivity;
 import com.bestteam.oschina.activity.LoginActivity;
-import com.bestteam.oschina.activity.TweetDetailActivity;
 import com.bestteam.oschina.base.Cantents;
 import com.bestteam.oschina.bean.Comment;
-import com.bestteam.oschina.bean.TweetsList;
 import com.bestteam.oschina.net.okhttp.interceptor.OKHttp3Helper;
 import com.bestteam.oschina.util.SPUtils;
 import com.squareup.picasso.Picasso;
@@ -32,7 +31,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import okhttp3.Cookie;
+import de.hdodenhof.circleimageview.CircleImageView;
+
+import static android.content.Context.INPUT_METHOD_SERVICE;
 
 
 /**
@@ -82,7 +83,7 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
     class MyViewHolder extends RecyclerView.ViewHolder {
 
 
-        private final ImageView ivIconComment;
+        private final CircleImageView ivIconComment;
         private final TextView tvUserNameComment;
         private final TextView tvTimeComment;
         private final TextView tvComment;
@@ -91,10 +92,13 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
         private final RelativeLayout rlHuifu;
         private int authorId;
         private final Button btSend;
+        private InputMethodManager imm;
+        private String author;
+        private String portrait;
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            ivIconComment = (ImageView) itemView.findViewById(R.id.iv_icon_detail_comment);
+            ivIconComment = (CircleImageView) itemView.findViewById(R.id.iv_icon_detail_comment);
             tvUserNameComment = (TextView) itemView.findViewById(R.id.tv_username_detail_comment);
             tvTimeComment = (TextView) itemView.findViewById(R.id.tv_time_detail_comment);
             tvComment = (TextView) itemView.findViewById(R.id.tv_comment_detail);
@@ -108,8 +112,8 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
         public void setData(int position) {
             Comment comment = list.get(position);
             final int id = comment.getId();
-            String portrait = comment.getPortrait();
-            String author = comment.getAuthor();
+            portrait = comment.getPortrait();
+            author = comment.getAuthor();
             authorId = comment.getAuthorId();
             String pubDate = comment.getPubDate();
             final String content = comment.getContent();
@@ -121,8 +125,9 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
             tvUserNameComment.setText(author);
             tvTimeComment.setText(pubDate);
             tvComment.setText(content);
-            final String huifu = "回复:@"+author+":";
+            final String huifu = "回复:@"+ author +":";
             etComment.setText(huifu);
+            //etComment.setTextColor(Color.BLACK);
             etComment.setSelection(huifu.length());
 
             final String myUid = SPUtils.getString(context,Cantents.MY_UID,"");
@@ -134,10 +139,15 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
                         context.startActivity(new Intent(context, LoginActivity.class));
                         return;
                     }
+                    imm = (InputMethodManager) context.getSystemService(INPUT_METHOD_SERVICE);
                     if(rlHuifu.getVisibility() == View.VISIBLE){
                         rlHuifu.setVisibility(View.GONE);
+                        imm.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+                        etComment.clearFocus();
                     }else {
                         rlHuifu.setVisibility(View.VISIBLE);
+                        imm.toggleSoftInput(0, InputMethodManager.RESULT_SHOWN);
+                        etComment.requestFocus();
                     }
                 }
             });
@@ -147,6 +157,8 @@ public class TweetDetailAdapter extends RecyclerView.Adapter {
                 public void onClick(View view) {
                     Intent intentIcon = new Intent(context,HisActivity.class);
                     intentIcon.putExtra("authorId",authorId);
+                    intentIcon.putExtra("face", portrait);
+                    intentIcon.putExtra("name", author);
                     context.startActivity(intentIcon);
                 }
             });

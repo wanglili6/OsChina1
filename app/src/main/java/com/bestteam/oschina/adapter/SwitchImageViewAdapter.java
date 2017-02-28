@@ -44,15 +44,6 @@ public class SwitchImageViewAdapter extends PagerAdapter {
     public Object instantiateItem(final ViewGroup container, final int position) {
         View view = imageViews.get(position);
         container.addView(view);
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(context,SwitchImageViewDetailActivity.class);
-                intent.putExtra("href",itemsBeen.get(position -1).getHref());
-                context.startActivity(intent);
-
-            }
-        });
         return view;
     }
 

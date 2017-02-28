@@ -29,7 +29,7 @@
             android:text="马上登陆"
             android:layout_below="@+id/iv_wait"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/bg_login_register"/>
+            />
     </RelativeLayout>
 
 </FrameLayout>

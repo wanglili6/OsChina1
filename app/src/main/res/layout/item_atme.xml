@@ -4,9 +4,9 @@
     android:layout_height="wrap_content">
     <ImageView
         android:id="@+id/icon_atme"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:src="@drawable/smiley_0"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@mipmap/ic_launcher"
         android:layout_margin="5dp"/>
 
     <LinearLayout
@@ -23,7 +23,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:textColor="#000"
-                android:textSize="12sp"
+                android:textSize="14sp"
+
                 android:text="用户名"/>
             <TextView
                 android:id="@+id/time_atme"
@@ -51,32 +52,67 @@
             android:layout_marginTop="5dp"
             android:textSize="13sp"
             android:text="回复内容"/>
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
             android:layout_marginRight="5dp"
-            android:textSize="12sp"
-            android:text="喜欢我的都来关注吧，喜欢我的都来关注吧，喜欢我的都来关注吧。"
-            android:background="@drawable/comment_reply_container_bg"/>
-        <LinearLayout
-            android:layout_width="wrap_content"
+            android:orientation="horizontal"
+            android:background="@drawable/comment_reply_container_bg">
+            <TextView
+                android:id="@+id/myid_atme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:layout_marginLeft="4dp"
+                android:textColor="#3cc720"
+                android:textSize="13sp"/>
+            <TextView
+                android:id="@+id/mydetail_atme"
+                android:layout_toRightOf="@+id/myid_atme"
+                android:layout_marginLeft="2dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="13sp"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:orientation="horizontal">
+            >
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="5dp"
                 android:src="@drawable/platform"/>
             <TextView
                 android:id="@+id/phone_atme"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="3dp"
-                android:textSize="10sp"
+                android:layout_marginLeft="10dp"
+                android:textSize="13sp"
                 android:layout_marginTop="2dp"
                 android:text="Andriod"/>
-        </LinearLayout>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_comment"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="38dp"
+
+                />
+            <TextView
+                android:id="@+id/count_atme"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="13sp"
+                android:layout_marginTop="2dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="30dp"
+                />
+        </RelativeLayout>
     </LinearLayout>
 </LinearLayout>

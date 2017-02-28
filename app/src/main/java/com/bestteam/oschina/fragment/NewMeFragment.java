@@ -302,7 +302,6 @@ public class NewMeFragment extends Fragment {
                     new AlertDialog.Builder(getContext());
             final View dialogView = LayoutInflater.from(getContext())
                     .inflate(R.layout.code_diaglo,null);
-            customizeDialog.setTitle("我是一个自定义Dialog");
             customizeDialog.setView(dialogView);
             customizeDialog.show();
         }

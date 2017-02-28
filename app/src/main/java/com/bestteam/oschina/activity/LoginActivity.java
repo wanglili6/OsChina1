@@ -16,8 +16,6 @@ import android.widget.TextView;
 
 import com.bestteam.oschina.R;
 import com.bestteam.oschina.base.Cantents;
-import com.bestteam.oschina.bean.LoginUserBean;
-import com.bestteam.oschina.bean.Result;
 import com.bestteam.oschina.bean.ResultBean;
 import com.bestteam.oschina.bean.UserInformation;
 import com.bestteam.oschina.util.MyToast;
@@ -77,7 +75,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private String username;
     private String pwd;
-    private boolean loginFlag;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -151,7 +148,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 Log.d("gender",user.getUser().getGender()+"" );
                                 Log.d("uid",user.getUser().getId()+"" );
                                 MyToast.show(LoginActivity.this, "登录成功");
-                                loginFlag = true;
+                                setResult(1);
                                 finish();
                             }
                         }
